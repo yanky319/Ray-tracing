@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>HourlyEmployee.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+HourlyEmployee.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java.util.Objects</span><span class="s0">;</span>
+
+
+<span class="s0">public class </span><span class="s1">HourlyEmployee </span><span class="s0">extends </span><span class="s1">Employee</span>
+<span class="s1">{</span>
+    <span class="s0">private int </span><span class="s1">hours</span><span class="s0">;</span>
+    <span class="s0">private float </span><span class="s1">wage</span><span class="s0">;</span>
+
+    <span class="s0">public </span><span class="s1">HourlyEmployee(</span><span class="s0">int </span><span class="s1">hours</span><span class="s0">, float </span><span class="s1">wage</span><span class="s0">, </span><span class="s1">String first</span><span class="s0">, </span><span class="s1">String last</span><span class="s0">, int </span><span class="s1">id) </span><span class="s0">throws </span><span class="s1">Exception</span>
+    <span class="s1">{</span>
+        <span class="s0">super</span><span class="s1">(first</span><span class="s0">, </span><span class="s1">last</span><span class="s0">, </span><span class="s1">id)</span><span class="s0">;</span>
+        <span class="s0">if</span><span class="s1">(hours &lt; </span><span class="s2">0</span><span class="s1">)</span>
+            <span class="s0">throw new </span><span class="s1">IllegalArgumentException(</span><span class="s3">&quot;hours error&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.hours = hours</span><span class="s0">;</span>
+        <span class="s0">if</span><span class="s1">(wage &lt; </span><span class="s2">0</span><span class="s1">)</span>
+            <span class="s0">throw new </span><span class="s1">IllegalArgumentException(</span><span class="s3">&quot;wage error&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.wage = wage</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public </span><span class="s1">HourlyEmployee()</span>
+    <span class="s1">{</span>
+        <span class="s0">super</span><span class="s1">()</span><span class="s0">;</span>
+        <span class="s1">hours = </span><span class="s2">0</span><span class="s0">;</span>
+        <span class="s1">wage = </span><span class="s2">0</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">setHours(</span><span class="s0">int </span><span class="s1">hours)</span><span class="s0">throws </span><span class="s1">Exception {</span>
+        <span class="s0">if</span><span class="s1">(hours &lt; </span><span class="s2">0</span><span class="s1">)</span>
+            <span class="s0">throw new </span><span class="s1">IllegalArgumentException(</span><span class="s3">&quot;hours error&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.hours = hours</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public void </span><span class="s1">setWage(</span><span class="s0">float </span><span class="s1">wage)</span><span class="s0">throws </span><span class="s1">Exception {</span>
+        <span class="s0">if</span><span class="s1">(wage &lt; </span><span class="s2">0</span><span class="s1">)</span>
+            <span class="s0">throw new </span><span class="s1">IllegalArgumentException(</span><span class="s3">&quot;wage error&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.wage = wage</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public int </span><span class="s1">getHours() {</span>
+        <span class="s0">return </span><span class="s1">hours</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public float </span><span class="s1">getWage() {</span>
+        <span class="s0">return </span><span class="s1">wage</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">String toString() {</span>
+        <span class="s0">return </span><span class="s3">&quot;HourlyEmployee{&quot; </span><span class="s1">+</span>
+               <span class="s0">super</span><span class="s1">.toString() +</span>
+                <span class="s3">&quot;hours=&quot; </span><span class="s1">+ hours +</span>
+                <span class="s3">&quot;, wage=&quot; </span><span class="s1">+ wage +</span>
+                <span class="s3">'}'</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public boolean </span><span class="s1">equals(Object o) {</span>
+        <span class="s0">if </span><span class="s1">(</span><span class="s0">this </span><span class="s1">== o) </span><span class="s0">return true;</span>
+        <span class="s0">if </span><span class="s1">(!(o </span><span class="s0">instanceof </span><span class="s1">HourlyEmployee)) </span><span class="s0">return false;</span>
+        <span class="s0">if </span><span class="s1">(!</span><span class="s0">super</span><span class="s1">.equals(o)) </span><span class="s0">return false;</span>
+        <span class="s1">HourlyEmployee that = (HourlyEmployee) o</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">getHours() == that.getHours() &amp;&amp;</span>
+                <span class="s1">Float.compare(that.getWage()</span><span class="s0">, </span><span class="s1">getWage()) == </span><span class="s2">0</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public int </span><span class="s1">hashCode() {</span>
+        <span class="s0">return </span><span class="s1">Objects.hash(</span><span class="s0">super</span><span class="s1">.hashCode()</span><span class="s0">, </span><span class="s1">getHours()</span><span class="s0">, </span><span class="s1">getWage())</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public float </span><span class="s1">earnings() {</span>
+        <span class="s0">return </span><span class="s1">hours * wage</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
