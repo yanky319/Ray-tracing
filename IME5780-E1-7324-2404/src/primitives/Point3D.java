@@ -1,5 +1,11 @@
 package primitives;
 
+/*
+*
+לבדוק האם צריך בהכרזת פונקציה להודיע על חריגה שנזרקת לא בצורה ישירה
+חיסור בין שני נקודות האם מחזיר ווקטור מהראשית
+הבדיקה שמיכל עשתה בבנאי של קרן
+* */
 
 import java.util.Objects;
 
@@ -19,8 +25,12 @@ public class Point3D {
      * @param _x coordinate
      * @param _y coordinate
      * @param _z coordinate
+     * @throws NullPointerException In case of one of the coordinates is null
      */
-    public Point3D(Coordinate _x, Coordinate _y, Coordinate _z) {
+    public Point3D(Coordinate _x, Coordinate _y, Coordinate _z)throws NullPointerException {
+        if(_x == null || _y == null || _z == null ) {
+            throw new NullPointerException();
+        }
         this._x = new Coordinate(_x);
         this._y = new Coordinate(_y);
         this._z = new Coordinate(_z);
@@ -43,6 +53,7 @@ public class Point3D {
      * Copy constructor for Point3D
      *
      * @param point
+     * @throws NullPointerException In case of point is null
      */
     public Point3D(Point3D point)throws NullPointerException {
         if(point == null) {
@@ -61,7 +72,7 @@ public class Point3D {
      * @return x coordinate
      */
     public Coordinate get_x() {
-        return _x;
+        return new Coordinate(_x);
     }
     /**
      * Coordinate getter
@@ -69,7 +80,7 @@ public class Point3D {
      * @return y coordinate
      */
     public Coordinate get_y() {
-        return _y;
+        return new Coordinate(_y);
     }
     /**
      * Coordinate getter
@@ -77,21 +88,42 @@ public class Point3D {
      * @return z coordinate
      */
     public Coordinate get_z() {
-        return _z;
+        return new Coordinate(_z);
     }
 
     //************** functions ******************
 
-    public Vector subtract(Point3D other)
-    {
+    public Vector subtract(Point3D other) { //***************************************
+     return new Vector(
+             this._x.get(),
+             this._x.get(),
+             this._x.get());
 
     }
-    public Point3D add(Vector vec){
+
+    /**
+     * Adds a vector to a point
+     *
+     * @param vec The vector
+     * @return A new point that is shifted from the original point, the length and direction of the vector
+     * @throws NullPointerException In case of Vector is null
+     */
+    public Point3D add(Vector vec)throws NullPointerException {
+        if(vec == null)
+            throw new NullPointerException();
         return new Point3D(
-                this.get_x().get()+vec.point.get_x().get(),
-                this.get_y().get()+vec.point.get_y().get(),
-                this.get_z().get()+vec.point.get_z().get());
+                this.get_x().get()+vec._head.get_x().get(),
+                this.get_y().get()+vec._head.get_y().get(),
+                this.get_z().get()+vec._head.get_z().get());
     }
+
+    /**
+     *Calculates the distance between two points squared
+     *
+     * @param other Second point
+     * @return result of the calculation
+     * @throws NullPointerException In case of second Point is null
+     */
     public double distanceSquared(Point3D other)throws NullPointerException {
         if(other == null)
             throw new NullPointerException();
@@ -99,6 +131,14 @@ public class Point3D {
                 + (this.get_y().get() - other.get_y().get()) * (this.get_y().get() - other.get_y().get())
                 + (this.get_z().get() - other.get_z().get()) * (this.get_z().get() - other.get_z().get());
     }
+
+    /**
+     *Calculates the distance between two points
+     *
+     * @param other Second point
+     * @return result of the calculation
+     * @throws NullPointerException In case of second Point is null
+     */
     public double distance (Point3D other)throws NullPointerException {
         if(other == null)
             throw new NullPointerException();

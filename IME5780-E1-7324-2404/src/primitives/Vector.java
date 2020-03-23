@@ -6,7 +6,7 @@ import java.util.Objects;
  *  Class Vector representing a Vector in 3D
  */
 public class Vector {
-    Point3D point;
+    Point3D _head;
 
     //*********************************** constructors ***************
     /**
@@ -15,12 +15,14 @@ public class Vector {
      * @param _x coordinate
      * @param _y coordinate
      * @param _z coordinate
+     * @throws NullPointerException In case of one of the coordinates is null
+     * @throws IllegalArgumentException In case of all the coordinates values are zero
      */
-    public Vector(Coordinate _x, Coordinate _y, Coordinate _z) throws IllegalArgumentException  {
+    public Vector(Coordinate _x, Coordinate _y, Coordinate _z) throws NullPointerException, IllegalArgumentException  {
       Point3D p =  new Point3D(_x,_y,_z);
       if (p.equals(Point3D.ZERO))
           throw new IllegalArgumentException();
-        this.point = p;
+        this._head = p;
     }
 
     /**
@@ -29,18 +31,21 @@ public class Vector {
      * @param _x coordinate value
      * @param _y coordinate value
      * @param _z coordinate value
+     * @throws IllegalArgumentException In case of all the values are zero
      */
-    public Vector(double _x, double _y, double _z) throws IllegalArgumentException  {
+    public Vector(double _x, double _y, double _z) throws  IllegalArgumentException  {
         Point3D p =  new Point3D(_x,_y,_z);
         if (p.equals(Point3D.ZERO))
             throw new IllegalArgumentException();
-        this.point = p;
+        this._head = p;
     }
 
     /**
      * Vector constructor receiving a point representing the head of the Vector
      *
      * @param point
+     * @throws NullPointerException  In case of point is null
+     * @throws IllegalArgumentException  In case of point is The beginning of the contractions
      */
     public Vector(Point3D point)throws NullPointerException,IllegalArgumentException {
         if(point == null) {
@@ -48,19 +53,20 @@ public class Vector {
         }
         if (point.equals(Point3D.ZERO))
             throw new IllegalArgumentException();
-        this.point = new Point3D(point);
+        this._head = new Point3D(point);
     }
 
     /**
      * Vector copy constructor receiving
      *
      * @param vec
+     * @throws NullPointerException In case of vec5 is null
      */
     public Vector(Vector vec)throws NullPointerException {
         if(vec == null) {
             throw new NullPointerException();
         }
-         this.point = new Point3D(vec.point);
+         this._head = new Point3D(vec._head);
     }
 
     //*********************************** getter ***************
@@ -70,11 +76,11 @@ public class Vector {
      *
      * @return point
      */
-    public Point3D getPoint() {
-        return new Point3D(point);
+    public Point3D get_head() {
+        return new Point3D(_head);
     }
 
-    //************** functions ******************
+//************** functions ******************
 
     /**
      * adds 2 vectors
@@ -83,14 +89,14 @@ public class Vector {
      * @return new Vector equal to the connection between the two vectors
      * @throws NullPointerException In case of second vector is null
      */
-    public Vector add(Vector vec)throws NullPointerException {
+    public Vector add(Vector vec)throws NullPointerException {/*************************************/
         if (vec == null) {
             throw new NullPointerException();
         }
         return new Vector(
-                this.point.get_x().get() + vec.point.get_x().get(),
-                this.point.get_y().get() + vec.point.get_y().get(),
-                this.point.get_z().get() + vec.point.get_z().get());
+                this._head.get_x().get() + vec._head.get_x().get(),
+                this._head.get_y().get() + vec._head.get_y().get(),
+                this._head.get_z().get() + vec._head.get_z().get());
     }
 
     /**
@@ -100,27 +106,27 @@ public class Vector {
      * @return new Vector equal to the subtraction between the two vectors
      * @throws NullPointerException In case of second vector is null
      */
-    public Vector subtract(Vector vec)throws NullPointerException {
+    public Vector subtract(Vector vec)throws NullPointerException {/*************************************/
         if (vec == null) {
             throw new NullPointerException();
         }
         return new Vector(
-                this.point.get_x().get() - vec.point.get_x().get(),
-                this.point.get_y().get() - vec.point.get_y().get(),
-                this.point.get_z().get() - vec.point.get_z().get());
+                this._head.get_x().get() - vec._head.get_x().get(),
+                this._head.get_y().get() - vec._head.get_y().get(),
+                this._head.get_z().get() - vec._head.get_z().get());
     }
 
     /**
-     *Multiplication of a vector in scalar
+     *Multiplication of a vector with scalar
      *
      * @param scale the scalar
      * @return new vector equal to the multiplication result
      */
-    public Vector scale (double scale ){
+    public Vector scale (double scale ){/*************************************/
         return new Vector(
-                this.point.get_x().get() * scale,
-                this.point.get_y().get() * scale,
-                this.point.get_z().get() * scale);
+                this._head.get_x().get() * scale,
+                this._head.get_y().get() * scale,
+                this._head.get_z().get() * scale);
     }
 
     /**
@@ -134,9 +140,9 @@ public class Vector {
         if (vec == null) {
             throw new NullPointerException();
         }
-        return this.point.get_x().get() * vec.point.get_x().get()
-            + this.point.get_y().get() * vec.point.get_y().get()
-            + this.point.get_z().get() * vec.point.get_z().get();
+        return this._head.get_x().get() * vec._head.get_x().get()
+            + this._head.get_y().get() * vec._head.get_y().get()
+            + this._head.get_z().get() * vec._head.get_z().get();
     }
 
     /**
@@ -146,12 +152,12 @@ public class Vector {
      * @return The result of the cross Product
      * @throws NullPointerException In case of second vector is null
      */
-    public Vector crossProduct(Vector vec)throws NullPointerException {
+    public Vector crossProduct(Vector vec)throws NullPointerException {/*************************************/
         if (vec == null) {
             throw new NullPointerException();
         }
-        Point3D u = this.point;
-        Point3D v = vec.point;
+        Point3D u = this._head;
+        Point3D v = vec._head;
         return new Vector(
                 u.get_y().get()*v.get_z().get() - u.get_z().get()*v.get_y().get(),
                 u.get_z().get()*v.get_x().get() - u.get_x().get()*v.get_z().get(),
@@ -163,7 +169,7 @@ public class Vector {
      * @return The length of a vector squared
      */
     public double lengthSquared(){
-        return this.point.distanceSquared(Point3D.ZERO);
+        return this._head.distanceSquared(Point3D.ZERO);
     }
 
     /**
@@ -180,7 +186,7 @@ public class Vector {
      * @return Same vector after normalization
      */
     public Vector normalize(){
-        this.point = new Vector(this.scale(1/this.length())).point;
+        this._head = new Vector(this.scale(1/this.length()))._head;
         return this;
     }
     /**
@@ -198,7 +204,7 @@ public class Vector {
     @Override
     public String toString() {
         return "Vector{" +
-                "point=" + point +
+                "point=" + _head +
                 '}';
     }
 
@@ -208,11 +214,11 @@ public class Vector {
         if (o == null) return false;
         if (!(o instanceof Vector)) return false;
         Vector vector = (Vector) o;
-        return getPoint().equals(vector.getPoint());
+        return get_head().equals(vector.get_head());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getPoint());
+        return Objects.hash(get_head());
     }
 }
