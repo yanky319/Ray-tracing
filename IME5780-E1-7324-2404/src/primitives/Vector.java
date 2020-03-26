@@ -3,76 +3,77 @@ package primitives;
 import java.util.Objects;
 
 /**
- *  Class Vector representing a Vector in 3D
+ * Class Vector representing a Vector in 3D.
  */
 public class Vector {
-    Point3D _head;
+    protected Point3D _head;
 
     //*********************************** constructors ***************
+
     /**
-     * Vector constructor receiving coordinates representing the head of the Vector
+     * Vector constructor receiving coordinates representing the head of the Vector.
      *
      * @param _x coordinate
      * @param _y coordinate
      * @param _z coordinate
-     * @throws NullPointerException In case of one of the coordinates is null
+     * @throws NullPointerException     In case of one of the coordinates is null
      * @throws IllegalArgumentException In case of all the coordinates values are zero
      */
-    public Vector(Coordinate _x, Coordinate _y, Coordinate _z) throws NullPointerException, IllegalArgumentException  {
-      Point3D p =  new Point3D(_x,_y,_z);
-      if (p.equals(Point3D.ZERO))
-          throw new IllegalArgumentException();
+    public Vector(Coordinate _x, Coordinate _y, Coordinate _z) throws NullPointerException, IllegalArgumentException {
+        Point3D p = new Point3D(_x, _y, _z);
+        if (p.equals(Point3D.ZERO))
+            throw new IllegalArgumentException("ERROR zero vector is Illegal");
         this._head = p;
     }
 
     /**
-     * Vector constructor receiving coordinate values representing the head of the Vector
+     * Vector constructor receiving coordinate values representing the head of the Vector.
      *
      * @param _x coordinate value
      * @param _y coordinate value
      * @param _z coordinate value
      * @throws IllegalArgumentException In case of all the values are zero
      */
-    public Vector(double _x, double _y, double _z) throws  IllegalArgumentException  {
-        Point3D p =  new Point3D(_x,_y,_z);
+    public Vector(double _x, double _y, double _z) throws IllegalArgumentException {
+        Point3D p = new Point3D(_x, _y, _z);
         if (p.equals(Point3D.ZERO))
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("ERROR zero vector is Illegal");
         this._head = p;
     }
 
     /**
-     * Vector constructor receiving a point representing the head of the Vector
+     * Vector constructor receiving a point representing the head of the Vector.
      *
-     * @param point
-     * @throws NullPointerException  In case of point is null
-     * @throws IllegalArgumentException  In case of point is The beginning of the contractions
+     * @param point point representing the head of the Vector
+     * @throws NullPointerException     In case of point is null
+     * @throws IllegalArgumentException In case of point is The beginning of the contractions
      */
-    public Vector(Point3D point)throws NullPointerException,IllegalArgumentException {
-        if(point == null) {
-            throw new NullPointerException();
+    public Vector(Point3D point) throws NullPointerException, IllegalArgumentException {
+        if (point == null) {
+            throw new NullPointerException("ERROR arguments is NULL");
         }
         if (point.equals(Point3D.ZERO))
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("ERROR zero vector is Illegal");
         this._head = new Point3D(point);
     }
 
     /**
-     * Vector copy constructor receiving
+     * Vector copy constructor receiving.
      *
-     * @param vec
+     * @param vec  object to be copied
      * @throws NullPointerException In case of vec5 is null
      */
-    public Vector(Vector vec)throws NullPointerException {
-        if(vec == null) {
-            throw new NullPointerException();
+    public Vector(Vector vec) throws NullPointerException {
+        if (vec == null) {
+            throw new NullPointerException("ERROR arguments is NULL");
         }
-         this._head = new Point3D(vec._head);
+        this._head = new Point3D(vec._head);
     }
 
     //*********************************** getter ***************
 
     /**
-     * Point3D getter
+     * Point3D head getter.
      *
      * @return point
      */
@@ -83,15 +84,16 @@ public class Vector {
 //************** functions ******************
 
     /**
-     * adds 2 vectors
+     * adds 2 vectors.
      *
      * @param vec Second vector
      * @return new Vector equal to the connection between the two vectors
-     * @throws NullPointerException In case of second vector is null
+     * @throws NullPointerException     In case of second vector is null
+     * @throws IllegalArgumentException When the connection result is the zero vector
      */
-    public Vector add(Vector vec)throws NullPointerException {/*************************************/
+    public Vector add(Vector vec) throws NullPointerException, IllegalArgumentException {
         if (vec == null) {
-            throw new NullPointerException();
+            throw new NullPointerException("ERROR arguments is NULL");
         }
         return new Vector(
                 this._head.get_x().get() + vec._head.get_x().get(),
@@ -100,15 +102,16 @@ public class Vector {
     }
 
     /**
-     * subtracts 2 vectors
+     * subtracts 2 vectors.
      *
      * @param vec Second vector
      * @return new Vector equal to the subtraction between the two vectors
-     * @throws NullPointerException In case of second vector is null
+     * @throws NullPointerException     In case of second vector is null
+     * @throws IllegalArgumentException When the subtraction result is the zero vector
      */
-    public Vector subtract(Vector vec)throws NullPointerException {/*************************************/
+    public Vector subtract(Vector vec) throws NullPointerException, IllegalArgumentException {
         if (vec == null) {
-            throw new NullPointerException();
+            throw new NullPointerException("ERROR arguments is NULL");
         }
         return new Vector(
                 this._head.get_x().get() - vec._head.get_x().get(),
@@ -117,12 +120,13 @@ public class Vector {
     }
 
     /**
-     *Multiplication of a vector with scalar
+     * Multiplication of a vector with scalar.
      *
      * @param scale the scalar
      * @return new vector equal to the multiplication result
+     * @throws IllegalArgumentException When the multiplication result is the zero vector
      */
-    public Vector scale (double scale ){/*************************************/
+    public Vector scale(double scale) throws IllegalArgumentException {
         return new Vector(
                 this._head.get_x().get() * scale,
                 this._head.get_y().get() * scale,
@@ -130,73 +134,77 @@ public class Vector {
     }
 
     /**
-     * Scalar multiplication (dot Product) of two vectors
+     * Scalar multiplication (dot Product) of two vectors.
      *
      * @param vec Second vector
      * @return The result of the dot Product
      * @throws NullPointerException In case of second vector is null
      */
-    public double dotProduct(Vector vec)throws NullPointerException {
+    public double dotProduct(Vector vec) throws NullPointerException {
         if (vec == null) {
-            throw new NullPointerException();
+            throw new NullPointerException("ERROR arguments is NULL");
         }
         return this._head.get_x().get() * vec._head.get_x().get()
-            + this._head.get_y().get() * vec._head.get_y().get()
-            + this._head.get_z().get() * vec._head.get_z().get();
+                + this._head.get_y().get() * vec._head.get_y().get()
+                + this._head.get_z().get() * vec._head.get_z().get();
     }
 
     /**
-     * Vector multiplication (cross Product) of two vectors
+     * Vector multiplication (cross Product) of two vectors.
      *
      * @param vec Second vector
      * @return The result of the cross Product
-     * @throws NullPointerException In case of second vector is null
+     * @throws NullPointerException     In case of second vector is null
+     * @throws IllegalArgumentException When the cross Product result is the zero vector
      */
-    public Vector crossProduct(Vector vec)throws NullPointerException {/*************************************/
+    public Vector crossProduct(Vector vec) throws NullPointerException, IllegalArgumentException {
         if (vec == null) {
-            throw new NullPointerException();
+            throw new NullPointerException("ERROR arguments is NULL");
         }
         Point3D u = this._head;
         Point3D v = vec._head;
         return new Vector(
-                u.get_y().get()*v.get_z().get() - u.get_z().get()*v.get_y().get(),
-                u.get_z().get()*v.get_x().get() - u.get_x().get()*v.get_z().get(),
-                u.get_x().get()*v.get_y().get() - u.get_y().get()*v.get_x().get());
+                u.get_y().get() * v.get_z().get() - u.get_z().get() * v.get_y().get(),
+                u.get_z().get() * v.get_x().get() - u.get_x().get() * v.get_z().get(),
+                u.get_x().get() * v.get_y().get() - u.get_y().get() * v.get_x().get());
     }
 
     /**
+     * get length of a vector squared.
      *
      * @return The length of a vector squared
      */
-    public double lengthSquared(){
+    public double lengthSquared() {
         return this._head.distanceSquared(Point3D.ZERO);
     }
 
     /**
+     * get length of a vector.
      *
      * @return The length of a vector
      */
-    public double length(){
-        return  Math.sqrt(this.lengthSquared());
+    public double length() {
+        return Math.sqrt(this.lengthSquared());
     }
 
     /**
-     * Normalizes vector
+     * Normalizes vector.
      *
      * @return Same vector after normalization
      */
-    public Vector normalize(){
-        this._head = new Vector(this.scale(1/this.length()))._head;
+    public Vector normalize() {
+        this._head = new Vector(this.scale(1 / this.length()))._head;
         return this;
     }
+
     /**
-     * Normalizes vector
+     * Normalizes vector.
      *
      * @return new vector that is equal to the original vector after normalization
      */
-     public Vector normalized(){
+    public Vector normalized() {
         return new Vector(this).normalize();
-     }
+    }
 
 
     //******************** Admin ****************

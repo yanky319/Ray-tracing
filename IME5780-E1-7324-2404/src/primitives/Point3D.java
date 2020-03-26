@@ -1,35 +1,30 @@
 package primitives;
 
-/*
-*
-לבדוק האם צריך בהכרזת פונקציה להודיע על חריגה שנזרקת לא בצורה ישירה
-חיסור בין שני נקודות האם מחזיר ווקטור מהראשית
-הבדיקה שמיכל עשתה בבנאי של קרן
-* */
 
 import java.util.Objects;
 
 /**
- * Class Point3D representing a Point in 3D
+ * Class Point3D representing a Point in 3D.
  */
 public class Point3D {
-    Coordinate _x;
-    Coordinate _y;
-    Coordinate _z;
-   public final static Point3D ZERO = new Point3D(0,0,0);
+    protected Coordinate _x;
+    protected Coordinate _y;
+    protected Coordinate _z;
+    public final static Point3D ZERO = new Point3D(0, 0, 0);
 
     //*********************************** constructors ***************
+
     /**
-     * Point3D constructor receiving coordinates
+     * Point3D constructor receiving coordinates.
      *
      * @param _x coordinate
      * @param _y coordinate
      * @param _z coordinate
      * @throws NullPointerException In case of one of the coordinates is null
      */
-    public Point3D(Coordinate _x, Coordinate _y, Coordinate _z)throws NullPointerException {
-        if(_x == null || _y == null || _z == null ) {
-            throw new NullPointerException();
+    public Point3D(Coordinate _x, Coordinate _y, Coordinate _z) throws NullPointerException {
+        if (_x == null || _y == null || _z == null) {
+            throw new NullPointerException("ERROR One or more of the arguments is NULL");
         }
         this._x = new Coordinate(_x);
         this._y = new Coordinate(_y);
@@ -37,7 +32,7 @@ public class Point3D {
     }
 
     /**
-     * Point3D constructor receiving a coordinate values
+     * Point3D constructor receiving a coordinate values.
      *
      * @param _x coordinate value
      * @param _y coordinate value
@@ -50,14 +45,14 @@ public class Point3D {
     }
 
     /**
-     * Copy constructor for Point3D
+     * Copy constructor for Point3D.
      *
-     * @param point
+     * @param point object to be copied
      * @throws NullPointerException In case of point is null
      */
-    public Point3D(Point3D point)throws NullPointerException {
-        if(point == null) {
-            throw new NullPointerException();
+    public Point3D(Point3D point) throws NullPointerException {
+        if (point == null) {
+            throw new NullPointerException("ERROR arguments is NULL");
         }
         this._x = new Coordinate(point.get_x());
         this._y = new Coordinate(point.get_y());
@@ -67,23 +62,25 @@ public class Point3D {
     //*********************************** getters ***************
 
     /**
-     * Coordinate getter
+     * Coordinate x getter.
      *
      * @return x coordinate
      */
     public Coordinate get_x() {
         return new Coordinate(_x);
     }
+
     /**
-     * Coordinate getter
+     * Coordinate y getter.
      *
      * @return y coordinate
      */
     public Coordinate get_y() {
         return new Coordinate(_y);
     }
+
     /**
-     * Coordinate getter
+     * Coordinate z getter.
      *
      * @return z coordinate
      */
@@ -93,55 +90,65 @@ public class Point3D {
 
     //************** functions ******************
 
-    public Vector subtract(Point3D other) { //***************************************
-     return new Vector(
-             this._x.get(),
-             this._x.get(),
-             this._x.get());
+    /**
+     * subtracts a point from a point.
+     *
+     * @param other point to subtracted
+     * @return a vector from a point to a point
+     * @throws NullPointerException     In case of "other" is null
+     * @throws IllegalArgumentException When trying to subtract the point from itself
+     */
+    public Vector subtract(Point3D other) throws NullPointerException, IllegalArgumentException {
+        if (other == null)
+            throw new NullPointerException("ERROR arguments is NULL");
+        return new Vector(
+                this._x.get() - other._x.get(),
+                this._y.get() - other._y.get(),
+                this._z.get() - other._z.get());
 
     }
 
     /**
-     * Adds a vector to a point
+     * Adds a vector to a point.
      *
      * @param vec The vector
      * @return A new point that is shifted from the original point, the length and direction of the vector
      * @throws NullPointerException In case of Vector is null
      */
-    public Point3D add(Vector vec)throws NullPointerException {
-        if(vec == null)
-            throw new NullPointerException();
+    public Point3D add(Vector vec) throws NullPointerException {
+        if (vec == null)
+            throw new NullPointerException("ERROR arguments is NULL");
         return new Point3D(
-                this.get_x().get()+vec._head.get_x().get(),
-                this.get_y().get()+vec._head.get_y().get(),
-                this.get_z().get()+vec._head.get_z().get());
+                this.get_x().get() + vec._head.get_x().get(),
+                this.get_y().get() + vec._head.get_y().get(),
+                this.get_z().get() + vec._head.get_z().get());
     }
 
     /**
-     *Calculates the distance between two points squared
+     * Calculates the distance between two points squared.
      *
      * @param other Second point
      * @return result of the calculation
      * @throws NullPointerException In case of second Point is null
      */
-    public double distanceSquared(Point3D other)throws NullPointerException {
-        if(other == null)
-            throw new NullPointerException();
+    public double distanceSquared(Point3D other) throws NullPointerException {
+        if (other == null)
+            throw new NullPointerException("ERROR arguments is NULL");
         return (this.get_x().get() - other.get_x().get()) * (this.get_x().get() - other.get_x().get())
                 + (this.get_y().get() - other.get_y().get()) * (this.get_y().get() - other.get_y().get())
                 + (this.get_z().get() - other.get_z().get()) * (this.get_z().get() - other.get_z().get());
     }
 
     /**
-     *Calculates the distance between two points
+     * Calculates the distance between two points.
      *
      * @param other Second point
      * @return result of the calculation
      * @throws NullPointerException In case of second Point is null
      */
-    public double distance (Point3D other)throws NullPointerException {
-        if(other == null)
-            throw new NullPointerException();
+    public double distance(Point3D other) throws NullPointerException {
+        if (other == null)
+            throw new NullPointerException("ERROR arguments is NULL");
         return Math.sqrt(this.distanceSquared(other));
     }
 

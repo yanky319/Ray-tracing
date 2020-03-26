@@ -10,32 +10,49 @@ import java.util.List;
  * class Triangle representing a Triangle in 3D
  */
 public class Triangle extends Polygon implements Geometry {
+
+    //*********************************** constructor ***************
+
     /**
-     * Triangle constructor receiving 3 points3D representing the Triangles vertices
+     * Triangle constructor receiving 3 points3D representing the Triangles vertices.
+     *
      * @param _po1 point3D
      * @param _po2 point3D
      * @param _po3 point3D
      */
-    public Triangle(Point3D _po1, Point3D _po2, Point3D _po3){
-        super(_po1,_po2,_po3);
+    public Triangle(Point3D _po1, Point3D _po2, Point3D _po3) {
+        super(_po1, _po2, _po3);
     }
 
+    //*********************************** Getters ***************
+
     /**
-     * List<Point3D> getter
-     * @return a copy  list of the triangle vertices
+     * List of Point3D getter.
+     *
+     * @return a copy list of the triangle vertices
      */
-    public List<Point3D> get_vertices(){
-        List<Point3D> copy_list =  new ArrayList<>();
+    public List<Point3D> get_vertices() {
+        List<Point3D> copy_list = new ArrayList<>();
         copy_list.addAll(_vertices);
         return copy_list;
     }
 
     @Override
     public Vector getNormal(Point3D point) {
-        Vector U = new Vector (_vertices.get(0).subtract(_vertices.get(1)));
-        Vector V = new Vector (_vertices.get(0).subtract(_vertices.get(2)));
+        Vector U = new Vector(_vertices.get(0).subtract(_vertices.get(1)));
+        Vector V = new Vector(_vertices.get(0).subtract(_vertices.get(2)));
         Vector N = U.crossProduct(V);
         N.normalize();
         return N.scale(-1);
+    }
+
+    //******************** Admin ****************
+
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "_vertices=" + _vertices +
+                ", _plane=" + _plane +
+                '}';
     }
 }

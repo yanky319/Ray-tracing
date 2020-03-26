@@ -4,32 +4,35 @@ import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
 
+
 /**
- * class Tube representing a Tube in 3D
+ * class Tube representing a Tube in 3D.
  */
 public class Tube extends RadialGeometry {
     protected Ray _axisRay;
 
+    //*********************************** constructor ***************
+
     /**
-     * Tube constructor
+     * Tube constructor receiving the radius and the axis ray.
+     *
      * @param _radius Tube radius
-     * @param ray Tube axis ray
-     * @throws NullPointerException
+     * @param ray     Tube axis ray
+     * @throws NullPointerException     In case of the Ray argument is null
+     * @throws IllegalArgumentException In case of the radius argument is not greater than zero
      */
-    public Tube(double _radius,Ray ray)throws NullPointerException {
+    public Tube(double _radius, Ray ray) throws NullPointerException, IllegalArgumentException {
         super(_radius);
-        if(ray == null)
-            throw new NullPointerException();
-        this._axisRay = ray;
+        if (ray == null)
+            throw new NullPointerException("ERROR Ray arguments is NULL");
+        this._axisRay = new Ray(ray);
     }
 
-    @Override
-    public double get_radius() {
-        return super.get_radius();
-    }
+    //*********************************** Getters ***************
 
     /**
-     * _axisray getter
+     * axis ray getter.
+     *
      * @return Tube axis ray
      */
     public Ray get_axisRay() {
@@ -39,5 +42,16 @@ public class Tube extends RadialGeometry {
     @Override
     public Vector getNormal(Point3D point) {
         return null;
+    }
+
+    //******************** Admin ****************
+
+    @Override
+    public String
+    toString() {
+        return "Tube{" +
+                "_axisRay=" + _axisRay +
+                ", _radius=" + _radius +
+                '}';
     }
 }

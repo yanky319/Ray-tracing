@@ -10,41 +10,53 @@ public class Ray {
     // ***************** Constructors ********************** //
 
     /**
-     * public Ray(Point3D poo, Vector direction){
-     *         this._POO = new Point3D(poo);
-     *         this._direction = new Vector (direction);
-     *         this._direction.normalize();
-     *     }
-     * @param _p0
-     * @param _dir
+     * Ray constructor receiving Point3D representing the start of the Ray and Vector representing the direction.
+     *
+     * @param _p0  Point3D representing the start of the Ray
+     * @param _dir Vector representing the direction
+     * @throws NullPointerException In case of one of the Arguments is null
      */
-    public Ray(Point3D _p0, Vector _dir) {
-        if (Math.sqrt((_dir.get_head().get_x()._coord - _p0.get_x()._coord)*(_dir.get_head().get_x()._coord - _p0.get_x()._coord)
-                + (_dir.get_head().get_y()._coord - _p0.get_y()._coord)*(_dir.get_head().get_y()._coord - _p0.get_y()._coord)
-                + (_dir.get_head().get_z()._coord - _p0.get_z()._coord)*(_dir.get_head().get_z()._coord - _p0.get_z()._coord)) == 1)
-            throw new IllegalArgumentException("Illegal input");
-        this._p0 = _p0;
-        this._direction = _dir;
+    public Ray(Point3D _p0, Vector _dir) throws NullPointerException {
+        if (_p0 == null || _dir == null)
+            throw new NullPointerException("ERROR One or more of the arguments is NULL");
+        this._p0 = new Point3D(_p0);
+        this._direction = new Vector(_dir);
     }
 
-
-    public Ray(Ray ray)throws NullPointerException{
+    /**
+     * Ray copy constructor
+     *
+     * @param ray  object to be copied
+     * @throws NullPointerException In case of the Argument is null
+     */
+    public Ray(Ray ray) throws NullPointerException {
         if (ray == null)
-            throw new NullPointerException();
+            throw new NullPointerException("ERROR arguments is NULL");
         this._p0 = new Point3D(ray.get_p0());
         this._direction = new Vector(ray.get_direction());
     }
 
     // ***************** Getters ********************** //
 
+    /**
+     * direction getter.
+     *
+     * @return the direction
+     */
     public Vector get_direction() {
         return new Vector(_direction);
     }
 
+    /**
+     * start point getter.
+     *
+     * @return the start point
+     */
     public Point3D get_p0() {
         return new Point3D(_p0);
     }
 
+    //******************** Admin ****************
 
     @Override
     public boolean equals(Object o) {

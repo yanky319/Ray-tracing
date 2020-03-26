@@ -28,7 +28,7 @@ public final class Coordinate {
     /**
      * Copy constructor for coordinate
      *
-     * @param other
+     * @param other object to be copied
      */
     public Coordinate(Coordinate other) {
         _coord = other._coord;
@@ -49,7 +49,7 @@ public final class Coordinate {
         if (this == obj) return true;
         if (obj == null) return false;
         if (!(obj instanceof Coordinate)) return false;
-        return isZero(_coord - ((Coordinate)obj)._coord);
+        return isZero(_coord - ((Coordinate) obj)._coord);
     }
 
     @Override
