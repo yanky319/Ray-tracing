@@ -39,11 +39,7 @@ public class Triangle extends Polygon implements Geometry {
 
     @Override
     public Vector getNormal(Point3D point) {
-        Vector U = new Vector(_vertices.get(0).subtract(_vertices.get(1)));
-        Vector V = new Vector(_vertices.get(0).subtract(_vertices.get(2)));
-        Vector N = U.crossProduct(V);
-        N.normalize();
-        return N.scale(-1);
+        return this._plane.getNormal();
     }
 
     //******************** Admin ****************
