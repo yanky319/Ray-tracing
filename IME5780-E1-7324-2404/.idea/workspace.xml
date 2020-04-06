@@ -4,11 +4,15 @@
     <list default="true" id="8ec927a9-9ce3-4778-bb72-f84f889574e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Cylinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Cylinder.java" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
+>>>>>>> e71a4622672fe5124cbf46535a9ed24a7ddc8bc2
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,11 +90,15 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="392" y="88" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1584822812051" />
-    <state x="1005" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1585244402857">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="804" y="83" key="#com.intellij.ide.util.MemberChooser" timestamp="1585438156870">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="804" y="100" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1585179000400" />
+    <state x="804" y="83" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1585438156870" />
     <state x="1005" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1585244402857" />
+    <state x="490" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585433099346">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="490" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680@0.0.1280.680" timestamp="1585433099346" />
     <state x="682" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584924234100">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -126,12 +134,21 @@
     <state x="580" y="61" key="SettingsEditor" timestamp="1586214196359">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
+<<<<<<< HEAD
     <state x="580" y="61" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1586214196359" />
     <state x="896" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1586213760366">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="673" y="201" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585175671226" />
     <state x="896" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1586213760366" />
+=======
+    <state x="280" y="4" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1585260036584" />
+    <state x="673" y="201" key="com.intellij.ide.util.TipDialog" timestamp="1585433032247">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="673" y="201" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585433032247" />
+    <state x="896" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1585256292025" />
+>>>>>>> e71a4622672fe5124cbf46535a9ed24a7ddc8bc2
     <state x="904" y="327" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584893058949">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
