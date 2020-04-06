@@ -88,10 +88,9 @@ public class Plane implements Geometry {
 
     @Override
     public String toString() {
-        return "Plane{" +
-                "_po=" + _po +
-                ", _normal=" + _normal +
-                '}';
+        return "_po=" + _po +
+                ", _normal=" + _normal;
+
     }
 
 }

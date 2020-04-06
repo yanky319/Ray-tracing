@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * class Triangle representing a Triangle in 3D
  */
-public class Triangle extends Polygon implements Geometry {
+public class Triangle extends Polygon  {
 
     //*********************************** constructor ***************
 
@@ -50,9 +50,10 @@ public class Triangle extends Polygon implements Geometry {
 
     @Override
     public String toString() {
-        return "Triangle{" +
-                "_vertices=" + _vertices +
-                ", _plane=" + _plane +
-                '}';
+        String result = "";
+        for (Point3D p : _vertices) {
+            result += p.toString();
+        }
+        return result;
     }
 }

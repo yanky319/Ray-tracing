@@ -13,5 +13,5 @@ public interface Geometry {
      * @param point a given point
      * @return vector perpendicular to the plane
      */
-    public Vector getNormal(Point3D point);
+     Vector getNormal(Point3D point);
 }
