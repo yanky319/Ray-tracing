@@ -54,9 +54,9 @@ public class Point3D {
         if (point == null) {
             throw new NullPointerException("ERROR arguments is NULL");
         }
-        this._x = new Coordinate(point.get_x());
-        this._y = new Coordinate(point.get_y());
-        this._z = new Coordinate(point.get_z());
+        this._x = new Coordinate(point._x);
+        this._y = new Coordinate(point._y);
+        this._z = new Coordinate(point._z);
     }
 
     //*********************************** getters ***************

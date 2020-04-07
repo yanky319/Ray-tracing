@@ -49,9 +49,8 @@ public class Vector {
      * @throws IllegalArgumentException In case of point is The beginning of the contractions
      */
     public Vector(Point3D point) throws NullPointerException, IllegalArgumentException {
-        if (point == null) {
+        if (point == null)
             throw new NullPointerException("ERROR arguments is NULL");
-        }
         if (point.equals(Point3D.ZERO))
             throw new IllegalArgumentException("ERROR zero vector is Illegal");
         this._head = new Point3D(point);

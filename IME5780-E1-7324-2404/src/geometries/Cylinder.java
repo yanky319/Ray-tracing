@@ -21,8 +21,8 @@ public class Cylinder extends Tube {
      * @param ray     Cylinder ray
      * @throws IllegalArgumentException In case of the height or radius argument is not greater than zero
      */
-    public Cylinder(double _radius, Ray ray, float height) throws  IllegalArgumentException {
-        super(_radius,ray);
+    public Cylinder(double _radius, Ray ray, float height) throws IllegalArgumentException {
+        super(_radius, ray);
         if (height <= 0)
             throw new IllegalArgumentException("The cylinder height must be greater than zero");
         _height = height;
@@ -51,7 +51,7 @@ public class Cylinder extends Tube {
     public String
     toString() {
         return "height=" + _height +
-                ", radius=" + _radius ;
+                ", radius=" + _radius;
 
     }
 }
