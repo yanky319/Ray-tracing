@@ -3,8 +3,8 @@ package primitives;
 import java.util.Objects;
 
 public class Ray {
-    Point3D _p0;
-    Vector _direction;
+    private final Point3D _p0;
+    private final Vector _direction;
 
 
     // ***************** Constructors ********************** //
@@ -75,10 +75,8 @@ public class Ray {
 
     @Override
     public String toString() {
-        return "Ray{" +
-                "_p0=" + _p0 +
-                ", _direction=" + _direction +
-                '}';
+        return "point " + _p0 +
+                ", direction " + _direction;
     }
 
 }

@@ -4,15 +4,13 @@
     <list default="true" id="8ec927a9-9ce3-4778-bb72-f84f889574e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Cylinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Cylinder.java" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
->>>>>>> e71a4622672fe5124cbf46535a9ed24a7ddc8bc2
+      <change beforePath="$PROJECT_DIR$/src/primitives/Point3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Point3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Ray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Ray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +53,7 @@
       <command value="    //*********************************** constructors ***************" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.PolygonTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="IME5780-E1-7324-2404" />
@@ -66,8 +64,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CylinderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IME5780-E1-7324-2404" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.CylinderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlaneTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IME5780-E1-7324-2404" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.PlaneTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PolygonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IME5780-E1-7324-2404" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.PolygonTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PolygonTest" />
+        <item itemvalue="JUnit.PlaneTest" />
+        <item itemvalue="JUnit.CylinderTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -86,10 +132,18 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="397" y="97" key="#PlaneTest" timestamp="1586225618969">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="397" y="97" key="#PlaneTest/0.0.1600.860@0.0.1600.860" timestamp="1586225618969" />
     <state x="392" y="88" key="#Project_Structure" timestamp="1584822812051">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="392" y="88" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1584822812051" />
+    <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1586225509782">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1586225509782" />
     <state x="804" y="83" key="#com.intellij.ide.util.MemberChooser" timestamp="1585438156870">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -111,22 +165,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="965" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1585260031329" />
-    <state width="1557" height="220" key="GridCell.Tab.0.bottom" timestamp="1585260839627">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1586225586245">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="220" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1585260839627" />
-    <state width="1557" height="220" key="GridCell.Tab.0.center" timestamp="1585260839627">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1586225586245" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1586225586245">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="220" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1585260839627" />
-    <state width="1557" height="220" key="GridCell.Tab.0.left" timestamp="1585260839627">
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1586225586245" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1586225586245">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="220" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1585260839627" />
-    <state width="1557" height="220" key="GridCell.Tab.0.right" timestamp="1585260839627">
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1586225586245" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1586225586245">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="220" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1585260839627" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1586225586245" />
     <state x="498" y="141" key="RollbackChangesDialog" timestamp="1585257924771">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -134,21 +188,12 @@
     <state x="580" y="61" key="SettingsEditor" timestamp="1586214196359">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-<<<<<<< HEAD
-    <state x="580" y="61" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1586214196359" />
-    <state x="896" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1586213760366">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="673" y="201" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585175671226" />
-    <state x="896" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1586213760366" />
-=======
     <state x="280" y="4" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1585260036584" />
     <state x="673" y="201" key="com.intellij.ide.util.TipDialog" timestamp="1585433032247">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="673" y="201" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585433032247" />
     <state x="896" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1585256292025" />
->>>>>>> e71a4622672fe5124cbf46535a9ed24a7ddc8bc2
     <state x="904" y="327" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584893058949">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

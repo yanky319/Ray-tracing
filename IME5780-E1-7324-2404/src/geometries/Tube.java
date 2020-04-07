@@ -9,7 +9,7 @@ import primitives.Vector;
  * class Tube representing a Tube in 3D.
  */
 public class Tube extends RadialGeometry {
-    protected Ray _axisRay;
+    protected final Ray _axisRay;
 
     //*********************************** constructor ***************
 

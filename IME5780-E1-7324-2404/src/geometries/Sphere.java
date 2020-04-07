@@ -7,7 +7,7 @@ import primitives.Vector;
  * class Sphere representing a Sphere in 3D
  */
 public class Sphere extends RadialGeometry {
-    protected Point3D _center;
+    private final Point3D _center;
 
     //*********************************** constructor ***************
 

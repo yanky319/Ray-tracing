@@ -211,9 +211,7 @@ public class Vector {
 
     @Override
     public String toString() {
-        return "Vector{" +
-                "point=" + _head +
-                '}';
+        return "" + _head;
     }
 
     @Override
@@ -225,8 +223,4 @@ public class Vector {
         return get_head().equals(vector.get_head());
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(get_head());
-    }
 }

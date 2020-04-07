@@ -9,7 +9,7 @@ import primitives.Vector;
  * class Cylinder representing a Cylinder in 3D.
  */
 public class Cylinder extends Tube {
-    protected float _height;
+    private float _height;
 
     //*********************************** constructor ***************
 
@@ -50,8 +50,8 @@ public class Cylinder extends Tube {
     @Override
     public String
     toString() {
-        return "_height=" + _height +
-                ", _radius=" + _radius ;
+        return "height=" + _height +
+                ", radius=" + _radius ;
 
     }
 }

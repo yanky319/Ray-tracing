@@ -156,11 +156,9 @@ public class Point3D {
 
     @Override
     public String toString() {
-        return "Point3D{" +
-                "_x=" + _x +
-                ", _y=" + _y +
-                ", _z=" + _z +
-                '}';
+        return "("+ _x +
+                "," + _y +
+                "," + _z +")";
     }
 
     @Override
@@ -174,8 +172,4 @@ public class Point3D {
                 && _z.equals(p._z);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(get_x(), get_y(), get_z());
-    }
 }

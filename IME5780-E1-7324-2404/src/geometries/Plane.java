@@ -44,8 +44,7 @@ public class Plane implements Geometry {
         Vector V = new Vector(_po1.subtract(_po3));
         Vector N = U.crossProduct(V);
         N.normalize();
-        this._normal = N.scale(-1);
-        this._normal = new Vector(_normal);
+        this._normal = N;
     }
 
     //*********************************** getters ***************
@@ -64,23 +63,14 @@ public class Plane implements Geometry {
      *
      * @return a vector perpendicular to the plane
      */
-    public Vector get_normal() {
+    public Vector getNormal() {
         return new Vector(_normal);
     }
 
 
     @Override
     public Vector getNormal(Point3D point) {
-        return get_normal();
-    }
-
-    /**
-     * Returns a vector perpendicular to the plane.
-     *
-     * @return vector perpendicular to the plane
-     */
-    public Vector getNormal() {
-        return get_normal();
+        return getNormal();
     }
 
 
@@ -88,8 +78,8 @@ public class Plane implements Geometry {
 
     @Override
     public String toString() {
-        return "_po=" + _po +
-                ", _normal=" + _normal;
+        return "point=" + _po +
+                ", normal=" + _normal;
 
     }
 
