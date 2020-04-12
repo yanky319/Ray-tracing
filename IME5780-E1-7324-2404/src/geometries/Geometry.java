@@ -8,10 +8,10 @@ import primitives.Vector;
  */
 public interface Geometry {
     /**
-     * Returns a vector perpendicular to the plane at the given point.
+     * calculates the unit vector that is orthogonal to the Tube in a given point
      *
      * @param point a given point
-     * @return vector perpendicular to the plane
+     * @return orthogonal unit vector
      */
      Vector getNormal(Point3D point);
 }

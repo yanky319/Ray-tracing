@@ -1,6 +1,3 @@
-/**
- *
- */
 package unittests;
 
 import static org.junit.Assert.*;
@@ -13,7 +10,6 @@ import primitives.*;
 /**
  * Testing Polygons
  * @author Dan
- *
  */
 public class PolygonTest {
 
@@ -24,7 +20,6 @@ public class PolygonTest {
     @Test
     public void testConstructor() {
         // ============ Equivalence Partitions Tests ==============
-
         // TC01: Correct concave quadrangular with vertices in correct order
         try {
             new Polygon(new Point3D(0, 0, 1), new Point3D(1, 0, 0),
@@ -59,11 +54,11 @@ public class PolygonTest {
 
         // =============== Boundary Values Tests ==================
 
-        // TC10: Vertix on a side of a quadrangular
+        // TC10: vertex on a side of a quadrangular
         try {
             new Polygon(new Point3D(0, 0, 1), new Point3D(1, 0, 0),
                     new Point3D(0, 1, 0), new Point3D(0, 0.5, 0.5));
-            fail("Constructed a polygon with vertix on a side");
+            fail("Constructed a polygon with vertex on a side");
         } catch (IllegalArgumentException e) {
         }
 
@@ -71,7 +66,7 @@ public class PolygonTest {
         try {
             new Polygon(new Point3D(0, 0, 1), new Point3D(1, 0, 0),
                     new Point3D(0, 1, 0), new Point3D(0, 0, 1));
-            fail("Constructed a polygon with vertice on a side");
+            fail("Constructed a polygon with vertex on a side");
         } catch (IllegalArgumentException e) {
         }
 
@@ -79,7 +74,7 @@ public class PolygonTest {
         try {
             new Polygon(new Point3D(0, 0, 1), new Point3D(1, 0, 0),
                     new Point3D(0, 1, 0), new Point3D(0, 1, 0));
-            fail("Constructed a polygon with vertice on a side");
+            fail("Constructed a polygon with vertex on a side");
         } catch (IllegalArgumentException e) {
         }
 
@@ -95,7 +90,6 @@ public class PolygonTest {
         Polygon pl = new Polygon(new Point3D(0, 0, 1), new Point3D(1, 0, 0), new Point3D(0, 1, 0),
                 new Point3D(-1, 1, 1));
         double sqrt3 = Math.sqrt(1d / 3);
-        assertEquals("Bad normal to trinagle", new Vector(sqrt3, sqrt3, sqrt3), pl.getNormal(new Point3D(0, 0, 1)));
+        assertEquals("Bad normal to triangle", new Vector(sqrt3, sqrt3, sqrt3), pl.getNormal(new Point3D(0, 0, 1)));
     }
-
 }

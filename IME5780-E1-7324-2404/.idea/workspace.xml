@@ -4,9 +4,18 @@
     <list default="true" id="8ec927a9-9ce3-4778-bb72-f84f889574e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Cylinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Cylinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/primitives/Point3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Point3D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/VectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/VectorTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/CylinderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/CylinderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/PlaneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/PlaneTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/Point3DTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/Point3DTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/PolygonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/PolygonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/SphereTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/SphereTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/TriangleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/TriangleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/VectorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/VectorTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +27,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -38,18 +48,61 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="C:/Program Files/Java/jdk-14" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.20367534" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="unittests" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="    //*********************************** constructors ***************" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.VectorTests">
+  <component name="RunManager" selected="JUnit.CylinderTest.getNormal">
+    <configuration name="CylinderTest.getNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IME5780-E1-7324-2404" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.CylinderTest" />
+      <option name="METHOD_NAME" value="getNormal" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CylinderTest.testConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IME5780-E1-7324-2404" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.CylinderTest" />
+      <option name="METHOD_NAME" value="testConstructor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PlaneTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IME5780-E1-7324-2404" />
       <extension name="coverage">
@@ -65,7 +118,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PolygonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SphereTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IME5780-E1-7324-2404" />
       <extension name="coverage">
         <pattern>
@@ -74,13 +127,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.PolygonTest" />
+      <option name="MAIN_CLASS_NAME" value="unittests.SphereTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VectorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TriangleTest.testConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IME5780-E1-7324-2404" />
       <extension name="coverage">
         <pattern>
@@ -89,39 +142,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.VectorTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VectorTests.testLengthSquared" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IME5780-E1-7324-2404" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.VectorTests" />
-      <option name="METHOD_NAME" value="testLengthSquared" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VectorTests.testNormalized" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IME5780-E1-7324-2404" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.VectorTests" />
-      <option name="METHOD_NAME" value="testNormalized" />
+      <option name="MAIN_CLASS_NAME" value="unittests.TriangleTest" />
+      <option name="METHOD_NAME" value="testConstructor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.VectorTests" />
-        <item itemvalue="JUnit.VectorTests.testNormalized" />
-        <item itemvalue="JUnit.VectorTests.testLengthSquared" />
-        <item itemvalue="JUnit.PolygonTest" />
+        <item itemvalue="JUnit.CylinderTest.getNormal" />
+        <item itemvalue="JUnit.SphereTest" />
+        <item itemvalue="JUnit.CylinderTest.testConstructor" />
         <item itemvalue="JUnit.PlaneTest" />
+        <item itemvalue="JUnit.TriangleTest.testConstructor" />
       </list>
     </recent_temporary>
   </component>
@@ -184,22 +206,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="965" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1586258054884" />
-    <state width="992" height="248" key="GridCell.Tab.0.bottom" timestamp="1586289653860">
+    <state width="1557" height="241" key="GridCell.Tab.0.bottom" timestamp="1586713155244">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="992" height="248" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1586289653860" />
-    <state width="992" height="248" key="GridCell.Tab.0.center" timestamp="1586289653860">
+    <state width="1557" height="241" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1586713155244" />
+    <state width="1557" height="241" key="GridCell.Tab.0.center" timestamp="1586713155244">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="992" height="248" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1586289653860" />
-    <state width="992" height="248" key="GridCell.Tab.0.left" timestamp="1586289653860">
+    <state width="1557" height="241" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1586713155244" />
+    <state width="1557" height="241" key="GridCell.Tab.0.left" timestamp="1586713155243">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="992" height="248" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1586289653860" />
-    <state width="992" height="248" key="GridCell.Tab.0.right" timestamp="1586289653860">
+    <state width="1557" height="241" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1586713155243" />
+    <state width="1557" height="241" key="GridCell.Tab.0.right" timestamp="1586713155244">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="992" height="248" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1586289653860" />
+    <state width="1557" height="241" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1586713155244" />
     <state x="498" y="141" key="RollbackChangesDialog" timestamp="1585257924771">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -221,14 +243,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="904" y="327" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1600.860@0.0.1600.860" timestamp="1584893058949" />
+    <state x="572" y="136" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1586521992280">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="572" y="136" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860@0.0.1600.860" timestamp="1586521992280" />
     <state x="604" y="46" width="695" height="846" key="dock-window-1" timestamp="1586298731537">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="604" y="46" width="695" height="846" key="dock-window-1/0.0.1600.860@0.0.1600.860" timestamp="1586298731537" />
-    <state x="856" y="199" width="672" height="677" key="run.anything.popup" timestamp="1586213857559">
+    <state x="-7" y="0" width="639" height="867" key="dock-window-2" timestamp="1586519595261">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="856" y="199" width="672" height="677" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1586213857559" />
+    <state x="-7" y="0" width="639" height="867" key="dock-window-2/0.0.1600.860@0.0.1600.860" timestamp="1586519595261" />
+    <state x="856" y="199" width="672" height="677" key="run.anything.popup" timestamp="1586712175351">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="856" y="199" width="672" height="677" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1586712175351" />
     <state x="777" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1586260003164">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

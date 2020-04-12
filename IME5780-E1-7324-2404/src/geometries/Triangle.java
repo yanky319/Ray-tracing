@@ -37,10 +37,6 @@ public class Triangle extends Polygon  {
         return copy_list;
     }
 
-    @Override
-    public Vector getNormal(Point3D point) {
-        return this._plane.getNormal();
-    }
 
     //******************** Admin ****************
 

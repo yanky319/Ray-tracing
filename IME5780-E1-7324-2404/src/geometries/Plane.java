@@ -35,8 +35,9 @@ public class Plane implements Geometry {
      * @param _po2 point2
      * @param _po3 point3
      * @throws NullPointerException In case of one of the arguments is null
+     * @throws IllegalArgumentException In case of normal vector is (0,0,0)
      */
-    public Plane(Point3D _po1, Point3D _po2, Point3D _po3) throws NullPointerException {
+    public Plane(Point3D _po1, Point3D _po2, Point3D _po3) throws NullPointerException, IllegalArgumentException {
         if (_po1 == null || _po2 == null || _po3 == null)
             throw new NullPointerException("ERROR One or more of the arguments is NULL");
         this._po = new Point3D(_po1);
