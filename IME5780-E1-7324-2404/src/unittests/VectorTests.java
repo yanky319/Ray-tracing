@@ -41,7 +41,8 @@ public class VectorTests {
         try {
             new Vector(Point3D.ZERO);
             fail("constructor Vector(Point3D) dose not throw exception for zero vector");
-        } catch (IllegalArgumentException e) { }
+        } catch (IllegalArgumentException e) {
+        }
     }
 
     /**
@@ -136,15 +137,27 @@ public class VectorTests {
 
         // ============ Equivalence Partitions Tests ==============
 
-        // TC01: check dotProduct returns the right value
-        assertTrue("Wrong result from vector dotProduct",
+        // TC01: check dotProduct returns the right value for vectors with sharp angle
+        assertTrue("Wrong result from vector dotProduct for vectors with sharp angle",
                 isZero(new Vector(3, 3, 3).dotProduct(new Vector(1, 2, 3)) - 18));
+
+        // TC02: check dotProduct returns the right value for vectors with Obtuse angle
+        assertTrue("Wrong result from vector dotProduct for vectors with Obtuse angle",
+                isZero(new Vector(-3, -3, -3).dotProduct(new Vector(1, 2, 3)) + 18));
 
         // =============== Boundary Values Tests ==================
 
         // TC11: check dotProduct for orthogonal vectors
         assertTrue("dotProduct for orthogonal vectors is not zero",
                 isZero(new Vector(3, 0, 0).dotProduct(new Vector(0, 2, 0))));
+
+        // TC12: check dotProduct for vectors with the same direction
+        assertTrue("Wrong result from vector dotProduct for vectors With the same direction",
+                isZero(new Vector(3, 3, 3).dotProduct(new Vector(2, 2, 2)) - 18));
+
+        // TC13: check dotProduct for orthogonal vectors On same straight with the opposite direction
+        assertTrue("Wrong result from vector dotProduct for vectors On same straight with the opposite direction",
+                isZero(new Vector(3, 3, 3).dotProduct(new Vector(-2, -2, -2)) + 18));
     }
 
     /**
@@ -158,23 +171,53 @@ public class VectorTests {
 
         // ============ Equivalence Partitions Tests ==============
 
-        // TC01: check CrossProduct returns the right vector
-        assertEquals("Wrong result vector from vector CrossProduct",
+        // TC01: check CrossProduct returns the right vector for vectors with sharp angle
+        assertEquals("Wrong result vector from vector CrossProduct for vectors with sharp angle",
                 v3,
                 v1.crossProduct(v2));
 
-        // TC02: check CrossProduct returns vector that is orthogonal to its operands
-        assertTrue("CrossProduct result is not orthogonal to its operands",
+        // TC02: check CrossProduct returns vector that is orthogonal to its operands for vectors with sharp angle
+        assertTrue("CrossProduct result is not orthogonal to its operands for vectors with sharp angle",
+                isZero(v3.dotProduct(v1)) && isZero(v3.dotProduct(v2)));
+
+        v1 = v1.scale(-1);
+        v3 = v3.scale(-1);
+
+        // TC03: check CrossProduct returns the right vector for vectors with Obtuse angle
+        assertEquals("Wrong result vector from vector CrossProduct for vectors with Obtuse angle",
+                v3,
+                v1.crossProduct(v2));
+
+        // TC04: check CrossProduct returns vector that is orthogonal to its operands for vectors with Obtuse angle
+        assertTrue("CrossProduct result is not orthogonal to its operands for vectors with Obtuse angle",
                 isZero(v3.dotProduct(v1)) && isZero(v3.dotProduct(v2)));
 
         // =============== Boundary Values Tests ==================
 
-        // TC11: check CrossProduct for parallel vectors
+        // TC11: check CrossProduct for parallel vectors with the same direction
         try {
-            new Vector(v1).crossProduct(new Vector(v1.scale(-2)));
-            fail("crossProduct for parallel vectors does not throw an exception");
+            new Vector(v1).crossProduct(new Vector(v1.scale(2)));
+            fail("crossProduct for parallel vectors with the same direction does not throw an exception");
         } catch (IllegalArgumentException e) {
         }
+
+        // TC12: check CrossProduct for parallel vectors with the opposite direction
+        try {
+            new Vector(v1).crossProduct(new Vector(v1.scale(-2)));
+            fail("crossProduct for parallel vectors with the opposite direction does not throw an exception");
+        } catch (IllegalArgumentException e) {
+        }
+
+
+        Vector v4 = new Vector(-24, -6, 12);
+        // TC13: check CrossProduct for orthogonal vectors
+        assertEquals("Wrong result vector from vector CrossProduct for vectors with Obtuse angle",
+               v4 ,
+                v2.crossProduct(v3));
+
+        // TC14: check CrossProduct for orthogonal vectors returns vector that is orthogonal to its operands for vectors with Obtuse angle
+        assertTrue("CrossProduct result for orthogonal vectors is not orthogonal to its operands",
+                isZero(v4.dotProduct(v2)) && isZero(v4.dotProduct(v3)));
     }
 
     /**

@@ -11,7 +11,7 @@ import static primitives.Util.isZero;
 /**
  * Unit tests for geometries.Sphere class
  */
-public class SphereTest {
+public class SphereTests {
 
     /**
      * Test method for {@link geometries.Sphere#Sphere(double, Point3D)}.

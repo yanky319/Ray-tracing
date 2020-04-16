@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 /**
  * Unit tests for primitives.Point3D class
  */
-public class Point3DTest {
+public class Point3DTests {
 
     /**
      * Test method for {@link primitives.Point3D#subtract(Point3D)}.

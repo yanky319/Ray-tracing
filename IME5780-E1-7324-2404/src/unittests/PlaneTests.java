@@ -12,7 +12,7 @@ import static primitives.Util.isZero;
 /**
  * Unit tests for geometries.Plane class
  */
-public class PlaneTest {
+public class PlaneTests {
 
     /**
      * Test method for {@link geometries.Plane#Plane(Point3D, Point3D, Point3D)}.

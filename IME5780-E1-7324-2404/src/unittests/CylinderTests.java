@@ -13,7 +13,7 @@ import static primitives.Util.isZero;
 /**
  * Unit tests for geometries.Cylinder class
  */
-public class CylinderTest {
+public class CylinderTests {
 
     /**
      * Test method for {@link geometries.Cylinder#Cylinder(double, Ray, float)}.

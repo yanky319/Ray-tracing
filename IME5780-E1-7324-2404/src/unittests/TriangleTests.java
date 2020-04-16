@@ -12,7 +12,7 @@ import static primitives.Util.isZero;
 /**
  * Unit tests for geometries.Triangle class
  */
-public class TriangleTest {
+public class TriangleTests {
 
     /**
      * Test method for {@link geometries.Triangle#Triangle(Point3D, Point3D, Point3D)}.
