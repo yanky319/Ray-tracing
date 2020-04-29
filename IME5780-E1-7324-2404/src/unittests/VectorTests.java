@@ -155,7 +155,7 @@ public class VectorTests {
         assertTrue("Wrong result from vector dotProduct for vectors With the same direction",
                 isZero(new Vector(3, 3, 3).dotProduct(new Vector(2, 2, 2)) - 18));
 
-        // TC13: check dotProduct for orthogonal vectors On same straight with the opposite direction
+        // TC13: check dotProduct for vectors On same straight with the opposite direction
         assertTrue("Wrong result from vector dotProduct for vectors On same straight with the opposite direction",
                 isZero(new Vector(3, 3, 3).dotProduct(new Vector(-2, -2, -2)) + 18));
     }

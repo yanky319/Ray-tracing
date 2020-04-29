@@ -1,7 +1,13 @@
 package geometries;
 
 import primitives.Point3D;
+import primitives.Ray;
 import primitives.Vector;
+
+import static primitives.Util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * class Sphere representing a Sphere in 3D
@@ -40,7 +46,31 @@ public class Sphere extends RadialGeometry {
 
     @Override
     public Vector getNormal(Point3D point) {
-       return point.subtract(_center).normalize();
+        return point.subtract(_center).normalize();
+    }
+
+    @Override
+    public List<Point3D> findIntersections(Ray ray) {
+        Vector u;
+        try {
+            u = this._center.subtract(ray.get_p0());
+        } catch (IllegalArgumentException e) {  // Ray starts at the center of the sphere
+            return List.of(ray.getPoint(this._radius)); // the point on the Ray and the sphere
+        }
+        double tm = alignZero(ray.get_direction().dotProduct(u));
+        double d = Math.sqrt(alignZero(u.lengthSquared() - tm * tm));
+        if (alignZero(d - this._radius) >= 0) // if(d>r) the ray does not intersect with the sphere
+            return null;
+        double th = alignZero(Math.sqrt(this._radius * this._radius - d * d));
+        if (alignZero(tm + th) > 0 || alignZero(tm - th) > 0) { //if there are at least one intersection
+            List<Point3D> result = new ArrayList<Point3D>(); // only ad the ones where t>0
+            if (alignZero(tm + th) > 0)
+                result.add(ray.getPoint(tm + th));
+            if (alignZero(tm - th) > 0)
+                result.add(ray.getPoint(tm - th));
+            return result;
+        }
+        return null;
     }
 
     //******************** Admin ****************

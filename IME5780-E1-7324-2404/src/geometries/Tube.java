@@ -8,41 +8,46 @@ import primitives.Vector;
 /**
  * class Tube representing a Tube in 3D.
  */
-public class Tube extends RadialGeometry {
-    protected final Ray _axisRay;
+public class Tube extends Cylinder {
+    private float _height;
 
     //*********************************** constructor ***************
 
     /**
-     * Tube constructor receiving the radius and the axis ray.
+     * Tube constructor receiving Tube radius value and the Tube height.
      *
      * @param _radius Tube radius
-     * @param ray     Tube axis ray
-     * @throws NullPointerException     In case of the Ray argument is null
-     * @throws IllegalArgumentException In case of the radius argument is not greater than zero
+     * @param height  Tube height
+     * @param ray     Tube ray
+     * @throws IllegalArgumentException In case of the height or radius argument is not greater than zero
      */
-    public Tube(double _radius, Ray ray) throws NullPointerException, IllegalArgumentException {
-        super(_radius);
-        if (ray == null)
-            throw new NullPointerException("ERROR Ray arguments is NULL");
-        this._axisRay = new Ray(ray);
+    public Tube(double _radius, Ray ray, float height) throws IllegalArgumentException {
+        super(_radius, ray);
+        if (height <= 0)
+            throw new IllegalArgumentException("The Tube height must be greater than zero");
+        _height = height;
     }
 
     //*********************************** Getters ***************
 
     /**
-     * axis ray getter.
+     * height getter.
      *
-     * @return Tube axis ray
+     * @return the Tube height
      */
-    public Ray get_axisRay() {
-        return new Ray(_axisRay);
+    public float get_height() {
+        return _height;
     }
-
 
     @Override
     public Vector getNormal(Point3D point) {
         double t = this._axisRay.get_direction().dotProduct(point.subtract(this._axisRay.get_p0()));
+        if(t == 0)
+            return new Vector(this._axisRay.get_direction()).scale(-1).normalize();
+
+        if(t == this._height)
+            return new Vector(this._axisRay.get_direction()).normalize();
+
         Point3D o = new Point3D(this._axisRay.get_p0().add(this._axisRay.get_direction().scale(t)));
         Vector n = new Vector(point.subtract(o));
         return n.normalize();
@@ -50,10 +55,12 @@ public class Tube extends RadialGeometry {
 
     //******************** Admin ****************
 
+
     @Override
     public String
     toString() {
-        return "ray: " + _axisRay +
-                ", radius: " + _radius;
+        return "height=" + _height +
+                ", radius=" + _radius;
+
     }
 }

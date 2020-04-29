@@ -6,9 +6,10 @@ import primitives.Vector;
 /**
  * interface Geometry for Geometry objects.
  */
-public interface Geometry {
+public interface Geometry extends Intersectable {
+
     /**
-     * calculates the unit vector that is orthogonal to the Tube in a given point
+     * calculates the unit vector that is orthogonal to the Tube in a given point.
      *
      * @param point a given point
      * @return orthogonal unit vector

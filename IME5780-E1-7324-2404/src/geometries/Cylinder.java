@@ -4,63 +4,63 @@ import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
 
+import java.util.List;
+
 
 /**
  * class Cylinder representing a Cylinder in 3D.
  */
-public class Cylinder extends Tube {
-    private float _height;
+public class Cylinder extends RadialGeometry {
+    protected final Ray _axisRay;
 
     //*********************************** constructor ***************
 
     /**
-     * Cylinder constructor receiving Cylinder radius value and the Cylinder height.
+     * Cylinder constructor receiving the radius and the axis ray.
      *
      * @param _radius Cylinder radius
-     * @param height  Cylinder height
-     * @param ray     Cylinder ray
-     * @throws IllegalArgumentException In case of the height or radius argument is not greater than zero
+     * @param ray     Cylinder axis ray
+     * @throws NullPointerException     In case of the Ray argument is null
+     * @throws IllegalArgumentException In case of the radius argument is not greater than zero
      */
-    public Cylinder(double _radius, Ray ray, float height) throws IllegalArgumentException {
-        super(_radius, ray);
-        if (height <= 0)
-            throw new IllegalArgumentException("The cylinder height must be greater than zero");
-        _height = height;
+    public Cylinder(double _radius, Ray ray) throws NullPointerException, IllegalArgumentException {
+        super(_radius);
+        if (ray == null)
+            throw new NullPointerException("ERROR Ray arguments is NULL");
+        this._axisRay = new Ray(ray);
     }
 
     //*********************************** Getters ***************
 
     /**
-     * height getter.
+     * axis ray getter.
      *
-     * @return the Cylinder height
+     * @return Cylinder axis ray
      */
-    public float get_height() {
-        return _height;
+    public Ray get_axisRay() {
+        return new Ray(_axisRay);
     }
+
 
     @Override
     public Vector getNormal(Point3D point) {
         double t = this._axisRay.get_direction().dotProduct(point.subtract(this._axisRay.get_p0()));
-        if(t == 0)
-            return new Vector(this._axisRay.get_direction()).scale(-1).normalize();
-
-        if(t == this._height)
-            return new Vector(this._axisRay.get_direction()).normalize();
-
         Point3D o = new Point3D(this._axisRay.get_p0().add(this._axisRay.get_direction().scale(t)));
         Vector n = new Vector(point.subtract(o));
         return n.normalize();
     }
 
-    //******************** Admin ****************
+    @Override
+    public List<Point3D> findIntersections(Ray ray) {
+        return null;
+    }
 
+    //******************** Admin ****************
 
     @Override
     public String
     toString() {
-        return "height=" + _height +
-                ", radius=" + _radius;
-
+        return "ray: " + _axisRay +
+                ", radius: " + _radius;
     }
 }

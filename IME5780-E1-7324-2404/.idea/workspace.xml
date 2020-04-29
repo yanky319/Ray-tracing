@@ -2,19 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ec927a9-9ce3-4778-bb72-f84f889574e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/IME5780-E2-7324-2404.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IME5780-E2-7324-2404.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IME5780-E2-7324-2404.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/Cylinder.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/Cylinder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/Tube.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/Tube.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Cylinder.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Cylinder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Tube.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Tube.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Cylinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Cylinder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Geometry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Geometry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Plane.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Plane.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Polygon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Polygon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Sphere.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Sphere.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Triangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Triangle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Tube.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Tube.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/CylinderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/CylinderTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/VectorTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/VectorTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/CylinderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/CylinderTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/PlaneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/PlaneTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/Point3DTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/Point3DTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/PolygonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/PolygonTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/SphereTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/SphereTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/TriangleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/TriangleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/primitives/Ray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/primitives/Ray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/CylinderTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/CylinderTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/PlaneTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/PlaneTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/PolygonTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/PolygonTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/SphereTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/SphereTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/TriangleTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/TriangleTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/TubeTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/TubeTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Cylinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Cylinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Ray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Ray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/CylinderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/CylinderTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/PlaneTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/PlaneTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/PolygonTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/PolygonTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/SphereTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/SphereTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/TriangleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/TriangleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/TubeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/TubeTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/unittests/VectorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/VectorTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,15 +91,8 @@
       <command value="    //*********************************** constructors ***************" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="IME5780-E1-7324-2404" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CylinderTests.getNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GeometriesTest">
+    <configuration name="GeometriesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IME5780-E1-7324-2404" />
       <extension name="coverage">
         <pattern>
@@ -87,29 +101,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.CylinderTests" />
-      <option name="METHOD_NAME" value="getNormal" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SphereTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IME5780-E1-7324-2404" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.SphereTests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.GeometriesTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VectorTests.testCrossProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GeometriesTest.testAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IME5780-E1-7324-2404" />
       <extension name="coverage">
         <pattern>
@@ -118,14 +116,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.VectorTests" />
-      <option name="METHOD_NAME" value="testCrossProduct" />
+      <option name="MAIN_CLASS_NAME" value="unittests.GeometriesTest" />
+      <option name="METHOD_NAME" value="testAdd" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VectorTests.testDotProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GeometriesTest.testFindIntersections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IME5780-E1-7324-2404" />
       <extension name="coverage">
         <pattern>
@@ -134,8 +132,39 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.VectorTests" />
-      <option name="METHOD_NAME" value="testDotProduct" />
+      <option name="MAIN_CLASS_NAME" value="unittests.GeometriesTest" />
+      <option name="METHOD_NAME" value="testFindIntersections" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PolygonTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IME5780-E1-7324-2404" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.PolygonTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PolygonTests.testFindIntersections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IME5780-E1-7324-2404" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.PolygonTests" />
+      <option name="METHOD_NAME" value="testFindIntersections" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -143,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.VectorTests.testCrossProduct" />
-        <item itemvalue="JUnit.VectorTests.testDotProduct" />
-        <item itemvalue="JUnit.CylinderTests.getNormal" />
-        <item itemvalue="JUnit.SphereTests" />
+        <item itemvalue="JUnit.GeometriesTest" />
+        <item itemvalue="JUnit.GeometriesTest.testAdd" />
+        <item itemvalue="JUnit.GeometriesTest.testFindIntersections" />
+        <item itemvalue="JUnit.PolygonTests" />
+        <item itemvalue="JUnit.PolygonTests.testFindIntersections" />
       </list>
     </recent_temporary>
   </component>
@@ -173,23 +202,27 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="392" y="88" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1584822812051" />
-    <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1586287320142">
+    <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1587137264780">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1586287320142" />
-    <state x="804" y="83" key="#com.intellij.ide.util.MemberChooser" timestamp="1585438156870">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1587137264780" />
+    <state x="1005" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1587495708530">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="804" y="83" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1585438156870" />
-    <state x="1005" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1585244402857" />
+    <state x="1005" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1587495708530" />
     <state x="490" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585433099346">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="490" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680@0.0.1280.680" timestamp="1585433099346" />
-    <state x="682" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584924234100">
+    <state x="596" y="315" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1587240184914">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="682" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1584924234100" />
+    <state x="596" y="315" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1587240184914" />
+    <state x="682" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587426723081">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="682" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1587426723081" />
     <state x="780" y="169" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585260761955">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -198,22 +231,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="965" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1586258054884" />
-    <state width="754" height="195" key="GridCell.Tab.0.bottom" timestamp="1587044664973">
+    <state width="1557" height="155" key="GridCell.Tab.0.bottom" timestamp="1587741253825">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="195" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1587044664973" />
-    <state width="754" height="195" key="GridCell.Tab.0.center" timestamp="1587044664973">
+    <state width="1557" height="155" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1587741253825" />
+    <state width="1557" height="155" key="GridCell.Tab.0.center" timestamp="1587741253825">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="195" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1587044664973" />
-    <state width="754" height="195" key="GridCell.Tab.0.left" timestamp="1587044664973">
+    <state width="1557" height="155" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1587741253825" />
+    <state width="1557" height="155" key="GridCell.Tab.0.left" timestamp="1587741253825">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="195" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1587044664973" />
-    <state width="754" height="195" key="GridCell.Tab.0.right" timestamp="1587044664973">
+    <state width="1557" height="155" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1587741253825" />
+    <state width="1557" height="155" key="GridCell.Tab.0.right" timestamp="1587741253825">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="195" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1587044664973" />
+    <state width="1557" height="155" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1587741253825" />
     <state x="498" y="141" key="RollbackChangesDialog" timestamp="1585257924771">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -226,23 +259,23 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="673" y="166" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1586298804781" />
-    <state x="896" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1587038956121">
+    <state x="896" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1587733161039">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="673" y="201" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585433032247" />
-    <state x="896" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1587038956121" />
+    <state x="896" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1587733161039" />
     <state x="904" y="327" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584893058949">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="904" y="327" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1600.860@0.0.1600.860" timestamp="1584893058949" />
-    <state x="572" y="136" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1586521992280">
+    <state x="572" y="136" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1587495767215">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="572" y="136" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860@0.0.1600.860" timestamp="1586521992280" />
-    <state x="604" y="46" width="695" height="846" key="dock-window-1" timestamp="1586298731537">
+    <state x="572" y="136" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860@0.0.1600.860" timestamp="1587495767215" />
+    <state x="323" y="230" width="828" height="551" key="dock-window-1" timestamp="1587250164938">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="604" y="46" width="695" height="846" key="dock-window-1/0.0.1600.860@0.0.1600.860" timestamp="1586298731537" />
+    <state x="323" y="230" width="828" height="551" key="dock-window-1/0.0.1600.860@0.0.1600.860" timestamp="1587250164938" />
     <state x="-7" y="0" width="639" height="867" key="dock-window-2" timestamp="1586519595261">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -251,9 +284,9 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="856" y="199" width="672" height="677" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1587040368177" />
-    <state x="777" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1586260003164">
+    <state x="777" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1587336735369">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="777" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1586260003164" />
+    <state x="777" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1587336735369" />
   </component>
 </project>

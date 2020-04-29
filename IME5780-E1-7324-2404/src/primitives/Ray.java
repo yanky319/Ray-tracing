@@ -20,7 +20,7 @@ public class Ray {
         if (_p0 == null || _dir == null)
             throw new NullPointerException("ERROR One or more of the arguments is NULL");
         this._p0 = new Point3D(_p0);
-        this._direction = new Vector(_dir);
+        this._direction = new Vector(_dir).normalize();
     }
 
     /**
@@ -56,6 +56,15 @@ public class Ray {
         return new Point3D(_p0);
     }
 
+    /**
+     * calculates a point on the Ray with distance t from the head of the Ray.
+     *
+     * @param t the distance wanted
+     * @return the point calculated
+     */
+    public Point3D getPoint(double t){
+        return this.get_p0().add(this.get_direction().scale(t));
+    }
     //******************** Admin ****************
 
     @Override
