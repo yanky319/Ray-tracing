@@ -4,9 +4,8 @@ import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
 
-import java.io.PipedOutputStream;
-
 import static primitives.Util.*;
+
 
 /**
  * Class Camera representing a Camera sending Ray's through a view plane.
@@ -83,14 +82,13 @@ public class Camera {
     /**
      * gets view plane parameters and indexes of a pixel and generates a Ray from the camera through that pixel.
      *
-     * @param nX number of pixels in X axis
-     * @param nY number of pixels in Y axis
-     * @param j column index of pixels
-     * @param i row index of pixels
+     * @param nX             number of pixels in X axis
+     * @param nY             number of pixels in Y axis
+     * @param j              column index of pixels
+     * @param i              row index of pixels
      * @param screenDistance the distance between the camera and the view plane
-     * @param screenWidth the width of the view plane
-     * @param screenHeight the height of the view plane
-     *
+     * @param screenWidth    the width of the view plane
+     * @param screenHeight   the height of the view plane
      * @return a ray from the camera through the given pixel on the view plane
      */
     public Ray constructRayThroughPixel(int nX, int nY,
