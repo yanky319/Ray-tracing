@@ -4,21 +4,52 @@ import org.junit.Test;
 
 import elements.*;
 import geometries.*;
+import parser.XMLtoRenderParser;
 import primitives.*;
 import renderer.ImageWriter;
 import renderer.Render;
 import scene.Scene;
 
 /**
- * Test rendering abasic image
- * 
+ * Test rendering a basic image
+ *
  * @author Dan
  */
 public class RenderTests {
 
     /**
-     * Produce a scene with basic 3D model and render it into a jpeg image with a
-     * grid
+     * function that creates a Render by getting its parameters from XMLtoRenderParser.
+     *
+     * @param fileName the name of the XML document to be passed to the Parser
+     * @return Render including the Scene and image writer fro the XML document
+     */
+    private Render renderFromXml(String fileName) {
+        XMLtoRenderParser parser;
+        try {
+            parser = new XMLtoRenderParser(fileName); // create instance of XML Parser
+        } catch (Exception e) { // if it fails return null
+            return null;
+        }
+        // create instance of Scene and get its parameters from the XML parser
+        Scene scene = new Scene("XML Test scene");
+        scene.set_camera(parser.cameraFromXML());
+        scene.set_distance(parser.distanceFromXml());
+        scene.set_background(parser.backgroundFromXML());
+        scene.set_ambientLight(parser.AmbientLightFromXML());
+
+        for (Intersectable i : parser.geometriesFromXml())
+            scene.addGeometries(i);
+
+        // create instance of imageWriter and get its parameters from the XML parser
+        ImageWriter imageWriter = new ImageWriter("XML base render test",
+                parser.imageWidthFromXML(), parser.imageHeightFromXML(), parser.nXFromXML(), parser.nyFromXML());
+        // create and return instance of Render that includes the imageWriter and Scene from the XML parser
+        return new Render(imageWriter, scene);
+    }
+
+    /**
+     * Produce a scene with basic 3D model and render it into a jpeg image with a grid
+     * and do so also to a scene with basic 3D model given from an XML document.
      */
     @Test
     public void basicRenderTwoColorTest() {
@@ -42,5 +73,13 @@ public class RenderTests {
         render.renderImage();
         render.printGrid(50, java.awt.Color.YELLOW);
         render.writeToImage();
+
+        Render XML_render = renderFromXml("basicRenderTestTwoColors.xml");
+        if(XML_render != null)
+        {
+            XML_render.renderImage();
+            XML_render.printGrid(50, java.awt.Color.YELLOW);
+            XML_render.writeToImage();
+        }
     }
 }
