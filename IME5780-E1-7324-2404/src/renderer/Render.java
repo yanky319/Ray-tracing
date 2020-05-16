@@ -69,8 +69,8 @@ public class Render {
      * @param points a list of points on the ray
      * @return the closest point to beginning of ray
      */
-    public Point3D getClosestPoint(List<Point3D> points) {
-    //private Point3D getClosestPoint(List<Point3D> points) {
+    //public Point3D getClosestPoint(List<Point3D> points) {
+    private Point3D getClosestPoint(List<Point3D> points) {
         if(points == null || points.size() ==0 )
             return null;
         Point3D ClosestPoint = null;

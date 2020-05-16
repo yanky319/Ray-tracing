@@ -88,39 +88,40 @@ public class RenderTests {
     }
 
 
-    /**
-     * test method for{@link renderer.Render#getClosestPoint(List)}
-     */
-    @Test
-    public void getClosestPoint() {
-        Scene scene = new Scene("Test scene");
-        scene.set_camera(new Camera(Point3D.ZERO, new Vector(0, 0, 1), new Vector(0, -1, 0)));
-        scene.set_distance(100);
-        scene.set_background(new Color(75, 127, 90));
-        scene.set_ambientLight(new AmbientLight(new Color(255, 191, 191), 1));
-        ImageWriter imageWriter = new ImageWriter("base render test", 500, 500, 500, 500);
-        Render render = new Render(imageWriter, scene);
-
-
-        List<Point3D> points = null;
-        // =============== Boundary Values Tests ==================
-
-        //TC11 list is null
-        assertEquals("does not return null when the list is null", null, render.getClosestPoint(points));
-        points = new LinkedList<>();
-
-        //TC12 empty list of Points
-        assertEquals("does not return null when the list is empty", null, render.getClosestPoint(points));
-       
-        // ============ Equivalence Partitions Tests ==============
-
-        // 01 check if returns the right point
-        points.add(new Point3D(4, 6, 9));
-        points.add(new Point3D(10, 3, 0.8));
-        points.add(new Point3D(1, 2, 3));
-        points.add(new Point3D(5, 3, 56.8));
-        points.add(new Point3D(10, 6, 0.8));
-        assertEquals("does not return the correct point", new Point3D(1, 2, 3), render.getClosestPoint(points));
-
-    }
+//    /**
+//     * test method for{@link renderer.Render#getClosestPoint(List)}
+//     */
+//    @Test
+//    public void getClosestPoint() {
+//        Scene scene = new Scene("Test scene");
+//        scene.set_camera(new Camera(Point3D.ZERO, new Vector(0, 0, 1), new Vector(0, -1, 0)));
+//        scene.set_distance(100);
+//        scene.set_background(new Color(75, 127, 90));
+//        scene.set_ambientLight(new AmbientLight(new Color(255, 191, 191), 1));
+//        ImageWriter imageWriter = new ImageWriter("base render test", 500, 500, 500, 500);
+//        Render render = new Render(imageWriter, scene);
+//
+//
+//
+//        // =============== Boundary Values Tests ==================
+//
+//        //TC11 list is null
+//        List<Point3D> points = null;
+//        assertEquals("does not return null when the list is null", null, render.getClosestPoint(points));
+//
+//        //TC12 empty list of Points
+//        points = new LinkedList<>();
+//        assertEquals("does not return null when the list is empty", null, render.getClosestPoint(points));
+//
+//        // ============ Equivalence Partitions Tests ==============
+//
+//        // 01 check if returns the right point
+//        points.add(new Point3D(4, 6, 9));
+//        points.add(new Point3D(10, 3, 0.8));
+//        points.add(new Point3D(1, 2, 3));
+//        points.add(new Point3D(5, 3, 56.8));
+//        points.add(new Point3D(10, 6, 0.8));
+//        assertEquals("does not return the correct point", new Point3D(1, 2, 3), render.getClosestPoint(points));
+//
+//    }
 }

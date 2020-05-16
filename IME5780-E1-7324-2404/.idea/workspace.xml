@@ -3,122 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8ec927a9-9ce3-4778-bb72-f84f889574e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/class-use/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/class-use/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/element-list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/elements/Camera.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/elements/Camera.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/elements/class-use/Camera.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/elements/class-use/Camera.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/elements/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/elements/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/elements/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/elements/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/elements/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/elements/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/Cylinder.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/Cylinder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/Geometries.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/Geometries.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/Geometry.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/Geometry.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/Intersectable.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/Intersectable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/Plane.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/Plane.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/Polygon.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/Polygon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/RadialGeometry.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/RadialGeometry.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/Sphere.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/Sphere.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/Triangle.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/Triangle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/Tube.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/Tube.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Cylinder.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Cylinder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Geometries.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Geometries.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Geometry.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Geometry.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Intersectable.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Intersectable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Plane.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Plane.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Polygon.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Polygon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/class-use/RadialGeometry.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/class-use/RadialGeometry.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Sphere.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Sphere.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Triangle.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Triangle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Tube.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Tube.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-17.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-18.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-19.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-19.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/member-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/member-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/overview-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/package-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/package-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/primitives/Coordinate.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/primitives/Coordinate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/primitives/Point3D.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/primitives/Point3D.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/primitives/Ray.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/primitives/Ray.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/primitives/Util.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/primitives/Util.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/primitives/Vector.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/primitives/Vector.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/primitives/class-use/Coordinate.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/primitives/class-use/Coordinate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/primitives/class-use/Point3D.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/primitives/class-use/Point3D.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/primitives/class-use/Ray.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/primitives/class-use/Ray.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/primitives/class-use/Util.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/primitives/class-use/Util.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/primitives/class-use/Vector.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/primitives/class-use/Vector.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/primitives/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/primitives/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/primitives/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/primitives/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/primitives/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/primitives/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/system-properties.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/system-properties.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/type-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/CameraIntegrationTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/CameraIntegrationTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/CameraTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/CameraTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/CylinderTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/CylinderTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/GeometriesTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/GeometriesTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/PlaneTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/PlaneTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/Point3DTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/Point3DTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/PolygonTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/PolygonTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/SphereTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/SphereTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/TriangleTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/TriangleTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/TubeTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/TubeTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/VectorTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/VectorTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/class-use/CameraIntegrationTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/class-use/CameraIntegrationTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/class-use/CameraTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/class-use/CameraTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/class-use/CylinderTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/class-use/CylinderTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/class-use/GeometriesTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/class-use/GeometriesTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/class-use/PlaneTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/class-use/PlaneTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/class-use/Point3DTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/class-use/Point3DTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/class-use/PolygonTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/class-use/PolygonTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/class-use/SphereTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/class-use/SphereTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/class-use/TriangleTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/class-use/TriangleTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/class-use/TubeTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/class-use/TubeTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/class-use/VectorTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/class-use/VectorTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/AmbientLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/AmbientLight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/primitives/Ray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/primitives/Ray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/renderer/Render.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/renderer/Render.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/scene/Scene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/scene/Scene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/ImageWriterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/ImageWriterTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/AmbientLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/AmbientLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/primitives/Ray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Ray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IME5780-E5-7324-2404.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IME5780-E5-7324-2404.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Render.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scene/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/Scene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/ImageWriterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/ImageWriterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/unittests/RenderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/RenderTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +45,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.20367534" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -175,22 +61,7 @@
       <command value="    //*********************************** constructors ***************" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RenderTests.basicRenderTwoColorTest">
-    <configuration name="CameraIntegrationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IME5780-E1-7324-2404" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.CameraIntegrationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.RenderTests.getClosestPoint">
     <configuration name="ImageWriterTest.testWriteToImage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IME5780-E1-7324-2404" />
       <extension name="coverage">
@@ -254,13 +125,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RenderTests.getClosestPoint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IME5780-E1-7324-2404" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.RenderTests" />
+      <option name="METHOD_NAME" value="getClosestPoint" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RenderTests.getClosestPoint" />
         <item itemvalue="JUnit.RenderTests.basicRenderTwoColorTest" />
         <item itemvalue="JUnit.RenderTests" />
         <item itemvalue="JUnit.ImageWriterTest.testWriteToImage" />
         <item itemvalue="JUnit.ImageWriterTest.testWriteToImages" />
-        <item itemvalue="JUnit.CameraIntegrationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -315,39 +202,39 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="965" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1586258054884" />
-    <state width="1118" height="309" key="GridCell.Tab.0.bottom" timestamp="1589550722508">
+    <state width="559" height="305" key="GridCell.Tab.0.bottom" timestamp="1589556548875">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1118" height="309" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589550722508" />
-    <state width="1118" height="309" key="GridCell.Tab.0.center" timestamp="1589550722508">
+    <state width="559" height="305" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589556548875" />
+    <state width="559" height="305" key="GridCell.Tab.0.center" timestamp="1589556548875">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1118" height="309" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589550722508" />
-    <state width="1118" height="309" key="GridCell.Tab.0.left" timestamp="1589550722508">
+    <state width="559" height="305" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589556548875" />
+    <state width="559" height="305" key="GridCell.Tab.0.left" timestamp="1589556548875">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1118" height="309" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589550722508" />
-    <state width="1118" height="309" key="GridCell.Tab.0.right" timestamp="1589550722508">
+    <state width="559" height="305" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589556548875" />
+    <state width="559" height="305" key="GridCell.Tab.0.right" timestamp="1589556548875">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1118" height="309" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589550722508" />
+    <state width="559" height="305" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589556548875" />
     <state x="498" y="141" key="RollbackChangesDialog" timestamp="1585257924771">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="498" y="141" key="RollbackChangesDialog/0.0.1600.860@0.0.1600.860" timestamp="1585257924771" />
-    <state x="739" y="97" width="669" height="672" key="SettingsEditor" timestamp="1586258351690">
+    <state x="684" y="97" width="916" height="708" key="SettingsEditor" timestamp="1589553728675">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="739" y="97" width="669" height="672" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1586258351690" />
+    <state x="684" y="97" width="916" height="708" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1589553728675" />
     <state x="673" y="166" key="Vcs.Push.Dialog.v2" timestamp="1586298804781">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="673" y="166" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1586298804781" />
-    <state x="896" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1589485283976">
+    <state x="896" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1589554093902">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="673" y="201" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585433032247" />
-    <state x="896" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1589485283976" />
+    <state x="896" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1589554093902" />
     <state x="904" y="327" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584893058949">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -368,9 +255,9 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="856" y="199" width="672" height="677" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1589315876753" />
-    <state x="777" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1589489929283">
+    <state x="777" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1589553411904">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="777" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1589489929283" />
+    <state x="777" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1589553411904" />
   </component>
 </project>
