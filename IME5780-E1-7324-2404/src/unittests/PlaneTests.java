@@ -1,8 +1,6 @@
 package unittests;
 
 import geometries.Plane;
-import geometries.Sphere;
-import geometries.Triangle;
 import org.junit.Test;
 import primitives.Point3D;
 import primitives.Ray;
@@ -12,6 +10,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 import static primitives.Util.isZero;
+import static geometries.Intersectable.GeoPoint;
 
 /**
  * Unit tests for geometries.Plane class
@@ -65,7 +64,7 @@ public class PlaneTests {
         // ============ Equivalence Partitions Tests ==============
 
         // TC01: Ray intersects the plane (1 point)
-        assertEquals("Wrong plane findIntersections when Ray does intersect the plane", List.of(new Point3D(1,2,0)),
+        assertEquals("Wrong plane findIntersections when Ray does intersect the plane", List.of(new GeoPoint(plane, new Point3D(1,2,0))),
                 plane.findIntersections(new Ray(new Point3D(-1, 0, 0), new Vector(1, 1, 0))));
         // TC02: Ray does not intersect the plane (0 points)
         assertEquals("Wrong plane findIntersections when Ray does not intersect the plane", null,
@@ -83,7 +82,7 @@ public class PlaneTests {
         // **** Group: Ray is orthogonal to the plane
         // TC13: Ray starts before the plane (1 point)
         assertEquals("Wrong plane findIntersections when Ray is orthogonal to the plane and starts after the plane",
-                List.of(new Point3D(4d/3,4d/3,1d/3)),
+                List.of(new GeoPoint(plane, new Point3D(4d/3,4d/3,1d/3))),
                 plane.findIntersections(new Ray(new Point3D(-1, -1,-2), new Vector(1,1,1))));
         // TC14: Ray starts in the plane (0 points)
         assertEquals("Wrong plane findIntersections when Ray is orthogonal to the plane and starts in the plane", null,

@@ -1,8 +1,6 @@
 package geometries;
 
-import primitives.Point3D;
-import primitives.Ray;
-import primitives.Vector;
+import primitives.*;
 
 import static primitives.Util.*;
 
@@ -12,7 +10,7 @@ import java.util.Objects;
 /**
  * class Plane representing a Plane in 3D.
  */
-public class Plane implements Geometry {
+public class Plane extends Geometry {
     protected Point3D _po;
     protected Vector _normal;
 
@@ -31,17 +29,47 @@ public class Plane implements Geometry {
         this._po = new Point3D(_po);
         this._normal = new Vector(_normal);
     }
+/**
+ * Plane constructor receiving 3 points on the plane.
+ * calls {@link geometries.Plane#Plane(Color emission, Point3D _po1, Point3D _po2, Point3D _po3)}.
+ *
+ * @param _po1 point1
+ * @param _po2 point2
+ * @param _po3 point3
+ * @throws NullPointerException     In case of one of the arguments is null
+ * @throws IllegalArgumentException In case of normal vector is (0,0,0)
+ */
+public Plane(Point3D _po1, Point3D _po2, Point3D _po3)  {
+    this( Color.BLACK, _po1, _po2, _po3);
+}
 
     /**
-     * Plane constructor receiving 3 points on the plane.
+     * Plane constructor receiving 3 points on the plane and emission light.
      *
+     * @param emission Planes emission light
      * @param _po1 point1
      * @param _po2 point2
      * @param _po3 point3
      * @throws NullPointerException     In case of one of the arguments is null
      * @throws IllegalArgumentException In case of normal vector is (0,0,0)
      */
-    public Plane(Point3D _po1, Point3D _po2, Point3D _po3) throws NullPointerException, IllegalArgumentException {
+    public Plane(Color emission, Point3D _po1, Point3D _po2, Point3D _po3) throws NullPointerException, IllegalArgumentException {
+        this(new Material(0,0,0), emission, _po1, _po2,  _po3);
+    }
+
+    /**
+     * Plane constructor receiving 3 points on the planes emission light and material.
+     *
+     * @param material Planes material
+     * @param emission Planes emission light
+     * @param _po1 point1
+     * @param _po2 point2
+     * @param _po3 point3
+     * @throws NullPointerException     In case of one of the arguments is null
+     * @throws IllegalArgumentException In case of normal vector is (0,0,0)
+     */
+    public Plane(Material material, Color emission, Point3D _po1, Point3D _po2, Point3D _po3) throws NullPointerException, IllegalArgumentException {
+        super(material, emission);
         if (_po1 == null || _po2 == null || _po3 == null)
             throw new NullPointerException("ERROR One or more of the arguments is NULL");
         this._po = new Point3D(_po1);
@@ -80,7 +108,7 @@ public class Plane implements Geometry {
 
 
     @Override
-    public List<Point3D> findIntersections(Ray ray) {
+    public List<GeoPoint> findIntersections(Ray ray) {
         Vector Qp;
         try {
             Qp = this._po.subtract(ray.get_p0());
@@ -93,7 +121,7 @@ public class Plane implements Geometry {
                 || isZero(NQp) // the point is in the plane
                 ||NQp/Nv<0) // the Ray starts after the plane
             return null;
-        return List.of(ray.getPoint(NQp/Nv));
+        return List.of(new GeoPoint(this, ray.getPoint(NQp/Nv)));
     }
 
 

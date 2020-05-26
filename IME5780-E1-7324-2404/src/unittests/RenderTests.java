@@ -13,6 +13,7 @@ import scene.Scene;
 import java.util.LinkedList;
 import java.util.List;
 
+import static geometries.Intersectable.GeoPoint;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -87,6 +88,33 @@ public class RenderTests {
         }
     }
 
+    @Test
+    public void basicRenderMultiColorTest() {
+        Scene scene = new Scene("Test scene");
+        scene.set_camera(new Camera(Point3D.ZERO, new Vector(0, 0, 1), new Vector(0, -1, 0)));
+        scene.set_distance(100);
+        scene.set_background(Color.BLACK);
+        scene.set_ambientLight(new AmbientLight(new Color(java.awt.Color.WHITE), 0.2));
+
+        scene.addGeometries(new Sphere(50, new Point3D(0, 0, 100)));
+
+        scene.addGeometries(
+                new Triangle(new Color(java.awt.Color.BLUE),
+                        new Point3D(100, 0, 100), new Point3D(0, 100, 100), new Point3D(100, 100, 100)),      // lower right
+                new Triangle(
+                        new Point3D(100, 0, 100), new Point3D(0, -100, 100), new Point3D(100, -100, 100)),    // upper right
+                new Triangle(new Color(java.awt.Color.RED),
+                        new Point3D(-100, 0, 100), new Point3D(0, 100, 100), new Point3D(-100, 100, 100)),    // lower left
+                new Triangle(new Color(java.awt.Color.GREEN),
+                        new Point3D(-100, 0, 100), new Point3D(0, -100, 100), new Point3D(-100, -100, 100))); // upper left
+
+        ImageWriter imageWriter = new ImageWriter("color render test", 500, 500, 500, 500);
+        Render render = new Render(imageWriter, scene);
+
+        render.renderImage();
+        render.printGrid(50, java.awt.Color.WHITE);
+        render.writeToImage();
+    }
 
 //    /**
 //     * test method for{@link renderer.Render#getClosestPoint(List)}
@@ -102,11 +130,10 @@ public class RenderTests {
 //        Render render = new Render(imageWriter, scene);
 //
 //
-//
 //        // =============== Boundary Values Tests ==================
 //
 //        //TC11 list is null
-//        List<Point3D> points = null;
+//        List<GeoPoint> points = null;
 //        assertEquals("does not return null when the list is null", null, render.getClosestPoint(points));
 //
 //        //TC12 empty list of Points
@@ -116,12 +143,12 @@ public class RenderTests {
 //        // ============ Equivalence Partitions Tests ==============
 //
 //        // 01 check if returns the right point
-//        points.add(new Point3D(4, 6, 9));
-//        points.add(new Point3D(10, 3, 0.8));
-//        points.add(new Point3D(1, 2, 3));
-//        points.add(new Point3D(5, 3, 56.8));
-//        points.add(new Point3D(10, 6, 0.8));
-//        assertEquals("does not return the correct point", new Point3D(1, 2, 3), render.getClosestPoint(points));
-//
+//        points.add(new GeoPoint(null, new Point3D(4, 6, 9)));
+//        points.add(new GeoPoint(null, new Point3D(10, 3, 0.8)));
+//        points.add(new GeoPoint(null, new Point3D(1, 2, 3)));
+//        points.add(new GeoPoint(null, new Point3D(5, 3, 56.8)));
+//        points.add(new GeoPoint(null, new Point3D(10, 6, 0.8)));
+//        assertEquals("does not return the correct point", new Point3D(1, 2, 3), render.getClosestPoint(points).point);
 //    }
+
 }

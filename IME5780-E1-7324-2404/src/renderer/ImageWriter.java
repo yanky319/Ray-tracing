@@ -82,7 +82,7 @@ public class ImageWriter {
 			jpgWriteParam.setCompressionMode(ImageWriteParam.MODE_EXPLICIT);
 			jpgWriteParam.setCompressionQuality(1f);
 			jpgWriter.setOutput(new FileImageOutputStream(ouFile));
-			jpgWriter.write(null,new IIOImage(_image, null, null), jpgWriteParam);
+			jpgWriter.write(null ,new IIOImage(_image, null, null), jpgWriteParam);
 			//ImageIO.write(_image, "jpg", ouFile);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -99,5 +99,4 @@ public class ImageWriter {
 	public void writePixel(int xIndex, int yIndex, Color color){
 		_image.setRGB(xIndex, yIndex, color.getRGB());
 	}
-
 }

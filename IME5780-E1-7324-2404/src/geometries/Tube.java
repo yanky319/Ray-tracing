@@ -1,8 +1,6 @@
 package geometries;
 
-import primitives.Point3D;
-import primitives.Ray;
-import primitives.Vector;
+import primitives.*;
 
 
 /**
@@ -15,14 +13,42 @@ public class Tube extends Cylinder {
 
     /**
      * Tube constructor receiving Tube radius value and the Tube height.
+     * calls {@link geometries.Tube#Tube(Color, double, Ray, float)}.
      *
-     * @param _radius Tube radius
+     * @param radius Tube radius
      * @param height  Tube height
      * @param ray     Tube ray
      * @throws IllegalArgumentException In case of the height or radius argument is not greater than zero
      */
-    public Tube(double _radius, Ray ray, float height) throws IllegalArgumentException {
-        super(_radius, ray);
+    public Tube(double radius, Ray ray, float height) {
+        this(Color.BLACK, radius, ray, height);
+    }
+
+    /**
+     * Tube constructor receiving Tube radius value and the Tube height and emission light.
+     *
+     * @param emission Tubes emission light
+     * @param radius Tube radius
+     * @param height  Tube height
+     * @param ray     Tube ray
+     * @throws IllegalArgumentException In case of the height or radius argument is not greater than zero
+     */
+    public Tube(Color emission, double radius, Ray ray, float height) throws IllegalArgumentException {
+        this(new  Material(0,0,0) , emission, radius, ray, height);
+    }
+
+    /**
+     * Tube constructor receiving Tube radius value and the Tube height emission light and material.
+     *
+     * @param material Tubes material
+     * @param emission Tubes emission light
+     * @param radius Tube radius
+     * @param height  Tube height
+     * @param ray     Tube ray
+     * @throws IllegalArgumentException In case of the height or radius argument is not greater than zero
+     */
+    public Tube(Material material, Color emission, double radius, Ray ray, float height) throws IllegalArgumentException {
+        super(material, emission, radius, ray);
         if (height <= 0)
             throw new IllegalArgumentException("The Tube height must be greater than zero");
         _height = height;

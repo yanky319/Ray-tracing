@@ -1,6 +1,7 @@
 package unittests;
 
 import elements.Camera;
+import geometries.Geometries;
 import geometries.Plane;
 import geometries.Sphere;
 import geometries.Triangle;
@@ -10,7 +11,7 @@ import primitives.Ray;
 import primitives.Vector;
 import java.util.List;
 import static org.junit.Assert.*;
-
+import static geometries.Intersectable.GeoPoint;
 
 /**
  * Testing integration with Camera Class
@@ -28,7 +29,7 @@ public class CameraIntegrationTests {
         Camera cam2 = new Camera(new Point3D(0, 0, -0.5), new Vector(0, 0, 1), new Vector(0, -1, 0));
         Sphere sphere;
         Ray ray;
-        List<Point3D> intersections;
+        List<GeoPoint> intersections;
         int count;
 
         //TC01: sphere is in front of center of view plane
@@ -105,7 +106,7 @@ public class CameraIntegrationTests {
         Camera cam = new Camera(new Point3D(0, 0, -1), new Vector(0, 0, 1), new Vector(0, -1, 0));
         Triangle triangle;
         Ray ray;
-        List<Point3D> intersections;
+        List<GeoPoint> intersections;
         int count;
 
         //TC01: triangle only in front of the center of the view plane
@@ -142,7 +143,7 @@ public class CameraIntegrationTests {
         Camera cam = new Camera(new Point3D(0, 0, 0), new Vector(0, 0, 1), new Vector(0, -1, 0));
         Plane plane;
         Ray ray;
-        List<Point3D> intersections;
+        List<GeoPoint> intersections;
         int count;
 
 

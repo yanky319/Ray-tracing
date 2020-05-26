@@ -1,12 +1,49 @@
 package geometries;
 
+import primitives.Color;
+import primitives.Material;
 import primitives.Point3D;
 import primitives.Vector;
 
 /**
- * interface Geometry for Geometry objects.
+ * abstract class Geometry for Geometry objects
+ *
  */
-public interface Geometry extends Intersectable {
+public abstract class Geometry implements Intersectable {
+
+    protected Color _emission; // the color/light from the object
+    protected Material _material;  // the material of the object
+    //-------------- constructors -------------
+    /**
+     * default constructor that calls parameter constructor with black.
+     */
+    public Geometry()
+    {
+        this(new Material(0,0,0) ,Color.BLACK);
+    }
+
+
+    /**
+     * constructor for Geometry that sets the emission color of the object.
+     *
+     * @param emission the emission color
+     */
+    public Geometry (Color emission)
+    {
+        this(new Material(0,0,0) ,emission);
+    }
+
+    /**
+     * constructor for Geometry that sets the emission light and material of the object.
+     *
+     * @param material the material geometry
+     * @param emission the emission light
+     */
+    public Geometry (Material material ,Color emission)
+    {
+        _emission = new Color(emission);
+        _material = material;
+    }
 
     /**
      * calculates the unit vector that is orthogonal to the Tube in a given point.
@@ -14,5 +51,23 @@ public interface Geometry extends Intersectable {
      * @param point a given point
      * @return orthogonal unit vector
      */
-     Vector getNormal(Point3D point);
+    public abstract Vector getNormal(Point3D point);
+
+    /**
+     * getter for emission light of the geometry.
+     *
+     * @return emission light
+     */
+    public Color get_emission() {
+        return new Color(_emission);
+    }
+
+    /**
+     * getter for Material of the geometry.
+     *
+     * @return Material
+     */
+    public Material get_material() {
+        return _material;
+    }
 }

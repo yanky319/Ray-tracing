@@ -1,9 +1,9 @@
 package geometries;
 
-import primitives.Point3D;
-import primitives.Ray;
-import primitives.Vector;
+import primitives.*;
+
 import static primitives.Util.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,15 +16,40 @@ public class Triangle extends Polygon {
 
     /**
      * Triangle constructor receiving 3 points3D representing the Triangles vertices.
+     * calls {@link geometries.Triangle#Triangle(Color, Point3D, Point3D, Point3D)}.
      *
      * @param _po1 point3D
      * @param _po2 point3D
      * @param _po3 point3D
      */
     public Triangle(Point3D _po1, Point3D _po2, Point3D _po3) {
-        super(_po1, _po2, _po3);
+        this(Color.BLACK,_po1, _po2, _po3);
     }
 
+    /**
+     * Triangle constructor receiving 3 points3D representing the Triangles vertices and emission light.
+     *
+     * @param emission Triangles emission light
+     * @param _po1 point3D
+     * @param _po2 point3D
+     * @param _po3 point3D
+     */
+    public Triangle(Color emission, Point3D _po1, Point3D _po2, Point3D _po3) {
+        this(new Material(0,0,0), emission,_po1, _po2, _po3);
+    }
+
+    /**
+     * Triangle constructor receiving 3 points3D representing the Triangles vertices emission light and material.
+     *
+     * @param material Triangles material
+     * @param emission Triangles emission light
+     * @param _po1 point3D
+     * @param _po2 point3D
+     * @param _po3 point3D
+     */
+    public Triangle(Material material, Color emission, Point3D _po1, Point3D _po2, Point3D _po3) {
+        super(material, emission,_po1, _po2, _po3);
+    }
     //*********************************** Getters ***************
 
     /**
@@ -40,10 +65,10 @@ public class Triangle extends Polygon {
     //*********************************** functions ***************
 
     @Override
-    public List<Point3D> findIntersections(Ray ray) {
-      List<Point3D> planeResult =  _plane.findIntersections(ray);
-      if(planeResult == null)
-          return null;
+    public List<GeoPoint> findIntersections(Ray ray) {
+        List<GeoPoint> planeResult = _plane.findIntersections(ray);
+        if (planeResult == null)
+            return null;
         Vector v1 = _vertices.get(0).subtract(ray.get_p0()).normalize();
         Vector v2 = _vertices.get(1).subtract(ray.get_p0()).normalize();
         Vector v3 = _vertices.get(2).subtract(ray.get_p0()).normalize();
@@ -56,8 +81,10 @@ public class Triangle extends Polygon {
         double t2 = alignZero(ray.get_direction().dotProduct(n2));
         double t3 = alignZero(ray.get_direction().dotProduct(n3));
 
-        if(Math.signum(t1)==Math.signum(t2)&&Math.signum(t2)==Math.signum(t3))
+        if (Math.signum(t1) == Math.signum(t2) && Math.signum(t2) == Math.signum(t3)) {
+            planeResult.get(0).geometry = this;
             return planeResult;
+        }
         return null;
     }
 

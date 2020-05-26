@@ -9,6 +9,7 @@ import primitives.Vector;
 import java.util.List;
 
 import static org.junit.Assert.*;
+import static geometries.Intersectable.GeoPoint;
 
 /**
  * Unit tests for geometries.Geometries class
@@ -103,12 +104,13 @@ public class GeometriesTest {
                 , new Point3D(0, 1, 0), new Point3D(-1, 1, 1));
         Plane plane = new Plane(new Point3D(1, 1, 1), new Vector(1, -1, 1));
         Geometries geometries = new Geometries(sphere, triangle, polygon, plane);
+
         // ============ Equivalence Partitions Tests ==============
 
         // TC01: some of the elements in the group of geometries gets intersected
-        List<Point3D> result = geometries.findIntersections(new Ray(new Point3D(1.375, 0.7, 0.5), new Vector(-1.875, -0.2, -0.5)));
+        List<GeoPoint> result = geometries.findIntersections(new Ray(new Point3D(1.375, 0.7, 0.5), new Vector(-1.875, -0.2, -0.5)));
         assertEquals("Wrong Geometries findIntersections when Ray crosses some of the elements in the group (case 1)", 3, result.size());
-        List<Point3D> result2 = geometries.findIntersections(new Ray(new Point3D(1.375, 0.7, 0.5), new Vector(1.875, 0.2, 0.5)));
+        List<GeoPoint> result2 = geometries.findIntersections(new Ray(new Point3D(1.375, 0.7, 0.5), new Vector(1.875, 0.2, 0.5)));
         assertEquals("Wrong Geometries findIntersections when Ray crosses some of the elements in the group (case 2)", 2, result2.size());
 
         // =============== Boundary Values Tests ================

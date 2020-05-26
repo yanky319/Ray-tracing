@@ -8,6 +8,7 @@ import primitives.Vector;
 
 import java.util.List;
 
+import static geometries.Intersectable.GeoPoint;
 import static org.junit.Assert.*;
 import static primitives.Util.isZero;
 
@@ -63,7 +64,7 @@ public class TriangleTests {
 
         // TC01: Ray's line is inside Triangle (1 point)
         assertEquals("Wrong Triangle findIntersections when Ray's line is inside the Triangle",
-                    List.of(new Point3D(1.4,1.6,1.2)),
+                    List.of(new GeoPoint(triangle, new Point3D(1.4,1.6,1.2))),
                 triangle.findIntersections(new Ray(new Point3D(-1, 0, 0), new Vector(3,2,1.5))));
 
         // TC02: Ray's line is Outside against the edge of Triangle (0 points)

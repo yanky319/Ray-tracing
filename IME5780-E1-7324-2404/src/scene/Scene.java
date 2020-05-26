@@ -2,9 +2,13 @@ package scene;
 
 import elements.AmbientLight;
 import elements.Camera;
+import elements.LightSource;
 import geometries.Geometries;
 import geometries.Intersectable;
 import primitives.Color;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * class representing a scene that includes
@@ -14,6 +18,7 @@ public class Scene {
 
     private final String _name; // tha name of the scene
     private final Geometries _geometries; // list of Geometries in the scene
+    private final List<LightSource> _lights; // list of Light Sources in the scene
 
     private Color _background; // the background Color
     private AmbientLight _ambientLight; // the ambient light
@@ -24,13 +29,15 @@ public class Scene {
 
     /**
      * constructor for Scene
-     * sets the name of the Scene and an empty list of geometries.
+     * sets the name of the Scene a empty list of geometries
+     * and an empty list of Light Sources.
      *
      * @param name the name of the Scene
      */
     public Scene(String name) {
         _name = name;
         _geometries = new Geometries();
+        _lights = new LinkedList<>();
     }
 
 //--------------- getters -----------------
@@ -51,6 +58,15 @@ public class Scene {
      */
     public Geometries get_geometries() {
         return _geometries;
+    }
+
+    /**
+     * getter for the list of Light Sources in the Scene.
+     *
+     * @return the Light Sources
+     */
+    public List<LightSource> get_lights() {
+        return _lights;
     }
 
     /**
@@ -136,4 +152,16 @@ public class Scene {
     public void addGeometries(Intersectable... geometries) {
         _geometries.add(geometries);
     }
+
+    /**
+     * function for adding one or more Light Sources to the scene.
+     *
+     * @param lights some Light Sources
+     */
+    public void addLights(LightSource... lights) {
+        for (LightSource l:lights) {
+            _lights.add(l);
+        }
+    }
 }
+

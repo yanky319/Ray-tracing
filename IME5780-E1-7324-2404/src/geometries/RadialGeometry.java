@@ -1,25 +1,51 @@
 package geometries;
 
 
+import primitives.Color;
+import primitives.Material;
+
 /**
  * abstract Class RadialGeometry representing a Radial Geometry objects.
  */
-public abstract class RadialGeometry implements Geometry {
+public abstract class RadialGeometry extends Geometry {
     protected double _radius;
 
     //*********************************** constructors ***************
 
+    /**
+     * RadialGeometry constructor receiving radius value.
+     *
+     * @param radius radius value
+     * @throws IllegalArgumentException In case of the height argument is not greater than zero
+     */
+    public RadialGeometry(double radius){
+        this(Color.BLACK, radius);
+    }
 
     /**
      * RadialGeometry constructor receiving radius value.
      *
-     * @param _radius radius value
+     *  @param emission RadialGeometry's emission light
+     * @param radius radius value
      * @throws IllegalArgumentException In case of the height argument is not greater than zero
      */
-    public RadialGeometry(double _radius) throws IllegalArgumentException {
-        if (_radius <= 0)
+    public RadialGeometry(Color emission, double radius) throws IllegalArgumentException {
+      this(new Material(0,0,0), emission, radius);
+    }
+
+    /**
+     * RadialGeometry constructor receiving radius value.
+     *
+     * @param material RadialGeometry's material
+     * @param emission RadialGeometry's emission light
+     * @param radius radius value
+     * @throws IllegalArgumentException In case of the height argument is not greater than zero
+     */
+    public RadialGeometry(Material material, Color emission, double radius) throws IllegalArgumentException {
+        super(material, emission);
+        if (radius <= 0)
             throw new IllegalArgumentException("The radius must be greater than zero");
-        this._radius = _radius;
+        this._radius = radius;
     }
 
     /**

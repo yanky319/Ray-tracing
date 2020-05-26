@@ -1,5 +1,6 @@
 package unittests;
 
+import static geometries.Intersectable.GeoPoint;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -11,13 +12,13 @@ import java.util.List;
 
 /**
  * Testing Polygons
+ *
  * @author Dan
  */
 public class PolygonTests {
 
     /**
-     * Test method for
-     * {@link geometries.Polygon#Polygon(Point3D... vertices)}.
+     * Test method for{@link geometries.Polygon#Polygon(Point3D... vertices)}.
      */
     @Test
     public void testConstructor() {
@@ -107,28 +108,28 @@ public class PolygonTests {
 
         // TC01: Ray's line is inside Polygon (1 point)
         assertEquals("Wrong Polygon findIntersections when Ray's line is inside the Polygon",
-                List.of(new Point3D(1.7,1.5,0.8)),
-                polygon.findIntersections(new Ray(new Point3D(1,2,0), new Vector(1.75,-1.25,2))));
+                List.of(new GeoPoint(polygon, new Point3D(1.7, 1.5, 0.8))),
+                polygon.findIntersections(new Ray(new Point3D(1, 2, 0), new Vector(1.75, -1.25, 2))));
 
         // TC02: Ray's line is Outside against the edge of Polygon (0 points)
         assertEquals("Wrong Polygon findIntersections when Ray is Outside against the edge of Polygon", null,
-                polygon.findIntersections(new Ray(new Point3D(1,2,0), new Vector(0.7,-2.3,1))));
+                polygon.findIntersections(new Ray(new Point3D(1, 2, 0), new Vector(0.7, -2.3, 1))));
 
         // TC03: Ray's line is Outside against the vertex of Polygon (0 points)
         assertEquals("Wrong Polygon findIntersections when Ray is Outside against the vertex of Polygon", null,
-                polygon.findIntersections(new Ray(new Point3D(1,2,0), new Vector(-0.5,-1.4,1))));
+                polygon.findIntersections(new Ray(new Point3D(1, 2, 0), new Vector(-0.5, -1.4, 1))));
 
         // =============== Boundary Values Tests ================
 
         // TC11: Ray starts before the plane and goes through the edge of the Polygon (0 points)
         assertEquals("Wrong Polygon findIntersections when Ray goes through the edge of the Polygon", null,
-                polygon.findIntersections(new Ray(new Point3D(1,2,0), new Vector(0.5,-1,0.5))));
+                polygon.findIntersections(new Ray(new Point3D(1, 2, 0), new Vector(0.5, -1, 0.5))));
         // TC12: Ray starts before the plane and goes through vertex (0 points)
         assertEquals("Wrong Polygon findIntersections when Ray goes through the vertex of the Polygon", null,
-                polygon.findIntersections(new Ray(new Point3D(1,2,0), new Vector(1, 2,0))));
+                polygon.findIntersections(new Ray(new Point3D(1, 2, 0), new Vector(1, 2, 0))));
         // TC13: Ray starts before the plane and goes through vertex (0 points)
         assertEquals("Wrong Polygon findIntersections when Ray goes through continuation of the Polygon edge's", null,
-                polygon.findIntersections(new Ray(new Point3D(1, 2, 0), new Vector(-1,-1,2))));
+                polygon.findIntersections(new Ray(new Point3D(1, 2, 0), new Vector(-1, -1, 2))));
 
     }
 }

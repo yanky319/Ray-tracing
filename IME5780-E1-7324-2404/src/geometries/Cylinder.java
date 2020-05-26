@@ -1,9 +1,9 @@
 package geometries;
 
-import primitives.Point3D;
-import primitives.Ray;
-import primitives.Vector;
+import primitives.*;
+import primitives.Color;
 
+import java.awt.*;
 import java.util.List;
 
 
@@ -18,13 +18,38 @@ public class Cylinder extends RadialGeometry {
     /**
      * Cylinder constructor receiving the radius and the axis ray.
      *
-     * @param _radius Cylinder radius
+     * @param radius Cylinder radius
      * @param ray     Cylinder axis ray
      * @throws NullPointerException     In case of the Ray argument is null
      * @throws IllegalArgumentException In case of the radius argument is not greater than zero
      */
-    public Cylinder(double _radius, Ray ray) throws NullPointerException, IllegalArgumentException {
-        super(_radius);
+    public Cylinder(double radius, Ray ray){this(Color.BLACK, radius, ray);}
+
+    /**
+     * Cylinder constructor receiving the radius and the axis ray and emission light.
+     *
+     * @param emission Cylinders emission light
+     * @param radius Cylinder radius
+     * @param ray     Cylinder axis ray
+     * @throws NullPointerException     In case of the Ray argument is null
+     * @throws IllegalArgumentException In case of the radius argument is not greater than zero
+     */
+    public Cylinder(Color emission, double radius, Ray ray) throws NullPointerException, IllegalArgumentException {
+       this(new Material(0,0,0), emission, radius, ray);
+    }
+
+    /**
+     * Cylinder constructor receiving the radius and the axis rays emission light and material.
+     *
+     * @param material Cylinders material
+     * @param emission Cylinders emission light
+     * @param radius Cylinder radius
+     * @param ray     Cylinder axis ray
+     * @throws NullPointerException     In case of the Ray argument is null
+     * @throws IllegalArgumentException In case of the radius argument is not greater than zero
+     */
+    public Cylinder(Material material, Color emission, double radius, Ray ray) throws NullPointerException, IllegalArgumentException {
+        super(material, emission, radius);
         if (ray == null)
             throw new NullPointerException("ERROR Ray arguments is NULL");
         this._axisRay = new Ray(ray);
@@ -51,7 +76,7 @@ public class Cylinder extends RadialGeometry {
     }
 
     @Override
-    public List<Point3D> findIntersections(Ray ray) {
+    public List<GeoPoint> findIntersections(Ray ray) {
         return null;
     }
 
