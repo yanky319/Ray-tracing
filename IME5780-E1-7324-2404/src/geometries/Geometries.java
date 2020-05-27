@@ -12,7 +12,8 @@ import java.util.List;
  */
 public class Geometries implements Intersectable {
 
-    private List<Intersectable> intersectables; // a list of intersectable geometries
+    /**a list of intersectable geometries*/
+    private List<Intersectable> intersectables;
 
     //*********************************** constructor ***************
 

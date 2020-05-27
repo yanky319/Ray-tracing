@@ -52,6 +52,7 @@ public class Polygon extends Geometry {
     /**
      * Polygon constructor based on vertices list. The list must be ordered by edge
      * path. The polygon must be convex.
+     * calls {@link geometries.Polygon#Polygon(Material, Color emission, Point3D... vertices)}.
      *
      * @param emission Polygons emission light
      * @param vertices list of vertices according to their order by edge path
@@ -78,6 +79,7 @@ public class Polygon extends Geometry {
     /**
      * Polygon constructor based on vertices list. The list must be ordered by edge
      * path. The polygon must be convex.
+     * calls {@link geometries.Geometry#Geometry(Material, Color)}.
      *
      * @param material Polygons material
      * @param emission Polygons emission light
@@ -138,6 +140,7 @@ public class Polygon extends Geometry {
         }
     }
 
+    // ------------------------ Override functions ---------------------
 
     @Override
     public Vector getNormal(Point3D point) {

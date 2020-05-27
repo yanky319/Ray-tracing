@@ -6,6 +6,9 @@ import java.util.Objects;
  * Class Vector representing a Vector in 3D.
  */
 public class Vector {
+    /**
+     * point of the head of the vector
+     */
     protected Point3D _head;
 
     //*********************************** constructors ***************
@@ -13,14 +16,14 @@ public class Vector {
     /**
      * Vector constructor receiving coordinates representing the head of the Vector.
      *
-     * @param _x coordinate
-     * @param _y coordinate
-     * @param _z coordinate
+     * @param x coordinate
+     * @param y coordinate
+     * @param z coordinate
      * @throws NullPointerException     In case of one of the coordinates is null
      * @throws IllegalArgumentException In case of all the coordinates values are zero
      */
-    public Vector(Coordinate _x, Coordinate _y, Coordinate _z) throws NullPointerException, IllegalArgumentException {
-        Point3D p = new Point3D(_x, _y, _z);
+    public Vector(Coordinate x, Coordinate y, Coordinate z) throws NullPointerException, IllegalArgumentException {
+        Point3D p = new Point3D(x, y, z);
         if (p.equals(Point3D.ZERO))
             throw new IllegalArgumentException("ERROR zero vector is Illegal");
         this._head = p;
@@ -29,13 +32,13 @@ public class Vector {
     /**
      * Vector constructor receiving coordinate values representing the head of the Vector.
      *
-     * @param _x coordinate value
-     * @param _y coordinate value
-     * @param _z coordinate value
+     * @param x coordinate value
+     * @param y coordinate value
+     * @param z coordinate value
      * @throws IllegalArgumentException In case of all the values are zero
      */
-    public Vector(double _x, double _y, double _z) throws IllegalArgumentException {
-        Point3D p = new Point3D(_x, _y, _z);
+    public Vector(double x, double y, double z) throws IllegalArgumentException {
+        Point3D p = new Point3D(x, y, z);
         if (p.equals(Point3D.ZERO))
             throw new IllegalArgumentException("ERROR zero vector is Illegal");
         this._head = p;

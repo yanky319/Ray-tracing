@@ -8,16 +8,28 @@ import primitives.Vector;
  * a light source that lightens in 360 degrees
  */
 public class PointLight extends Light implements LightSource {
-
-    protected Point3D _position; // the position of the light source
-    protected double _kC;       // constant attenuation coefficient
-    protected double _kL;      // Linear attenuation coefficient
-    protected double _kQ;      // quadrant attenuation coefficient
+    /**
+     * the position of the light source
+     */
+    protected Point3D _position;
+    /**
+     * constant attenuation coefficient
+     */
+    protected double _kC;
+    /**
+     * Linear attenuation coefficient
+     */
+    protected double _kL;
+    /**
+     * quadrant attenuation coefficient
+     */
+    protected double _kQ;
 
     //------------- constructor --------------------
 
     /**
      * constructor for point light class.
+     * calls {@link elements.Light#Light(Color)} with the intensity
      *
      * @param intensity color of the light
      * @param position  position of the light source

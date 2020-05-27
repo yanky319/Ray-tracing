@@ -11,40 +11,48 @@ import java.util.List;
  * class Cylinder representing a Cylinder in 3D.
  */
 public class Cylinder extends RadialGeometry {
+    /**
+     * the axis of the Cylinder.
+     */
     protected final Ray _axisRay;
 
     //*********************************** constructor ***************
 
     /**
      * Cylinder constructor receiving the radius and the axis ray.
+     * calls {@link geometries.Cylinder#Cylinder(Color, double, Ray)}.
      *
      * @param radius Cylinder radius
-     * @param ray     Cylinder axis ray
+     * @param ray    Cylinder axis ray
      * @throws NullPointerException     In case of the Ray argument is null
      * @throws IllegalArgumentException In case of the radius argument is not greater than zero
      */
-    public Cylinder(double radius, Ray ray){this(Color.BLACK, radius, ray);}
+    public Cylinder(double radius, Ray ray) {
+        this(Color.BLACK, radius, ray);
+    }
 
     /**
      * Cylinder constructor receiving the radius and the axis ray and emission light.
+     * calls {@link geometries.Cylinder#Cylinder(Material, Color, double, Ray)}.
      *
      * @param emission Cylinders emission light
-     * @param radius Cylinder radius
-     * @param ray     Cylinder axis ray
+     * @param radius   Cylinder radius
+     * @param ray      Cylinder axis ray
      * @throws NullPointerException     In case of the Ray argument is null
      * @throws IllegalArgumentException In case of the radius argument is not greater than zero
      */
     public Cylinder(Color emission, double radius, Ray ray) throws NullPointerException, IllegalArgumentException {
-       this(new Material(0,0,0), emission, radius, ray);
+        this(new Material(0, 0, 0), emission, radius, ray);
     }
 
     /**
      * Cylinder constructor receiving the radius and the axis rays emission light and material.
+     * calls {@link geometries.Cylinder#Cylinder(Color, double, Ray)}.
      *
      * @param material Cylinders material
      * @param emission Cylinders emission light
-     * @param radius Cylinder radius
-     * @param ray     Cylinder axis ray
+     * @param radius   Cylinder radius
+     * @param ray      Cylinder axis ray
      * @throws NullPointerException     In case of the Ray argument is null
      * @throws IllegalArgumentException In case of the radius argument is not greater than zero
      */

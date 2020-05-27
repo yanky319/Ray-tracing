@@ -18,37 +18,39 @@ public class Triangle extends Polygon {
      * Triangle constructor receiving 3 points3D representing the Triangles vertices.
      * calls {@link geometries.Triangle#Triangle(Color, Point3D, Point3D, Point3D)}.
      *
-     * @param _po1 point3D
-     * @param _po2 point3D
-     * @param _po3 point3D
+     * @param po1 point3D
+     * @param po2 point3D
+     * @param po3 point3D
      */
-    public Triangle(Point3D _po1, Point3D _po2, Point3D _po3) {
-        this(Color.BLACK,_po1, _po2, _po3);
+    public Triangle(Point3D po1, Point3D po2, Point3D po3) {
+        this(Color.BLACK, po1, po2, po3);
     }
 
     /**
      * Triangle constructor receiving 3 points3D representing the Triangles vertices and emission light.
+     * calls {@link geometries.Triangle#Triangle(Material, Color, Point3D, Point3D, Point3D)}.
      *
      * @param emission Triangles emission light
-     * @param _po1 point3D
-     * @param _po2 point3D
-     * @param _po3 point3D
+     * @param po1      point3D
+     * @param po2      point3D
+     * @param po3      point3D
      */
-    public Triangle(Color emission, Point3D _po1, Point3D _po2, Point3D _po3) {
-        this(new Material(0,0,0), emission,_po1, _po2, _po3);
+    public Triangle(Color emission, Point3D po1, Point3D po2, Point3D po3) {
+        this(new Material(0, 0, 0), emission, po1, po2, po3);
     }
 
     /**
      * Triangle constructor receiving 3 points3D representing the Triangles vertices emission light and material.
+     * calls {@link geometries.Polygon#Polygon(Material, Color, Point3D...)}.
      *
      * @param material Triangles material
      * @param emission Triangles emission light
-     * @param _po1 point3D
-     * @param _po2 point3D
-     * @param _po3 point3D
+     * @param po1      point3D
+     * @param po2      point3D
+     * @param po3      point3D
      */
-    public Triangle(Material material, Color emission, Point3D _po1, Point3D _po2, Point3D _po3) {
-        super(material, emission,_po1, _po2, _po3);
+    public Triangle(Material material, Color emission, Point3D po1, Point3D po2, Point3D po3) {
+        super(material, emission, po1, po2, po3);
     }
     //*********************************** Getters ***************
 

@@ -6,7 +6,10 @@ import primitives.Color;
  * abstract class representing Light's.
  */
 abstract class Light {
-    protected Color _intensity; // the Light intensity
+    /**
+     * the Light intensity
+     */
+    protected Color _intensity;
 
     //---------------- constructor -------------------
 
@@ -15,7 +18,7 @@ abstract class Light {
      *
      * @param intensity the Light intensity
      */
-    public Light(Color intensity){
+    public Light(Color intensity) {
         this._intensity = new Color(intensity);
     }
 
@@ -26,5 +29,7 @@ abstract class Light {
      *
      * @return Light intensity
      */
-    public Color get_intensity(){return new Color(this._intensity);}
+    public Color get_intensity() {
+        return new Color(this._intensity);
+    }
 }

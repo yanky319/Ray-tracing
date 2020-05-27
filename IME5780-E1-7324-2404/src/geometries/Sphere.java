@@ -12,6 +12,9 @@ import java.util.List;
  * class Sphere representing a Sphere in 3D
  */
 public class Sphere extends RadialGeometry {
+    /**
+     * the center of the sphere
+     */
     private final Point3D _center;
 
     //*********************************** constructor ***************
@@ -31,6 +34,7 @@ public class Sphere extends RadialGeometry {
 
     /**
      * Sphere constructor receiving Sphere radius value and the Sphere Center point and emission light.
+     * calls {@link geometries.Sphere#Sphere(Material, Color, double, Point3D)}.
      *
      * @param emission Spheres emission light
      * @param radius Sphere radius value
@@ -44,6 +48,7 @@ public class Sphere extends RadialGeometry {
 
     /**
      * Sphere constructor receiving Sphere radius value and the Sphere Center point and emission light.
+     * calls {@link geometries.RadialGeometry#RadialGeometry(Material, Color, double)}.
      *
      * @param material Spheres material
      * @param emission Spheres emission light
@@ -69,6 +74,7 @@ public class Sphere extends RadialGeometry {
         return new Point3D(_center);
     }
 
+    //------------ Override functions -----------------------
 
     @Override
     public Vector getNormal(Point3D point) {
@@ -100,7 +106,6 @@ public class Sphere extends RadialGeometry {
     }
 
     //******************** Admin ****************
-
 
     @Override
     public String toString() {

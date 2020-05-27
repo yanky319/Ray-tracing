@@ -12,6 +12,7 @@ import primitives.Color;
 
 import static java.lang.System.out;
 import static primitives.Util.*;
+
 import java.awt.*;
 import java.io.PipedOutputStream;
 import java.util.List;
@@ -20,21 +21,26 @@ import java.util.List;
  * class for Creating the color matrix from the scene for the image.
  */
 public class Render {
-
-    private ImageWriter _imageWriter; // Object of image Writer
-    private Scene _scene; // the scene to be Rendered
+    /**
+     * Object of image Writer for writing the image
+     */
+    private ImageWriter _imageWriter;
+    /**
+     * the scene to be Rendered
+     */
+    private Scene _scene;
 
     // ------------------- constructor -----------
 
     /**
      * constructor for class Render.
      *
-     * @param _imageWriter // instance of image Writer
-     * @param _scene       // the scene
+     * @param imageWriter  instance of image Writer
+     * @param scene        the scene
      */
-    public Render(ImageWriter _imageWriter, Scene _scene) {
-        this._imageWriter = _imageWriter;
-        this._scene = _scene;
+    public Render(ImageWriter imageWriter, Scene scene) {
+        this._imageWriter = imageWriter;
+        this._scene = scene;
     }
 
     //--------------- functions -----------------
@@ -110,18 +116,16 @@ public class Render {
         double kd = geoPoint.geometry.get_material().get_kD();
         double ks = geoPoint.geometry.get_material().get_kS();
         int nShininess = geoPoint.geometry.get_material().get_nShininess();
-        for (LightSource light : lightSources)
-        {
-                Vector l = light.getL(p); //vector from light source to the point
-                double nl = alignZero(n.dotProduct(l));
-                double nv = alignZero(n.dotProduct(v));
-                if(Math.signum(nl) == Math.signum(nv))
-                {
-                    Color li = light.getIntensity(p);
-                    color = color.add(
-                            calcDiffusive(kd, nl, li),
-                            calcSpecular(ks, l, n, nl, v, nShininess, li));
-                }
+        for (LightSource light : lightSources) {
+            Vector l = light.getL(p); //vector from light source to the point
+            double nl = alignZero(n.dotProduct(l));
+            double nv = alignZero(n.dotProduct(v));
+            if (Math.signum(nl) == Math.signum(nv)) {
+                Color li = light.getIntensity(p);
+                color = color.add(
+                        calcDiffusive(kd, nl, li),
+                        calcSpecular(ks, l, n, nl, v, nShininess, li));
+            }
         }
         return color;
     }
@@ -129,37 +133,35 @@ public class Render {
     /**
      * calculates the specular part of the reflection of light.
      *
-     * @param ks specular coefficient
-     * @param l vector from light source to the point
-     * @param n normal vector from geometry at the point
-     * @param nl dot product between the 2 vectors
-     * @param v vector from camera to the point
+     * @param ks         specular coefficient
+     * @param l          vector from light source to the point
+     * @param n          normal vector from geometry at the point
+     * @param nl         dot product between the 2 vectors
+     * @param v          vector from camera to the point
      * @param nShininess strength of Shininess
-     * @param li the light that hits the geometry at the point
+     * @param li         the light that hits the geometry at the point
      * @return specular reflection of light
      */
     private Color calcSpecular(double ks, Vector l, Vector n, double nl, Vector v, int nShininess, Color li) {
         Vector r = new Vector(l);
-        if(!isZero(nl))
-            r = r.subtract(n.scale(2*nl));
+        if (!isZero(nl))
+            r = r.subtract(n.scale(2 * nl));
         double vr = v.scale(-1).dotProduct(r);
-        return li.scale(ks * Math.pow(Math.max(0,vr),nShininess));
+        return li.scale(ks * Math.pow(Math.max(0, vr), nShininess));
     }
 
     /**
      * calculates the diffuse part of the reflection of light.
      *
      * @param kd diffuse coefficient
-     * @param nl  dot product between vector from light source to the point
-     *            and normal vector from geometry at the point
+     * @param nl dot product between vector from light source to the point
+     *           and normal vector from geometry at the point
      * @param li the light that hits the geometry at the point
      * @return diffuse reflection of light
      */
     private Color calcDiffusive(double kd, double nl, Color li) {
         return li.scale(Math.abs(kd * nl));
     }
-
-
 
 
     /**
@@ -180,6 +182,7 @@ public class Render {
 
     /**
      * writes the pixels to the image file and saves it.
+     * calls {@link ImageWriter#writeToImage()}.
      */
     public void writeToImage() {
         _imageWriter.writeToImage(); // pass on the job to the imageWriter

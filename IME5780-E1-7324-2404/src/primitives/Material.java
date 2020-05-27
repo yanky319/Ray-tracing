@@ -7,23 +7,32 @@ import java.util.Objects;
  * using parameters of light reflection types from the surface
  */
 public class Material {
-    double _kD;      // diffuse coefficient
-    double _kS;      // specular coefficient
-    int _nShininess; // strength of Shininess
+    /**
+     * diffuse coefficient
+     */
+    double _kD;
+    /**
+     * specular coefficient
+     */
+    double _kS;
+    /**
+     * strength of Shininess
+     */
+    int _nShininess;
 
     //------------ constructor ----------------
 
     /**
      * constructor for class Material.
      *
-     * @param _kD  diffuse coefficient
-     * @param _kS  specular coefficient
-     * @param _nShininess strength of Shininess
+     * @param kD         diffuse coefficient
+     * @param kS         specular coefficient
+     * @param nShininess strength of Shininess
      */
-    public Material(double _kD, double _kS, int _nShininess) {
-        this._kD = _kD;
-        this._kS = _kS;
-        this._nShininess = _nShininess;
+    public Material(double kD, double kS, int nShininess) {
+        this._kD = kD;
+        this._kS = kS;
+        this._nShininess = nShininess;
     }
 
     // ---------------- getters ---------

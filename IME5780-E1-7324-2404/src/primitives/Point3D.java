@@ -7,9 +7,22 @@ import java.util.Objects;
  * Class Point3D representing a Point in 3D.
  */
 public class Point3D {
+    /**
+     * Coordinate on x axis.
+     */
     protected Coordinate _x;
+    /**
+     * Coordinate on y axis.
+     */
     protected Coordinate _y;
+    /**
+     * Coordinate on z axis.
+     */
     protected Coordinate _z;
+
+    /**
+     * static point that is the beginning of the axises
+     */
     public final static Point3D ZERO = new Point3D(0, 0, 0);
 
     //*********************************** constructors ***************
@@ -17,31 +30,31 @@ public class Point3D {
     /**
      * Point3D constructor receiving coordinates.
      *
-     * @param _x coordinate
-     * @param _y coordinate
-     * @param _z coordinate
+     * @param x coordinate on x axis
+     * @param y coordinate on y axis
+     * @param z coordinate on z axis
      * @throws NullPointerException In case of one of the coordinates is null
      */
-    public Point3D(Coordinate _x, Coordinate _y, Coordinate _z) throws NullPointerException {
-        if (_x == null || _y == null || _z == null) {
+    public Point3D(Coordinate x, Coordinate y, Coordinate z) throws NullPointerException {
+        if (x == null || y == null || z == null) {
             throw new NullPointerException("ERROR One or more of the arguments is NULL");
         }
-        this._x = new Coordinate(_x);
-        this._y = new Coordinate(_y);
-        this._z = new Coordinate(_z);
+        this._x = new Coordinate(x);
+        this._y = new Coordinate(y);
+        this._z = new Coordinate(z);
     }
 
     /**
      * Point3D constructor receiving a coordinate values.
      *
-     * @param _x coordinate value
-     * @param _y coordinate value
-     * @param _z coordinate value
+     * @param x value of coordinate on x axis
+     * @param y value of coordinate on y axis
+     * @param z value of coordinate on z axis
      */
-    public Point3D(double _x, double _y, double _z) {
-        this._x = new Coordinate(_x);
-        this._y = new Coordinate(_y);
-        this._z = new Coordinate(_z);
+    public Point3D(double x, double y, double z) {
+        this._x = new Coordinate(x);
+        this._y = new Coordinate(y);
+        this._z = new Coordinate(z);
     }
 
     /**
@@ -156,9 +169,9 @@ public class Point3D {
 
     @Override
     public String toString() {
-        return "("+ _x +
+        return "(" + _x +
                 "," + _y +
-                "," + _z +")";
+                "," + _z + ")";
     }
 
     @Override

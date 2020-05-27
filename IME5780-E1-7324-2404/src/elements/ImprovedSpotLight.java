@@ -11,11 +11,17 @@ import static primitives.Util.alignZero;
  * a light source that lightens in less then 180 degrees by concentrating the light beams.
  */
 public class ImprovedSpotLight extends SpotLight {
-    private int _concentration; // defines the light beam concentration
+
+    /**
+     * defines the light beam concentration towards the center
+     */
+    private int _concentration;
     //--------------- constructor ------------
 
     /**
      * constructor for Improved Spot light class.
+     * calls {@link elements.SpotLight#SpotLight(Color, Point3D, Vector, double, double, double)}
+     * with all parameters except for concentration.
      *
      * @param intensity     color of the light
      * @param position      position of the light source

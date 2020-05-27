@@ -9,12 +9,16 @@ import primitives.Vector;
  * and all light beams from it arr close enough as parallel
  */
 public class DirectionalLight extends Light implements LightSource {
-    private Vector _direction; // the direction of light beams from the source
+    /**
+     * the direction of the light beams from the source
+     */
+    private Vector _direction;
 
     //---------------- constructor -----------------------
 
     /**
      * constructor for DirectionalLight class.
+     * calls {@link elements.Light#Light(Color)} with the intensity
      *
      * @param intensity the color of the light
      * @param direction the direction of the light beams
@@ -32,5 +36,7 @@ public class DirectionalLight extends Light implements LightSource {
     }
 
     @Override
-    public Vector getL(Point3D p) { return new Vector(_direction); }
+    public Vector getL(Point3D p) {
+        return new Vector(_direction);
+    }
 }

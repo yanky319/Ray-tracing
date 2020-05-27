@@ -6,7 +6,13 @@ import java.util.Objects;
  * class Ray representing a ray from a point in a specific direction.
  */
 public class Ray {
+    /**
+     * start point of the ray
+     */
     private final Point3D _p0;
+    /**
+     * the direction vector of the ray
+     */
     private final Vector _direction;
 
 
@@ -15,15 +21,15 @@ public class Ray {
     /**
      * Ray constructor receiving Point3D representing the start of the Ray and Vector representing the direction.
      *
-     * @param _p0  Point3D representing the start of the Ray
-     * @param _dir Vector representing the direction
+     * @param p0  Point3D representing the start of the Ray
+     * @param dir Vector representing the direction
      * @throws NullPointerException In case of one of the Arguments is null
      */
-    public Ray(Point3D _p0, Vector _dir) throws NullPointerException {
-        if (_p0 == null || _dir == null)
+    public Ray(Point3D p0, Vector dir) throws NullPointerException {
+        if (p0 == null || dir == null)
             throw new NullPointerException("ERROR One or more of the arguments is NULL");
-        this._p0 = new Point3D(_p0);
-        this._direction = new Vector(_dir).normalize();
+        this._p0 = new Point3D(p0);
+        this._direction = new Vector(dir).normalize();
     }
 
     /**

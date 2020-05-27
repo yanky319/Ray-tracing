@@ -7,43 +7,51 @@ import primitives.Vector;
 
 /**
  * abstract class Geometry for Geometry objects
- *
  */
 public abstract class Geometry implements Intersectable {
 
-    protected Color _emission; // the color/light from the object
-    protected Material _material;  // the material of the object
+    /**
+     * the color/light from the object
+     */
+    protected Color _emission;
+    /**
+     * the material of the object
+     */
+    protected Material _material;
+
     //-------------- constructors -------------
+
     /**
      * default constructor that calls parameter constructor with black.
+     * calls {@link geometries.Geometry#Geometry(Material, Color)}.
      */
-    public Geometry()
-    {
-        this(new Material(0,0,0) ,Color.BLACK);
+    public Geometry() {
+        this(new Material(0, 0, 0), Color.BLACK);
     }
 
 
     /**
      * constructor for Geometry that sets the emission color of the object.
+     * calls {@link geometries.Geometry#Geometry(Material, Color)}.
      *
-     * @param emission the emission color
+     * @param emission the emission light of the geometry
      */
-    public Geometry (Color emission)
-    {
-        this(new Material(0,0,0) ,emission);
+    public Geometry(Color emission) {
+        this(new Material(0, 0, 0), emission);
     }
 
     /**
      * constructor for Geometry that sets the emission light and material of the object.
      *
-     * @param material the material geometry
-     * @param emission the emission light
+     * @param material the material of the geometry
+     * @param emission the emission light of the geometry
      */
-    public Geometry (Material material ,Color emission)
-    {
+    public Geometry(Material material, Color emission) {
         _emission = new Color(emission);
         _material = material;
     }
+
+    // ------------------ getters ---------------------------
 
     /**
      * calculates the unit vector that is orthogonal to the Tube in a given point.

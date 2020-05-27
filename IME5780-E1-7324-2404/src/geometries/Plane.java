@@ -8,73 +8,112 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * class Plane representing a Plane in 3D.
+ * class Plane representing a Plane in 3D with a point and normal vector.
  */
 public class Plane extends Geometry {
+    /**
+     * a point on the Plane.
+     */
     protected Point3D _po;
+    /**
+     * a vector normal to the Plane.
+     */
     protected Vector _normal;
 
     //*********************************** constructors ***************
 
     /**
      * Plane constructor receiving a point on the plane and a vector perpendicular to the plane.
+     * calls {@link geometries.Plane#Plane(Color, Point3D, Vector)}.
      *
-     * @param _po     a point on the plane
-     * @param _normal a vector perpendicular to the plane
+     * @param po     a point on the plane
+     * @param normal a vector perpendicular to the plane
      * @throws NullPointerException In case of one of the arguments is null
      */
-    public Plane(Point3D _po, Vector _normal) throws NullPointerException {
+    public Plane(Point3D po, Vector normal) throws NullPointerException {
+        this(Color.BLACK, po, normal);
+    }
+
+    /**
+     * Plane constructor receiving a point on the plane and a vector perpendicular to the plane.
+     *calls {@link geometries.Plane#Plane(Material, Color, Point3D, Vector)}.
+     *
+     * @param emission Planes emission light
+     * @param po       a point on the plane
+     * @param normal   a vector perpendicular to the plane
+     * @throws NullPointerException In case of one of the arguments is null
+     */
+    public Plane(Color emission, Point3D po, Vector normal) throws NullPointerException {
+        this(new Material(0, 0, 0), emission, po, normal);
+    }
+
+    /**
+     * Plane constructor receiving a point on the plane and a vector perpendicular to the plane.
+     * calls {@link geometries.Geometry#Geometry(Material, Color)}.
+     *
+     * @param material Planes material
+     * @param emission Planes emission light
+     * @param po       a point on the plane
+     * @param normal   a vector perpendicular to the plane
+     * @throws NullPointerException In case of one of the arguments is null
+     */
+    public Plane(Material material, Color emission, Point3D po, Vector normal) throws NullPointerException {
+        super(material, emission);
         if (_po == null || _normal == null)
             throw new NullPointerException("ERROR One or more of the arguments is NULL");
         this._po = new Point3D(_po);
         this._normal = new Vector(_normal);
     }
-/**
- * Plane constructor receiving 3 points on the plane.
- * calls {@link geometries.Plane#Plane(Color emission, Point3D _po1, Point3D _po2, Point3D _po3)}.
- *
- * @param _po1 point1
- * @param _po2 point2
- * @param _po3 point3
- * @throws NullPointerException     In case of one of the arguments is null
- * @throws IllegalArgumentException In case of normal vector is (0,0,0)
- */
-public Plane(Point3D _po1, Point3D _po2, Point3D _po3)  {
-    this( Color.BLACK, _po1, _po2, _po3);
-}
+
 
     /**
-     * Plane constructor receiving 3 points on the plane and emission light.
+     * Plane constructor receiving 3 points on the plane.
+     * calls {@link geometries.Plane#Plane(Color emission, Point3D _po1, Point3D _po2, Point3D _po3)}.
      *
-     * @param emission Planes emission light
-     * @param _po1 point1
-     * @param _po2 point2
-     * @param _po3 point3
+     * @param po1 point1
+     * @param po2 point2
+     * @param po3 point3
      * @throws NullPointerException     In case of one of the arguments is null
      * @throws IllegalArgumentException In case of normal vector is (0,0,0)
      */
-    public Plane(Color emission, Point3D _po1, Point3D _po2, Point3D _po3) throws NullPointerException, IllegalArgumentException {
-        this(new Material(0,0,0), emission, _po1, _po2,  _po3);
+    public Plane(Point3D po1, Point3D po2, Point3D po3) {
+        this(Color.BLACK, po1, po2, po3);
+    }
+
+    /**
+     * Plane constructor receiving 3 points on the plane and emission light.
+     * calls {@link geometries.Plane#Plane(Material, Color emission, Point3D _po1, Point3D _po2, Point3D _po3)}.
+     *
+     * @param emission Planes emission light
+     * @param po1      point1
+     * @param po2      point2
+     * @param po3      point3
+     * @throws NullPointerException     In case of one of the arguments is null
+     * @throws IllegalArgumentException In case of normal vector is (0,0,0)
+     */
+    public Plane(Color emission, Point3D po1, Point3D po2, Point3D po3) throws NullPointerException, IllegalArgumentException {
+        this(new Material(0, 0, 0), emission, po1, po2, po3);
     }
 
     /**
      * Plane constructor receiving 3 points on the planes emission light and material.
+     * calls {@link geometries.Geometry#Geometry(Material, Color)}.
      *
      * @param material Planes material
      * @param emission Planes emission light
-     * @param _po1 point1
-     * @param _po2 point2
-     * @param _po3 point3
+     * @param po1      point1
+     * @param po2      point2
+     * @param po3      point3
      * @throws NullPointerException     In case of one of the arguments is null
      * @throws IllegalArgumentException In case of normal vector is (0,0,0)
      */
-    public Plane(Material material, Color emission, Point3D _po1, Point3D _po2, Point3D _po3) throws NullPointerException, IllegalArgumentException {
+    public Plane(Material material, Color emission, Point3D po1, Point3D po2, Point3D po3) throws NullPointerException, IllegalArgumentException {
         super(material, emission);
-        if (_po1 == null || _po2 == null || _po3 == null)
+        if (po1 == null || po2 == null || po3 == null)
             throw new NullPointerException("ERROR One or more of the arguments is NULL");
-        this._po = new Point3D(_po1);
-        Vector U = new Vector(_po1.subtract(_po2));
-        Vector V = new Vector(_po1.subtract(_po3));
+        this._po = new Point3D(po1);
+        Vector U = new Vector(po1.subtract(po2));
+        Vector V = new Vector(po1.subtract(po3));
         Vector N = U.crossProduct(V);
         N.normalize();
         this._normal = N;
@@ -117,11 +156,11 @@ public Plane(Point3D _po1, Point3D _po2, Point3D _po3)  {
         }
         double Nv = alignZero(this._normal.dotProduct(ray.get_direction()));
         double NQp = alignZero(this._normal.dotProduct(Qp));
-        if(isZero(Nv) // the Ray is parallel to or in the plane
+        if (isZero(Nv) // the Ray is parallel to or in the plane
                 || isZero(NQp) // the point is in the plane
-                ||NQp/Nv<0) // the Ray starts after the plane
+                || NQp / Nv < 0) // the Ray starts after the plane
             return null;
-        return List.of(new GeoPoint(this, ray.getPoint(NQp/Nv)));
+        return List.of(new GeoPoint(this, ray.getPoint(NQp / Nv)));
     }
 
 

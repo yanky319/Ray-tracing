@@ -8,12 +8,16 @@ import primitives.Material;
  * abstract Class RadialGeometry representing a Radial Geometry objects.
  */
 public abstract class RadialGeometry extends Geometry {
+    /**
+     * the radius of the geometry.
+     */
     protected double _radius;
 
     //*********************************** constructors ***************
 
     /**
      * RadialGeometry constructor receiving radius value.
+     * calls {@link geometries.RadialGeometry#RadialGeometry(Color, double)}.
      *
      * @param radius radius value
      * @throws IllegalArgumentException In case of the height argument is not greater than zero
@@ -24,6 +28,7 @@ public abstract class RadialGeometry extends Geometry {
 
     /**
      * RadialGeometry constructor receiving radius value.
+     * calls {@link geometries.RadialGeometry#RadialGeometry(Material, Color, double)}.
      *
      *  @param emission RadialGeometry's emission light
      * @param radius radius value
@@ -35,6 +40,7 @@ public abstract class RadialGeometry extends Geometry {
 
     /**
      * RadialGeometry constructor receiving radius value.
+     * calls {@link geometries.Geometry#Geometry(Material, Color)}.
      *
      * @param material RadialGeometry's material
      * @param emission RadialGeometry's emission light

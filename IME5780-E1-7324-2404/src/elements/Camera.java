@@ -11,9 +11,21 @@ import static primitives.Util.*;
  * Class Camera representing a Camera sending Ray's through a view plane.
  */
 public class Camera {
+    /**
+     * location of tha camera
+     */
     private Point3D _p0;
+    /**
+     * vector from center of the camera upwards
+     */
     private Vector _Vup;
+    /**
+     * vector from center of the camera towards the view plane
+     */
     private Vector _Vto;
+    /**
+     * vector from center of the camera t the right
+     */
     private Vector _Vright;
 
 

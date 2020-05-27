@@ -166,6 +166,7 @@ public class XMLtoRenderParser {
      * parser from string to double.
      *
      * @param str the string to be pares
+     * @param i the index of the double in the string
      * @return the double
      */
     private double doubleFromStr(String str, int i) {

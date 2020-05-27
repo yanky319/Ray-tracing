@@ -16,8 +16,14 @@ public interface Intersectable {
      * for the purpose of knowing the emission color of the point.
      */
     public static class GeoPoint {
-        public Geometry geometry; // the geometry it is part of
-        public Point3D point;   //the point
+        /**
+         * the geometry it is part of
+         */
+        public Geometry geometry;
+        /**
+         * the point
+         */
+        public Point3D point;
 
         // ------------ constructor -------------
 

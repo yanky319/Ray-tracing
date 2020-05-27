@@ -16,14 +16,35 @@ import java.util.List;
  */
 public class Scene {
 
-    private final String _name; // tha name of the scene
-    private final Geometries _geometries; // list of Geometries in the scene
-    private final List<LightSource> _lights; // list of Light Sources in the scene
+    /**
+     * tha name of the scene
+     */
+    private final String _name;
+    /**
+     * list of Geometries in the scene
+     */
+    private final Geometries _geometries;
+    /**
+     * list of Light Sources in the scene
+     */
+    private final List<LightSource> _lights;
 
-    private Color _background; // the background Color
-    private AmbientLight _ambientLight; // the ambient light
-    private Camera _camera; // the camera
-    private double _distance; // the distance from camera to simulated screen
+    /**
+     * the background Color in the scene
+     */
+    private Color _background;
+    /**
+     * the ambient light in the scene
+     */
+    private AmbientLight _ambientLight;
+    /**
+     * the camera of the scene
+     */
+    private Camera _camera;
+    /**
+     * the distance from camera to simulated screen
+     */
+    private double _distance;
 
     //--------------- constructor ------------
 
@@ -159,7 +180,7 @@ public class Scene {
      * @param lights some Light Sources
      */
     public void addLights(LightSource... lights) {
-        for (LightSource l:lights) {
+        for (LightSource l : lights) {
             _lights.add(l);
         }
     }
