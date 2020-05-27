@@ -2,47 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ec927a9-9ce3-4778-bb72-f84f889574e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/sphereImprovedSpot.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/trianglesImprovedSpot.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/ImprovedSpotLight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/elements/ImprovedSpotLight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Cylinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Cylinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Geometries.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Geometries.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Geometry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Geometry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Intersectable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Intersectable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Plane.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Plane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Polygon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Polygon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/RadialGeometry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/RadialGeometry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Sphere.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Sphere.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Triangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Triangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Tube.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Tube.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/renderer/Render.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/renderer/Render.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/CameraIntegrationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/CameraIntegrationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/GeometriesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/GeometriesTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/PlaneTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/PlaneTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/PolygonTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/PolygonTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/RenderTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/RenderTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/SphereTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/SphereTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/TriangleTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/TriangleTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/AmbientLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/AmbientLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Cylinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Cylinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Geometries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/ImageWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/ImageWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Render.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scene/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/Scene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/CameraIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/CameraIntegrationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/GeometriesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/GeometriesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/PlaneTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/PlaneTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/PolygonTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/PolygonTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/RenderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/RenderTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/SphereTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/SphereTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/TriangleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/TriangleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/SpotLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/SpotLight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/LightsTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/LightsTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/SpotLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/SpotLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/LightsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/LightsTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +66,7 @@
       <command value="    //*********************************** constructors ***************" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LightsTests.sphereAllLightSources">
+  <component name="RunManager" selected="JUnit.LightsTests">
     <configuration name="LightsTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IME5780-E1-7324-2404" />
       <extension name="coverage">
@@ -130,7 +98,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LightsTests.sphereDirectional" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LightsTests.sphereSpot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IME5780-E1-7324-2404" />
       <extension name="coverage">
         <pattern>
@@ -140,7 +108,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="unittests" />
       <option name="MAIN_CLASS_NAME" value="unittests.LightsTests" />
-      <option name="METHOD_NAME" value="sphereDirectional" />
+      <option name="METHOD_NAME" value="sphereSpot" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -162,7 +130,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RenderTests.basicRenderMultiColorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LightsTests.trianglesSpot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IME5780-E1-7324-2404" />
       <extension name="coverage">
         <pattern>
@@ -171,8 +139,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.RenderTests" />
-      <option name="METHOD_NAME" value="basicRenderMultiColorTest" />
+      <option name="MAIN_CLASS_NAME" value="unittests.LightsTests" />
+      <option name="METHOD_NAME" value="trianglesSpot" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -180,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LightsTests" />
+        <item itemvalue="JUnit.LightsTests.sphereSpot" />
+        <item itemvalue="JUnit.LightsTests.trianglesSpot" />
         <item itemvalue="JUnit.LightsTests.sphereAllLightSources" />
         <item itemvalue="JUnit.LightsTests.trianglesAllLightSources" />
-        <item itemvalue="JUnit.LightsTests" />
-        <item itemvalue="JUnit.LightsTests.sphereDirectional" />
-        <item itemvalue="JUnit.RenderTests.basicRenderMultiColorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -239,22 +207,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="965" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1586258054884" />
-    <state width="1557" height="252" key="GridCell.Tab.0.bottom" timestamp="1590514632150">
+    <state width="1557" height="252" key="GridCell.Tab.0.bottom" timestamp="1590571937176">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="252" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1590514632150" />
-    <state width="1557" height="252" key="GridCell.Tab.0.center" timestamp="1590514632149">
+    <state width="1557" height="252" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1590571937176" />
+    <state width="1557" height="252" key="GridCell.Tab.0.center" timestamp="1590571937175">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="252" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1590514632149" />
-    <state width="1557" height="252" key="GridCell.Tab.0.left" timestamp="1590514632149">
+    <state width="1557" height="252" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1590571937175" />
+    <state width="1557" height="252" key="GridCell.Tab.0.left" timestamp="1590571937175">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="252" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1590514632149" />
-    <state width="1557" height="252" key="GridCell.Tab.0.right" timestamp="1590514632149">
+    <state width="1557" height="252" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1590571937175" />
+    <state width="1557" height="252" key="GridCell.Tab.0.right" timestamp="1590571937175">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="252" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1590514632149" />
+    <state width="1557" height="252" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1590571937175" />
     <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1589759119593">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

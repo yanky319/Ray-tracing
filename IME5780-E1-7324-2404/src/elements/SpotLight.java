@@ -10,12 +10,12 @@ import static primitives.Util.*;
  * a light source that lightens in 180 degrees
  */
 public class SpotLight extends PointLight {
-    private Vector _direction; // the center light beam from the source
+    protected Vector _direction; // the center light beam from the source
 
     //------------- constructor --------------------
 
     /**
-     * constructor for point light class.
+     * constructor for spot light class.
      *
      * @param intensity color of the light
      * @param position  position of the light source
