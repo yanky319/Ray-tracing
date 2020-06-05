@@ -29,14 +29,18 @@ public class Render {
      * the scene to be Rendered
      */
     private Scene _scene;
-
+    /**
+     * a small const value used for moving intersection point
+     * before checking if it is shaded by another object so we doe not accidentally find it is shading it self
+     */
+    private static final double DELTA = 0.1;
     // ------------------- constructor -----------
 
     /**
      * constructor for class Render.
      *
-     * @param imageWriter  instance of image Writer
-     * @param scene        the scene
+     * @param imageWriter instance of image Writer
+     * @param scene       the scene
      */
     public Render(ImageWriter imageWriter, Scene scene) {
         this._imageWriter = imageWriter;
@@ -121,15 +125,37 @@ public class Render {
             double nl = alignZero(n.dotProduct(l));
             double nv = alignZero(n.dotProduct(v));
             if (Math.signum(nl) == Math.signum(nv)) {
-                Color li = light.getIntensity(p);
-                color = color.add(
-                        calcDiffusive(kd, nl, li),
-                        calcSpecular(ks, l, n, nl, v, nShininess, li));
+                if (unshaded(l, n, nl, geoPoint, light)) {
+                    Color li = light.getIntensity(p);
+                    color = color.add(
+                            calcDiffusive(kd, nl, li),
+                            calcSpecular(ks, l, n, nl, v, nShininess, li));
+                }
             }
         }
         return color;
     }
 
+    /**
+     * checks whether the light from a source hits a given pointor that point is shaded by another object.
+     *
+     * @param l vector from light source towards the point
+     * @param n normal vector from the geometry at the given point
+     * @param nl dot Product between the to vectors sent to the function to save calculation time
+     * @param gp the geo point we are checking if is unshaded
+     * @param lightSource the light source we are checking if the light from gets to the point
+     * @return boolean value true wen the point is unshaded
+     */
+    private boolean unshaded(Vector l, Vector n, double nl, GeoPoint gp, LightSource lightSource) {
+        Vector lightDirection = l.scale(-1); // grt vector from point towards light source
+        Vector deltaVec = n.scale(nl < 0 ? DELTA : -DELTA); // decide which way we are going to move the point to
+        Point3D p = gp.point.add(deltaVec); // move the point a little to avoid thinking it is shaded by itself
+        Ray lightRay = new Ray(p, lightDirection); // create ray from the point towards the light source
+        // check if the ray intersects objects that are closer then the light source
+        List<GeoPoint> intersections = _scene.get_geometries().findIntersections(lightRay, lightSource.getDistance(p));
+        return intersections == null || intersections.size() == 0; // true if no intersections found
+    }
+    
     /**
      * calculates the specular part of the reflection of light.
      *

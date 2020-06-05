@@ -60,6 +60,10 @@ public class PointLight extends Light implements LightSource {
         } catch (IllegalArgumentException e) {
             return null;
         }
+    }
 
+    @Override
+    public double getDistance(Point3D point) {
+        return _position.distance(point);
     }
 }

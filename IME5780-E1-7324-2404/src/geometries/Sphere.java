@@ -24,11 +24,11 @@ public class Sphere extends RadialGeometry {
      * calls {@link geometries.Sphere#Sphere(Color, double, Point3D)}.
      *
      * @param radius Sphere radius value
-     * @param po      Sphere Center point
+     * @param po     Sphere Center point
      * @throws NullPointerException     In case the Point3D arguments is null
      * @throws IllegalArgumentException In case of the radius argument is not greater than zero
      */
-    public Sphere(double radius, Point3D po){
+    public Sphere(double radius, Point3D po) {
         this(Color.BLACK, radius, po);
     }
 
@@ -37,13 +37,13 @@ public class Sphere extends RadialGeometry {
      * calls {@link geometries.Sphere#Sphere(Material, Color, double, Point3D)}.
      *
      * @param emission Spheres emission light
-     * @param radius Sphere radius value
-     * @param po      Sphere Center point
+     * @param radius   Sphere radius value
+     * @param po       Sphere Center point
      * @throws NullPointerException     In case the Point3D arguments is null
      * @throws IllegalArgumentException In case of the radius argument is not greater than zero
      */
     public Sphere(Color emission, double radius, Point3D po) throws NullPointerException, IllegalArgumentException {
-        this(new Material(0,0,0), emission, radius, po);
+        this(new Material(0, 0, 0), emission, radius, po);
     }
 
     /**
@@ -52,8 +52,8 @@ public class Sphere extends RadialGeometry {
      *
      * @param material Spheres material
      * @param emission Spheres emission light
-     * @param radius Sphere radius value
-     * @param po      Sphere Center point
+     * @param radius   Sphere radius value
+     * @param po       Sphere Center point
      * @throws NullPointerException     In case the Point3D arguments is null
      * @throws IllegalArgumentException In case of the radius argument is not greater than zero
      */
@@ -82,24 +82,33 @@ public class Sphere extends RadialGeometry {
     }
 
     @Override
-    public List<GeoPoint> findIntersections(Ray ray) {
+    public List<GeoPoint> findIntersections(Ray ray, double maxDistance) {
         Vector u;
         try {
             u = this._center.subtract(ray.get_p0());
         } catch (IllegalArgumentException e) {  // Ray starts at the center of the sphere
-            return List.of(new GeoPoint(this, ray.getPoint(this._radius))); // the point on the Ray and the sphere
+            {
+                double t = this._radius;
+                if (alignZero(t - maxDistance) <= 0) // if the point is further then max distance
+                    return List.of(new GeoPoint(this, ray.getPoint(t))); // the point on the Ray and the sphere
+                return null;
+            }
+
         }
         double tm = alignZero(ray.get_direction().dotProduct(u));
         double d = Math.sqrt(alignZero(u.lengthSquared() - tm * tm));
         if (alignZero(d - this._radius) >= 0) // if(d>r) the ray does not intersect with the sphere
             return null;
         double th = alignZero(Math.sqrt(this._radius * this._radius - d * d));
-        if (alignZero(tm + th) > 0 || alignZero(tm - th) > 0) { //if there are at least one intersection
+        double t1 = tm + th;
+        double t2 = tm - th;
+        if ((alignZero(t1) > 0 || alignZero(t2) > 0) //if there is at least one intersection
+                && ((alignZero(t1 - maxDistance) <= 0 || alignZero(t2 - maxDistance) <= 0))) { //and at least one intersection is closer then max distance
             List<GeoPoint> result = new LinkedList<>(); // only ad the ones where t>0
-            if (alignZero(tm + th) > 0)
-                result.add(new GeoPoint(this, ray.getPoint(tm + th)));
-            if (alignZero(tm - th) > 0)
-                result.add(new GeoPoint(this, ray.getPoint(tm - th)));
+            if (alignZero(t1) > 0 && alignZero(t1 - maxDistance) <= 0)
+                result.add(new GeoPoint(this, ray.getPoint(t1)));
+            if (alignZero(t2) > 0 && alignZero(t2 - maxDistance) <= 0)
+                result.add(new GeoPoint(this, ray.getPoint(t2)));
             return result;
         }
         return null;

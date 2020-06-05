@@ -9,7 +9,9 @@ import org.junit.Test;
 import primitives.Point3D;
 import primitives.Ray;
 import primitives.Vector;
+
 import java.util.List;
+
 import static org.junit.Assert.*;
 import static geometries.Intersectable.GeoPoint;
 
@@ -110,8 +112,8 @@ public class CameraIntegrationTests {
         int count;
 
         //TC01: triangle only in front of the center of the view plane
-        triangle = new Triangle(new Point3D(0,-1,2), new Point3D(1,1,2), new Point3D(-1,1,2));
-        count=0;
+        triangle = new Triangle(new Point3D(0, -1, 2), new Point3D(1, 1, 2), new Point3D(-1, 1, 2));
+        count = 0;
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++) {
                 ray = cam.constructRayThroughPixel(3, 3, j, i, 1, 3, 3);
@@ -122,8 +124,8 @@ public class CameraIntegrationTests {
         assertEquals("wrong amount of intersections when triangle only in front of the center of the view plane", 1, count);
 
         //TC01: triangle only in front of the center and top middle of the view plane
-        triangle = new Triangle(new Point3D(0,-20,2), new Point3D(1,1,2), new Point3D(-1,1,2));
-        count=0;
+        triangle = new Triangle(new Point3D(0, -20, 2), new Point3D(1, 1, 2), new Point3D(-1, 1, 2));
+        count = 0;
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++) {
                 ray = cam.constructRayThroughPixel(3, 3, j, i, 1, 3, 3);
@@ -148,8 +150,8 @@ public class CameraIntegrationTests {
 
 
         //TC01: plane is in front of the view plane and parallel to it
-        plane = new Plane(new Point3D(0,0,3), new Vector(0,0,1));
-        count=0;
+        plane = new Plane(new Point3D(0, 0, 3), new Vector(0, 0, 1));
+        count = 0;
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++) {
                 ray = cam.constructRayThroughPixel(3, 3, j, i, 1, 3, 3);
@@ -160,8 +162,8 @@ public class CameraIntegrationTests {
         assertEquals("wrong amount of intersections when plane is in front of the view plane", 9, count);
 
         //TC02: plane is in front of the view plane and tilted a little
-        plane = new Plane(new Point3D(0,0,3), new Vector(0,0.5,1));
-        count=0;
+        plane = new Plane(new Point3D(0, 0, 3), new Vector(0, 0.5, 1));
+        count = 0;
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++) {
                 ray = cam.constructRayThroughPixel(3, 3, j, i, 1, 3, 3);
@@ -172,8 +174,8 @@ public class CameraIntegrationTests {
         assertEquals("wrong amount of intersections when plane is in front of the view plane and tilted a little ", 9, count);
 
         //TC03: plane is in front of the view plane and tilted more then 45 degrees
-        plane = new Plane(new Point3D(0,0,3), new Vector(0,1,1));
-        count=0;
+        plane = new Plane(new Point3D(0, 0, 3), new Vector(0, 1, 1));
+        count = 0;
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++) {
                 ray = cam.constructRayThroughPixel(3, 3, j, i, 1, 3, 3);

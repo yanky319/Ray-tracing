@@ -148,8 +148,8 @@ public class Polygon extends Geometry {
     }
 
     @Override
-    public List<GeoPoint> findIntersections(Ray ray) {
-        List<GeoPoint> PlaneResult = this._plane.findIntersections(ray);
+    public List<GeoPoint> findIntersections(Ray ray, double maxDistance) {
+        List<GeoPoint> PlaneResult = this._plane.findIntersections(ray, maxDistance);
         if (PlaneResult == null)
             return null;
 

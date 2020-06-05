@@ -59,10 +59,10 @@ public class Plane extends Geometry {
      */
     public Plane(Material material, Color emission, Point3D po, Vector normal) throws NullPointerException {
         super(material, emission);
-        if (_po == null || _normal == null)
+        if (po == null || normal == null)
             throw new NullPointerException("ERROR One or more of the arguments is NULL");
-        this._po = new Point3D(_po);
-        this._normal = new Vector(_normal);
+        this._po = new Point3D(po);
+        this._normal = new Vector(normal);
     }
 
 
@@ -147,7 +147,7 @@ public class Plane extends Geometry {
 
 
     @Override
-    public List<GeoPoint> findIntersections(Ray ray) {
+    public List<GeoPoint> findIntersections(Ray ray, double maxDistance) {
         Vector Qp;
         try {
             Qp = this._po.subtract(ray.get_p0());
@@ -156,13 +156,16 @@ public class Plane extends Geometry {
         }
         double Nv = alignZero(this._normal.dotProduct(ray.get_direction()));
         double NQp = alignZero(this._normal.dotProduct(Qp));
-        if (isZero(Nv) // the Ray is parallel to or in the plane
-                || isZero(NQp) // the point is in the plane
-                || NQp / Nv < 0) // the Ray starts after the plane
-            return null;
-        return List.of(new GeoPoint(this, ray.getPoint(NQp / Nv)));
+        if (!isZero(Nv) // the Ray is not parallel to or in the plane
+                && !isZero(NQp)) // the point is not in the plane
+        {
+            double t = alignZero(NQp / Nv);
+            if ( !(t < 0)  // the Ray does not start after the plane
+                    && (alignZero(t - maxDistance) <= 0)) // the distance to the point point is not more then the max distance
+                return List.of(new GeoPoint(this, ray.getPoint(t)));
+        }
+        return null;
     }
-
 
     //******************** Admin ****************
 

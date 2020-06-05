@@ -51,11 +51,42 @@ public interface Intersectable {
         }
     }
 
+//    /**
+//     * calculates intersections between a Ral and a intersectable object.
+//     *
+//     * @param ray the Ray to find intersections with
+//     * @return list of GeoPoints that are intersections with the Ray
+//     */
+//    List<GeoPoint> findIntersections(Ray ray);
+//    /**
+//     * calculates intersections between a Ral and a intersectable object.
+//     *
+//     * @param ray the Ray to find intersections with
+//     * @return list of GeoPoints that are intersections with the Ray
+//     */
+//    List<GeoPoint> findIntersections(Ray ray, double maxDistance);
+
     /**
-     * calculates intersections between a Ral and a intersectable object.
+     * calculates all intersections between a Ray and a intersectable objects
+     * from beginning of the ray all a long.
+     * calls {@link geometries.Intersectable#findIntersections(Ray, double)}
+     * with Double.POSITIVE_INFINITY as the highest distance value
      *
      * @param ray the Ray to find intersections with
      * @return list of GeoPoints that are intersections with the Ray
      */
-    List<GeoPoint> findIntersections(Ray ray);
+    default List<GeoPoint> findIntersections(Ray ray) {
+        return findIntersections(ray, Double.POSITIVE_INFINITY);
+    }
+
+    /**
+     * calculates all intersections between a Ray and a intersectable objects
+     * from beginning of the ray until a given distance.
+     *
+     * @param ray the Ray to find intersections with
+     * @param maxDistance the max distance value between the head of the ray and intersection point
+     * @return list of GeoPoints that are intersections with the Ray
+     */
+    List<GeoPoint> findIntersections(Ray ray, double maxDistance);
+
 }

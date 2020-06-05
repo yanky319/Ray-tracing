@@ -67,8 +67,8 @@ public class Triangle extends Polygon {
     //*********************************** functions ***************
 
     @Override
-    public List<GeoPoint> findIntersections(Ray ray) {
-        List<GeoPoint> planeResult = _plane.findIntersections(ray);
+    public List<GeoPoint> findIntersections(Ray ray, double maxDistance) {
+        List<GeoPoint> planeResult = _plane.findIntersections(ray, maxDistance);
         if (planeResult == null)
             return null;
         Vector v1 = _vertices.get(0).subtract(ray.get_p0()).normalize();
