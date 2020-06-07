@@ -7,6 +7,12 @@ import java.util.Objects;
  */
 public class Ray {
     /**
+     * a small const value used for moving head of ray to be sure we are not in a bad position
+     * for example moving intersection point
+     * before checking if it is shaded by another object so we doe not accidentally find it is shading it self
+     */
+    private static final double DELTA = 0.1;
+    /**
      * start point of the ray
      */
     private final Point3D _p0;
@@ -43,6 +49,21 @@ public class Ray {
             throw new NullPointerException("ERROR arguments is NULL");
         this._p0 = new Point3D(ray.get_p0());
         this._direction = new Vector(ray.get_direction());
+    }
+
+    /**
+     * construct ray with head moved a little bit on normal vector.
+     *
+     * @param point original head point
+     * @param direction direction of the ray
+     * @param normal normal vector
+     */
+    public Ray(Point3D point, Vector direction, Vector normal) {
+        //_p0 = _p0 + normal.scale(±DELTA)
+        double nv = normal.dotProduct(direction);
+        Vector normalDelta = normal.scale((nv > 0 ? DELTA : -DELTA));
+        _p0 = point.add(normalDelta);
+        _direction = new Vector(direction).normalized();
     }
 
     // ***************** Getters ********************** //

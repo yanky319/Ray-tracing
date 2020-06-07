@@ -3,49 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="8ec927a9-9ce3-4778-bb72-f84f889574e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IME5780-E6-7324-2404.zip" beforeDir="false" afterPath="$PROJECT_DIR$/IME5780-E6-7324-2404.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/sphereAllLightSources.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sphereAllLightSources.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/sphereDirectional.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sphereDirectional.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/sphereImprovedSpot.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sphereImprovedSpot.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/spherePoint.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/spherePoint.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/sphereSpot.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sphereSpot.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/sphereTriangleInitial.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sphereTriangleInitial.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/sphereTriangleMove1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sphereTriangleMove1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/sphereTriangleMove2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sphereTriangleMove2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/sphereTriangleSpot1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sphereTriangleSpot1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/sphereTriangleSpot2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sphereTriangleSpot2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/images/trianglesAllLightSources.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/trianglesAllLightSources.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/AmbientLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/AmbientLight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/DirectionalLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/DirectionalLight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/ImprovedSpotLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/ImprovedSpotLight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/Light.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/Light.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/PointLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/PointLight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/SpotLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/SpotLight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Cylinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Cylinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Geometries.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Geometries.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Geometry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Geometry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Intersectable$GeoPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Intersectable$GeoPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Plane.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Plane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Polygon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Polygon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/RadialGeometry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/RadialGeometry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Sphere.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Sphere.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Triangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Triangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Tube.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Tube.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/parser/XMLtoRenderParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/parser/XMLtoRenderParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/trianglesDirectional.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/trianglesDirectional.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/trianglesImprovedSpot.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/trianglesImprovedSpot.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/trianglesPoint.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/trianglesPoint.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/trianglesSphere.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/trianglesSphere.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/trianglesSpot.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/trianglesSpot.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/primitives/Material.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/primitives/Material.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/primitives/Point3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/primitives/Point3D.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/primitives/Ray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/primitives/Ray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/primitives/Vector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/primitives/Vector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/renderer/ImageWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/renderer/ImageWriter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/renderer/Render.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/renderer/Render.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/scene/Scene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/scene/Scene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/CameraIntegrationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/CameraIntegrationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/LightsTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/LightsTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/DirectionalLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/DirectionalLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/LightSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/LightSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/PointLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/PointLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Cylinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Cylinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Geometries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/primitives/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Ray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Ray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Render.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/CameraIntegrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/CameraIntegrationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +80,7 @@
       <command value="    //*********************************** constructors ***************" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ShadowTests">
+  <component name="RunManager" selected="JUnit.ReflectionRefractionTests">
     <configuration name="LightsTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IME5780-E1-7324-2404" />
       <extension name="coverage">
@@ -112,6 +91,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="unittests" />
       <option name="MAIN_CLASS_NAME" value="unittests.LightsTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReflectionRefractionTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IME5780-E1-7324-2404" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.ReflectionRefractionTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -128,22 +122,6 @@
       <option name="PACKAGE_NAME" value="unittests" />
       <option name="MAIN_CLASS_NAME" value="unittests.ShadowTests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ShadowTests.SphereTriangleMove1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IME5780-E1-7324-2404" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.ShadowTests" />
-      <option name="METHOD_NAME" value="SphereTriangleMove1" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -182,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ReflectionRefractionTests" />
         <item itemvalue="JUnit.ShadowTests" />
+        <item itemvalue="JUnit.LightsTests" />
         <item itemvalue="JUnit.ShadowTests.SphereTriangleSpot2" />
         <item itemvalue="JUnit.ShadowTests.SphereTriangleMove2" />
-        <item itemvalue="JUnit.ShadowTests.SphereTriangleMove1" />
-        <item itemvalue="JUnit.LightsTests" />
       </list>
     </recent_temporary>
   </component>
@@ -216,11 +194,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1590155333102" />
-    <state x="1005" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1591304347639">
+    <state x="1005" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1591356982517">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="804" y="83" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1585438156870" />
-    <state x="1005" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1591304347639" />
+    <state x="1005" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1591356982517" />
     <state x="490" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585433099346">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -233,30 +211,30 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="682" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1587426723081" />
-    <state x="780" y="169" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1590597200990">
+    <state x="780" y="169" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1591547930836">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="780" y="169" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860@0.0.1600.860" timestamp="1590597200990" />
+    <state x="780" y="169" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860@0.0.1600.860" timestamp="1591547930836" />
     <state x="965" y="188" key="FileChooserDialogImpl" timestamp="1586258054884">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="965" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1586258054884" />
-    <state width="893" height="164" key="GridCell.Tab.0.bottom" timestamp="1591354485214">
+    <state width="1557" height="321" key="GridCell.Tab.0.bottom" timestamp="1591547930925">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="893" height="164" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1591354485214" />
-    <state width="893" height="164" key="GridCell.Tab.0.center" timestamp="1591354485214">
+    <state width="1557" height="321" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1591547930925" />
+    <state width="1557" height="321" key="GridCell.Tab.0.center" timestamp="1591547930925">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="893" height="164" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1591354485214" />
-    <state width="893" height="164" key="GridCell.Tab.0.left" timestamp="1591354485214">
+    <state width="1557" height="321" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1591547930925" />
+    <state width="1557" height="321" key="GridCell.Tab.0.left" timestamp="1591547930925">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="893" height="164" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1591354485214" />
-    <state width="893" height="164" key="GridCell.Tab.0.right" timestamp="1591354485214">
+    <state width="1557" height="321" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1591547930925" />
+    <state width="1557" height="321" key="GridCell.Tab.0.right" timestamp="1591547930925">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="893" height="164" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1591354485214" />
+    <state width="1557" height="321" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1591547930925" />
     <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1589759119593">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -298,14 +276,18 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="760" y="163" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860@0.0.1600.860" timestamp="1588907111949" />
-    <state x="511" y="64" width="675" height="513" key="dock-window-1" timestamp="1589756472762">
+    <state x="925" y="0" width="682" height="867" key="dock-window-1" timestamp="1591370537200">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="511" y="64" width="675" height="513" key="dock-window-1/0.0.1600.860@0.0.1600.860" timestamp="1589756472762" />
-    <state x="-7" y="0" width="639" height="867" key="dock-window-2" timestamp="1586519595261">
+    <state x="925" y="0" width="682" height="867" key="dock-window-1/0.0.1600.860@0.0.1600.860" timestamp="1591370537200" />
+    <state x="966" y="0" width="641" height="867" key="dock-window-2" timestamp="1591373145361">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="-7" y="0" width="639" height="867" key="dock-window-2/0.0.1600.860@0.0.1600.860" timestamp="1586519595261" />
+    <state x="966" y="0" width="641" height="867" key="dock-window-2/0.0.1600.860@0.0.1600.860" timestamp="1591373145361" />
+    <state x="901" y="0" width="706" height="867" key="dock-window-3" timestamp="1591373713026">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="901" y="0" width="706" height="867" key="dock-window-3/0.0.1600.860@0.0.1600.860" timestamp="1591373713026" />
     <state x="856" y="199" width="672" height="677" key="run.anything.popup" timestamp="1590507464200">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
