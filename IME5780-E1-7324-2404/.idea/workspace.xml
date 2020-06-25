@@ -2,49 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ec927a9-9ce3-4778-bb72-f84f889574e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/pictureE7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/Cylinder.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/Cylinder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/Tube.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/Tube.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Cylinder.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Cylinder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Tube.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/geometries/class-use/Tube.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/CylinderTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/CylinderTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/TubeTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/TubeTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/class-use/CylinderTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/class-use/CylinderTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/class-use/TubeTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/class-use/TubeTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/unittests/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDocs/unittests/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/sphereTriangleInitial.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sphereTriangleInitial.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/sphereTriangleMove1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sphereTriangleMove1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/sphereTriangleMove2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sphereTriangleMove2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/sphereTriangleSpot1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sphereTriangleSpot1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/sphereTriangleSpot2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/sphereTriangleSpot2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/trianglesSphere.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/trianglesSphere.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/DirectionalLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/DirectionalLight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Cylinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Cylinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Intersectable$GeoPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Intersectable$GeoPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Intersectable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Intersectable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Plane.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Plane.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Polygon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Polygon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Tube.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/geometries/Tube.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/renderer/Render.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/renderer/Render.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/CylinderTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/CylinderTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/ReflectionRefractionTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/ReflectionRefractionTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/TubeTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/unittests/TubeTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/elements/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/DirectionalLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/DirectionalLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Cylinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Cylinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Render.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/CylinderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/CylinderTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/ReflectionRefractionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/ReflectionRefractionTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittests/TubeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/TubeTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
