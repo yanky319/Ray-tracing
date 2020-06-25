@@ -147,28 +147,43 @@ public class Polygon extends Geometry {
         return _plane.getNormal();
     }
 
+
     @Override
     public List<GeoPoint> findIntersections(Ray ray, double maxDistance) {
-        List<GeoPoint> PlaneResult = this._plane.findIntersections(ray, maxDistance);
-        if (PlaneResult == null)
+        GeoPoint p;
+        try {
+            p = _plane.findIntersections(ray, maxDistance).get(0);
+            if (p == null) return null;
+        } catch (Exception e) {
             return null;
-
-        Vector v1 = this._vertices.get(0).subtract(ray.get_p0());
-        Vector v2 = this._vertices.get(1).subtract(ray.get_p0());
-        Vector N = v1.crossProduct(v2).normalize();
-        double t1 = alignZero(ray.get_direction().dotProduct(N));
-        double t2;
-        if (isZero(t1))
-            return null;
-        for (int i = 2; i < this._vertices.size(); i++) {
-            v1 = v2;
-            v2 = this._vertices.get(i).subtract(ray.get_p0());
-            N = v1.crossProduct(v2).normalize();
-            t2 = alignZero(ray.get_direction().dotProduct(N));
-            if (Math.signum(t1) != Math.signum(t2))
-                return null;
         }
-        PlaneResult.get(0).geometry = this;
-        return PlaneResult;
+        // changing to an array so it will be faster to get one of them, like vertices[1] and vertices[3].
+        Point3D[] vertices = new Point3D[_vertices.size()];
+        vertices = _vertices.toArray(vertices);
+        Vector rn = ray.get_direction();
+        Point3D rp = ray.get_p0();
+        // getting the first and second vectors
+        try {
+
+            Vector vec1 = rp.subtract(vertices[vertices.length - 1]);
+            Vector vec2 = rp.subtract(vertices[0]);
+
+            if (isZero(vec1.crossProduct(vec2).normalized().dotProduct(rn)))
+                return null;
+            boolean flag = vec1.crossProduct(vec2).normalized().dotProduct(rn) > 0;
+
+            for (int i = 1; i < vertices.length; ++i) {
+                vec1 = vec2;
+                vec2 = rp.subtract(vertices[i]);
+                if ((isZero(vec1.crossProduct(vec2).normalized().dotProduct(rn))) ||
+                        (flag != vec1.crossProduct(vec2).normalized().dotProduct(rn) > 0)) {
+                    return null;
+                }
+            }
+        } catch (IllegalArgumentException e) {
+            return null;
+        }
+        return List.of(new GeoPoint(this, p.point));
     }
+
 }

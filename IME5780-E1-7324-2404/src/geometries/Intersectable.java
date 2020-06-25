@@ -49,6 +49,14 @@ public interface Intersectable {
             return (this.geometry != null && this.geometry.equals(((GeoPoint) o).geometry)) &&
                     this.point != null && this.point.equals(((GeoPoint) o).point);
         }
+
+        @Override
+        public String toString() {
+            return "GeoPoint{" +
+                    "geometry=" + geometry +
+                    ", point=" + point +
+                    '}';
+        }
     }
 
 //    /**

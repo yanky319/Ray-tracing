@@ -10,11 +10,8 @@ import scene.Scene;
 import geometries.Intersectable.GeoPoint;
 import primitives.Color;
 
-import static java.lang.System.out;
 import static primitives.Util.*;
 
-import java.awt.*;
-import java.io.PipedOutputStream;
 import java.util.List;
 
 /**
@@ -38,8 +35,14 @@ public class Render {
      * the scene to be Rendered
      */
     private Scene _scene;
-
-
+    /**
+     * boolean flag whether to super sample
+     */
+    private boolean _superSampling;
+    /**
+     * the size of the superSampling grid
+     */
+    private int _gridSize;
     // ------------------- constructor -----------
 
     /**
@@ -51,6 +54,27 @@ public class Render {
     public Render(ImageWriter imageWriter, Scene scene) {
         this._imageWriter = imageWriter;
         this._scene = scene;
+        _superSampling = false;
+        _gridSize = 0;
+    }
+    // -------------- setters --------------------
+
+    /**
+     * sets whether we are super sampling or not.
+     *
+     * @param superSampling
+     */
+    public void setSuperSampling(boolean superSampling) {
+        _superSampling = superSampling;
+    }
+
+    /**
+     * sets the size of superSampling grid.
+     *
+     * @param gridSize size of superSampling grid
+     */
+    public void setGridSize(int gridSize) {
+        _gridSize = gridSize;
     }
 
     //--------------- functions -----------------
@@ -179,7 +203,8 @@ public class Render {
      * @return the color at that geoPoint
      */
     private Color calcColor(GeoPoint geoPoint, Ray inRay) {
-        return calcColor(geoPoint, inRay, MAX_CALC_COLOR_LEVEL, 1.0).add(_scene.get_ambientLight().get_intensity());
+        return calcColor(geoPoint, inRay, MAX_CALC_COLOR_LEVEL, 1.0)
+                .add(_scene.get_ambientLight().get_intensity());
     }
 
     /**
@@ -249,7 +274,7 @@ public class Render {
             Vector l = light.getL(point); //vector from light source to the point
             double nl = alignZero(n.dotProduct(l));
             double nv = alignZero(n.dotProduct(v));
-            if (nl * nv > 0) {
+            if (nl * nv > 0) {  // check both dotProducts hav the same sign
                 //if (unshaded(l, n, geoPoint, light)) {
                 double ktr = transparency(l, n, geoPoint, light);
                 if (ktr * k > MIN_CALC_COLOR_K) {
@@ -287,17 +312,15 @@ public class Render {
         // r = v - 2*(v*n)*n
         Vector v = inRay.get_direction();
         double vn = v.dotProduct(n);
-
         if (vn == 0) {
             return null;
         }
-
         Vector r = v.subtract(n.scale(2 * vn));
         return new Ray(point, r, n);
     }
 
     /**
-     * checks whether the light from a source hits a given pointor that point is shaded by another object.
+     * checks whether the light from a source hits a given point or that point is shaded by another object.
      *
      * @param l           vector from light source towards the point
      * @param n           normal vector from the geometry at the given point
@@ -359,8 +382,9 @@ public class Render {
      */
     private Color calcSpecular(double ks, Vector l, Vector n, double nl, Vector v, int nShininess, Color li) {
         Vector r = new Vector(l);
-        if (!isZero(nl))
-            r = r.subtract(n.scale(2 * nl));
+        if (isZero(nl))
+            return Color.BLACK;
+        r = r.subtract(n.scale(2 * nl));
         double vr = v.scale(-1).dotProduct(r);
         return li.scale(ks * Math.pow(Math.max(0, vr), nShininess));
     }

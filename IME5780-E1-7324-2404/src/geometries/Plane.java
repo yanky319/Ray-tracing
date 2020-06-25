@@ -36,7 +36,7 @@ public class Plane extends Geometry {
 
     /**
      * Plane constructor receiving a point on the plane and a vector perpendicular to the plane.
-     *calls {@link geometries.Plane#Plane(Material, Color, Point3D, Vector)}.
+     * calls {@link geometries.Plane#Plane(Material, Color, Point3D, Vector)}.
      *
      * @param emission Planes emission light
      * @param po       a point on the plane
@@ -62,7 +62,7 @@ public class Plane extends Geometry {
         if (po == null || normal == null)
             throw new NullPointerException("ERROR One or more of the arguments is NULL");
         this._po = new Point3D(po);
-        this._normal = new Vector(normal);
+        this._normal = new Vector(normal).normalize();
     }
 
 
@@ -160,7 +160,7 @@ public class Plane extends Geometry {
                 && !isZero(NQp)) // the point is not in the plane
         {
             double t = alignZero(NQp / Nv);
-            if ( !(t < 0)  // the Ray does not start after the plane
+            if (!(t < 0)  // the Ray does not start after the plane
                     && (alignZero(t - maxDistance) <= 0)) // the distance to the point point is not more then the max distance
                 return List.of(new GeoPoint(this, ray.getPoint(t)));
         }

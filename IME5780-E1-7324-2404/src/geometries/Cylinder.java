@@ -1,99 +1,98 @@
 package geometries;
 
 import primitives.*;
-import primitives.Color;
-
-import java.awt.*;
-import java.util.List;
 
 
 /**
  * class Cylinder representing a Cylinder in 3D.
  */
-public class Cylinder extends RadialGeometry {
+public class Cylinder extends Tube {
     /**
-     * the axis of the Cylinder.
+     * the height of the Cylinder the distance between the top and bottom plane
      */
-    protected final Ray _axisRay;
+    private float _height;
 
     //*********************************** constructor ***************
 
     /**
-     * Cylinder constructor receiving the radius and the axis ray.
-     * calls {@link geometries.Cylinder#Cylinder(Color, double, Ray)}.
+     * Cylinder constructor receiving Cylinder radius value and the Cylinder height.
+     * calls {@link Cylinder#Cylinder(Color, double, Ray, float)}.
      *
-     * @param radius Cylinder radius
-     * @param ray    Cylinder axis ray
-     * @throws NullPointerException     In case of the Ray argument is null
-     * @throws IllegalArgumentException In case of the radius argument is not greater than zero
+     * @param radius Cylinders radius
+     * @param height Cylinders height
+     * @param ray    Cylinders ray
+     * @throws IllegalArgumentException In case of the height or radius argument is not greater than zero
      */
-    public Cylinder(double radius, Ray ray) {
-        this(Color.BLACK, radius, ray);
+    public Cylinder(double radius, Ray ray, float height) {
+        this(Color.BLACK, radius, ray, height);
     }
 
     /**
-     * Cylinder constructor receiving the radius and the axis ray and emission light.
-     * calls {@link geometries.Cylinder#Cylinder(Material, Color, double, Ray)}.
+     * Cylinders constructor receiving Cylinders radius value and the Cylinders height and emission light.
+     * calls {@link Cylinder#Cylinder(Material, Color, double, Ray, float)}.
      *
      * @param emission Cylinders emission light
-     * @param radius   Cylinder radius
-     * @param ray      Cylinder axis ray
-     * @throws NullPointerException     In case of the Ray argument is null
-     * @throws IllegalArgumentException In case of the radius argument is not greater than zero
+     * @param radius   Cylinders radius
+     * @param height   Cylinders height
+     * @param ray      Cylinders ray
+     * @throws IllegalArgumentException In case of the height or radius argument is not greater than zero
      */
-    public Cylinder(Color emission, double radius, Ray ray) throws NullPointerException, IllegalArgumentException {
-        this(new Material(0, 0, 0), emission, radius, ray);
+    public Cylinder(Color emission, double radius, Ray ray, float height) throws IllegalArgumentException {
+        this(new Material(0, 0, 0), emission, radius, ray, height);
     }
 
     /**
-     * Cylinder constructor receiving the radius and the axis rays emission light and material.
-     * calls {@link geometries.Cylinder#Cylinder(Color, double, Ray)}.
+     * Cylinders constructor receiving Cylinders radius value and the Cylinders height emission light and material.
+     * calls {@link Tube#Tube(Material, Color, double, Ray)}.
      *
      * @param material Cylinders material
      * @param emission Cylinders emission light
-     * @param radius   Cylinder radius
-     * @param ray      Cylinder axis ray
-     * @throws NullPointerException     In case of the Ray argument is null
-     * @throws IllegalArgumentException In case of the radius argument is not greater than zero
+     * @param radius   Cylinders radius
+     * @param height   Cylinders height
+     * @param ray      Cylinders ray
+     * @throws IllegalArgumentException In case of the height or radius argument is not greater than zero
      */
-    public Cylinder(Material material, Color emission, double radius, Ray ray) throws NullPointerException, IllegalArgumentException {
-        super(material, emission, radius);
-        if (ray == null)
-            throw new NullPointerException("ERROR Ray arguments is NULL");
-        this._axisRay = new Ray(ray);
+    public Cylinder(Material material, Color emission, double radius, Ray ray, float height) throws IllegalArgumentException {
+        super(material, emission, radius, ray);
+        if (height <= 0)
+            throw new IllegalArgumentException("The Cylinder height must be greater than zero");
+        _height = height;
     }
 
     //*********************************** Getters ***************
 
     /**
-     * axis ray getter.
+     * height getter.
      *
-     * @return Cylinder axis ray
+     * @return the Cylinder height
      */
-    public Ray get_axisRay() {
-        return new Ray(_axisRay);
+    public float get_height() {
+        return _height;
     }
-
 
     @Override
     public Vector getNormal(Point3D point) {
         double t = this._axisRay.get_direction().dotProduct(point.subtract(this._axisRay.get_p0()));
+        if (t == 0)
+            return new Vector(this._axisRay.get_direction()).scale(-1).normalize();
+
+        if (t == this._height)
+            return new Vector(this._axisRay.get_direction()).normalize();
+
         Point3D o = new Point3D(this._axisRay.get_p0().add(this._axisRay.get_direction().scale(t)));
         Vector n = new Vector(point.subtract(o));
         return n.normalize();
     }
 
-    @Override
-    public List<GeoPoint> findIntersections(Ray ray, double maxDistance) {
-        return null;
-    }
 
     //******************** Admin ****************
+
 
     @Override
     public String
     toString() {
-        return "ray: " + _axisRay +
-                ", radius: " + _radius;
+        return "height=" + _height +
+                ", radius=" + _radius;
+
     }
 }

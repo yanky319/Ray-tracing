@@ -2,97 +2,98 @@ package geometries;
 
 import primitives.*;
 
+import java.util.List;
+
+import static primitives.Util.alignZero;
+import static primitives.Util.isZero;
 
 /**
  * class Tube representing a Tube in 3D.
  */
-public class Tube extends Cylinder {
+public class Tube extends RadialGeometry {
     /**
-     * the height of the tube the distance between the top and bottom plane
+     * the axis of the Tube.
      */
-    private float _height;
+    protected final Ray _axisRay;
 
     //*********************************** constructor ***************
 
     /**
-     * Tube constructor receiving Tube radius value and the Tube height.
-     * calls {@link geometries.Tube#Tube(Color, double, Ray, float)}.
+     * Tube constructor receiving the radius and the axis ray.
+     * calls {@link Tube#Tube(Color, double, Ray)}.
      *
-     * @param radius Tube radius
-     * @param height Tube height
-     * @param ray    Tube ray
-     * @throws IllegalArgumentException In case of the height or radius argument is not greater than zero
+     * @param radius Tubes radius
+     * @param ray    Tubes axis ray
+     * @throws NullPointerException     In case of the Ray argument is null
+     * @throws IllegalArgumentException In case of the radius argument is not greater than zero
      */
-    public Tube(double radius, Ray ray, float height) {
-        this(Color.BLACK, radius, ray, height);
+    public Tube(double radius, Ray ray) {
+        this(Color.BLACK, radius, ray);
     }
 
     /**
-     * Tube constructor receiving Tube radius value and the Tube height and emission light.
-     * calls {@link geometries.Tube#Tube(Material, Color, double, Ray, float)}.
+     * Tube constructor receiving the radius and the axis ray and emission light.
+     * calls {@link Tube#Tube(Material, Color, double, Ray)}.
      *
      * @param emission Tubes emission light
-     * @param radius   Tube radius
-     * @param height   Tube height
-     * @param ray      Tube ray
-     * @throws IllegalArgumentException In case of the height or radius argument is not greater than zero
+     * @param radius   Tubes radius
+     * @param ray      Tubes axis ray
+     * @throws NullPointerException     In case of the Ray argument is null
+     * @throws IllegalArgumentException In case of the radius argument is not greater than zero
      */
-    public Tube(Color emission, double radius, Ray ray, float height) throws IllegalArgumentException {
-        this(new Material(0, 0, 0), emission, radius, ray, height);
+    public Tube(Color emission, double radius, Ray ray) throws NullPointerException, IllegalArgumentException {
+        this(new Material(0, 0, 0), emission, radius, ray);
     }
 
     /**
-     * Tube constructor receiving Tube radius value and the Tube height emission light and material.
-     * calls {@link geometries.Cylinder#Cylinder(Material, Color, double, Ray)}.
+     * Tube constructor receiving the radius and the axis rays emission light and material.
+     * calls {@link Tube#Tube(Color, double, Ray)}.
      *
      * @param material Tubes material
      * @param emission Tubes emission light
      * @param radius   Tube radius
-     * @param height   Tube height
-     * @param ray      Tube ray
-     * @throws IllegalArgumentException In case of the height or radius argument is not greater than zero
+     * @param ray      Tube axis ray
+     * @throws NullPointerException     In case of the Ray argument is null
+     * @throws IllegalArgumentException In case of the radius argument is not greater than zero
      */
-    public Tube(Material material, Color emission, double radius, Ray ray, float height) throws IllegalArgumentException {
-        super(material, emission, radius, ray);
-        if (height <= 0)
-            throw new IllegalArgumentException("The Tube height must be greater than zero");
-        _height = height;
+    public Tube(Material material, Color emission, double radius, Ray ray) throws NullPointerException, IllegalArgumentException {
+        super(material, emission, radius);
+        if (ray == null)
+            throw new NullPointerException("ERROR Ray arguments is NULL");
+        this._axisRay = new Ray(ray);
     }
 
     //*********************************** Getters ***************
 
     /**
-     * height getter.
+     * axis ray getter.
      *
-     * @return the Tube height
+     * @return Tube axis ray
      */
-    public float get_height() {
-        return _height;
+    public Ray get_axisRay() {
+        return new Ray(_axisRay);
     }
+
 
     @Override
     public Vector getNormal(Point3D point) {
         double t = this._axisRay.get_direction().dotProduct(point.subtract(this._axisRay.get_p0()));
-        if (t == 0)
-            return new Vector(this._axisRay.get_direction()).scale(-1).normalize();
-
-        if (t == this._height)
-            return new Vector(this._axisRay.get_direction()).normalize();
-
         Point3D o = new Point3D(this._axisRay.get_p0().add(this._axisRay.get_direction().scale(t)));
         Vector n = new Vector(point.subtract(o));
         return n.normalize();
     }
 
+    @Override
+    public List<GeoPoint> findIntersections(Ray ray, double maxDistance) {
+        return null;
+    }
 
     //******************** Admin ****************
-
 
     @Override
     public String
     toString() {
-        return "height=" + _height +
-                ", radius=" + _radius;
-
+        return "ray: " + _axisRay +
+                ", radius: " + _radius;
     }
 }
