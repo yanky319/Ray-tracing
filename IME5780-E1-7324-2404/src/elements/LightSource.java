@@ -4,6 +4,8 @@ import primitives.Color;
 import primitives.Point3D;
 import primitives.Vector;
 
+import java.util.List;
+
 /**
  * interface for all light sources.
  */
@@ -31,4 +33,9 @@ public interface LightSource {
      * @return the distance calculated
      */
     double getDistance(Point3D point);
+
+    /**
+     * returns list of normalized vectors from the light sources towards the given point.
+     */
+    List<Vector> getListOfVectors(Point3D lightedPoint,int numOfVectors);
 }

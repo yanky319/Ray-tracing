@@ -40,9 +40,13 @@ public class Render {
      */
     private boolean _superSampling;
     /**
+     * boolean flag whether to make soft shadow
+     */
+    private boolean _softShadowing;
+    /**
      * the size of the superSampling grid
      */
-    private int _gridSize;
+    private int _numOfRays;
     // ------------------- constructor -----------
 
     /**
@@ -55,26 +59,36 @@ public class Render {
         this._imageWriter = imageWriter;
         this._scene = scene;
         _superSampling = false;
-        _gridSize = 0;
+        _softShadowing = false;
+        _numOfRays = 0;
     }
     // -------------- setters --------------------
 
     /**
      * sets whether we are super sampling or not.
      *
-     * @param superSampling
+     * @param superSampling whether to super sample
      */
     public void setSuperSampling(boolean superSampling) {
         _superSampling = superSampling;
     }
 
     /**
+     * sets whether we are making soft Shadows or not.
+     *
+     * @param softShadowing whether make soft Shadows
+     */
+    public void setSoftShadowing(boolean softShadowing) {
+        _softShadowing = softShadowing;
+    }
+
+    /**
      * sets the size of superSampling grid.
      *
-     * @param gridSize size of superSampling grid
+     * @param numOfRays size of superSampling grid
      */
-    public void setGridSize(int gridSize) {
-        _gridSize = gridSize;
+    public void setNumOfRays(int numOfRays) {
+        _numOfRays = numOfRays;
     }
 
     //--------------- functions -----------------
@@ -96,17 +110,36 @@ public class Render {
 
         for (int i = 0; i < ny; i++) {                        // go over all of the pixels
             for (int j = 0; j < nx; j++) {
-                Ray ray = camera.constructRayThroughPixel(nx, ny, j, i, distance, width, height);   // construct a ray from tha camera through it
-                GeoPoint closestIntersection = findClosestIntersection(ray); // find the closest intersection point on the ray and any geometry
-                if (closestIntersection == null)                          // if no intersections
-                    _imageWriter.writePixel(j, i, background.getColor());          //then color pixel with background color
-                else {                                                  // if there are intersections
-                    Color color = calcColor(closestIntersection, ray);                         // calculate the color of that point
-                    _imageWriter.writePixel(j, i, color.getColor());               // color the pixel
+                Ray mainRay = camera.constructRayThroughPixel(nx, ny, j, i, distance, width, height);   // construct a ray from tha camera through it
+                if (!_superSampling) {
+                    GeoPoint closestIntersection = findClosestIntersection(mainRay); // find the closest intersection point on the ray and any geometry
+                    if (closestIntersection == null)                          // if no intersections
+                        _imageWriter.writePixel(j, i, background.getColor());          //then color pixel with background color
+                    else {                                                  // if there are intersections
+                        Color color = calcColor(closestIntersection, mainRay);                         // calculate the color of that point
+                        _imageWriter.writePixel(j, i, color.getColor());               // color the pixel
+                    }
+                } else {
+                    List<Ray> rays = camera.constructBeamOfRaysThroughPixel(nx, ny, j, i, distance, width, height, _numOfRays);   // construct a ray from tha camera through it
+                    Color color = Color.BLACK;
+                    double sumScales = 0;
+                    double scale = 0;
+                    for (Ray ray : rays) {
+                        GeoPoint closestIntersection = findClosestIntersection(ray); // find the closest intersection point on the ray and any geometry
+                        scale = ray.get_direction().dotProduct(mainRay.get_direction());
+                        sumScales += scale;
+                        if (closestIntersection == null)                          // if no intersections
+                            color = color.add(background.scale(scale));          // then add background color to pixel
+                        else {                                                  // if there are intersections
+                            color = color.add(calcColor(closestIntersection, ray).scale(scale));                         // calculate the color of that point
+                        }
+                    }
+                    _imageWriter.writePixel(j, i, color.scale(1 / sumScales).getColor());               // color the pixel
                 }
             }
         }
     }
+
 
     /**
      * finds the point from the list closest to the camera.
@@ -274,11 +307,25 @@ public class Render {
             Vector l = light.getL(point); //vector from light source to the point
             double nl = alignZero(n.dotProduct(l));
             double nv = alignZero(n.dotProduct(v));
+            // parameter to save the sum of ktr of each ray in beam
+            double ktr = 0;
+            // count the number of vectors for calculating the average
+            int counter = 0;
             if (nl * nv > 0) {  // check both dotProducts hav the same sign
                 //if (unshaded(l, n, geoPoint, light)) {
-                double ktr = transparency(l, n, geoPoint, light);
-                if (ktr * k > MIN_CALC_COLOR_K) {
-                    Color li = light.getIntensity(point).scale(ktr);
+                ktr = transparency(l, n, geoPoint, light);
+                counter++;
+            }
+            if (_softShadowing) {
+                for (Vector vec : light.getListOfVectors(point, _numOfRays)) {
+                    nl = alignZero(n.dotProduct(vec));
+                    if (nl * nv > 0) {  // check both dotProducts have the same sign
+                        ktr += transparency(vec, n, geoPoint, light);
+                        counter++;
+                    }
+                }
+                if ((ktr / counter) * k > MIN_CALC_COLOR_K) {
+                    Color li = light.getIntensity(point).scale(ktr / counter);
                     color = color.add(
                             calcDiffusive(kd, nl, li),
                             calcSpecular(ks, l, n, nl, v, nShininess, li));

@@ -6,6 +6,7 @@ import primitives.Vector;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 import static primitives.Util.*;
 
@@ -32,7 +33,7 @@ public class Camera {
     private Vector _Vright;
 
 
-    //*********************************** constructor ***************
+    //*********************************** constructor **************
 
     /**
      * constructor for class Camera gets location of camera and two Vectors and calculates the 3'rd.
@@ -126,6 +127,68 @@ public class Camera {
         return new Ray(_p0, PIJ.subtract(_p0));
     }
 
+    /**
+     * gets view plane parameters and indexes of a pixel and generates a Beam Of Rays from the camera through that pixel.
+     *
+     * @param nX             number of pixels in X axis
+     * @param nY             number of pixels in Y axis
+     * @param j              column index of pixels
+     * @param i              row index of pixels
+     * @param screenDistance the distance between the camera and the view plane
+     * @param screenWidth    the width of the view plane
+     * @param screenHeight   the height of the view plane
+     * @param numOfRays      the amount of rays to construct
+     * @return a Beam Of Rays from the camera through the given pixel on the view plane
+     */
+    public List<Ray> constructBeamOfRaysThroughPixel(int nX, int nY,
+                                                     int j, int i, double screenDistance,
+                                                     double screenWidth, double screenHeight, int numOfRays) {
+        // create list to hold the rays
+        List<Ray> rays = new LinkedList<>();
+        // center point of the view plane
+        Point3D planeCenter = _p0.add(_Vto.scale(screenDistance));
+        // size of each pixel
+        double Ry = screenHeight / (double) nY;
+        double Rx = screenWidth / (double) nX;
+        // center of the pixel to construct the beam through
+        double yi = ((i - nY / 2d) * Ry + Ry / 2d);
+        double xj = ((j - nX / 2d) * Rx + Rx / 2d);
 
-    
+        //calculate ray through pixel(i,j) center
+        Point3D Pij = new Point3D(planeCenter);
+        if (!isZero(xj)) {
+            Pij = Pij.add(_Vright.scale(xj));
+        }
+        if (!isZero(yi)) {
+            Pij = Pij.add(_Vup.scale((-yi)));
+        }
+        rays.add(new Ray(_p0, Pij.subtract(_p0)));
+
+        Random r = new Random();
+
+        // the parameter to calculate the coefficient of the _vRight and _vUp vectors
+        double dX, dY;
+        //the coefficient to calculate in which quadrant is random point on this pixel
+        int k, h;
+        Point3D randomPoint;
+        // divide the random points evenly within the four quarters
+        for (int t = 0; t < 4; t++) {
+            // decide which quarter we are in
+            k = t != 1 && t != 2 ? 1 : -1;
+            h = t != 2 && t != 3 ? 1 : -1;
+            for (int u = 0; u < numOfRays / 4; u++) {
+                dX = r.nextDouble() * Rx / 2d;
+                dY = r.nextDouble() * Ry / 2d;
+                // find random point on this pixel to create new ray from camera
+                randomPoint = Pij;
+                if (dY != 0)
+                    randomPoint = randomPoint.add(_Vup.scale(-1 * h * dY));
+                if (dX != 0)
+                    randomPoint = randomPoint.add(_Vright.scale(k * dX));
+                // add the ray to the list
+                rays.add(new Ray(_p0, randomPoint.subtract(_p0)));
+            }
+        }
+        return rays;
+    }
 }

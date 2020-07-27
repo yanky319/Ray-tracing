@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ec927a9-9ce3-4778-bb72-f84f889574e8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/Camera.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/DirectionalLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/DirectionalLight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/LightSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/LightSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/PointLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/PointLight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/SpotLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/elements/SpotLight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/renderer/Render.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IME5780-E1-7324-2404/renderer/Render.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/elements/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/DirectionalLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/DirectionalLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/LightSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/LightSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/PointLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/PointLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/SpotLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/elements/SpotLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittests/ReflectionRefractionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittests/ReflectionRefractionTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,16 +50,16 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../Program Files/Java/jdk-14" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.20367534" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.idesettings.debugger.capture" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="renderer" />
       <recent name="unittests" />
+      <recent name="renderer" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -57,23 +70,7 @@
       <command value="    //*********************************** constructors ***************" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ReflectionRefractionTests.pictureE7">
-    <configuration name="ReflectionRefractionTests.picture" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IME5780-E1-7324-2404" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.ReflectionRefractionTests" />
-      <option name="METHOD_NAME" value="picture" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.SuperSamplingTest.trianglesSphereWithSuperSampling">
     <configuration name="ReflectionRefractionTests.pictureE7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IME5780-E1-7324-2404" />
       <extension name="coverage">
@@ -90,17 +87,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SuperSamplingTest.trianglesSphere" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SuperSamplingTest.pictureE7WithSuperSampling" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IME5780-E1-7324-2404" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="unittests.*" />
+          <option name="PATTERN" value="renderer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.SuperSamplingTest" />
-      <option name="METHOD_NAME" value="trianglesSphere" />
+      <option name="MAIN_CLASS_NAME" value="renderer.SuperSamplingTest" />
+      <option name="METHOD_NAME" value="pictureE7WithSuperSampling" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -122,7 +119,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TubeTests.testFindIntersections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="softShadowTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IME5780-E1-7324-2404" />
       <extension name="coverage">
         <pattern>
@@ -131,8 +128,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="unittests" />
-      <option name="MAIN_CLASS_NAME" value="unittests.TubeTests" />
-      <option name="METHOD_NAME" value="testFindIntersections" />
+      <option name="MAIN_CLASS_NAME" value="unittests.softShadowTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="softShadowTest.trianglesSphereWithSoftShadow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IME5780-E1-7324-2404" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittests" />
+      <option name="MAIN_CLASS_NAME" value="unittests.softShadowTest" />
+      <option name="METHOD_NAME" value="trianglesSphereWithSoftShadow" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -140,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ReflectionRefractionTests.pictureE7" />
         <item itemvalue="JUnit.SuperSamplingTest.trianglesSphereWithSuperSampling" />
-        <item itemvalue="JUnit.SuperSamplingTest.trianglesSphere" />
-        <item itemvalue="JUnit.TubeTests.testFindIntersections" />
-        <item itemvalue="JUnit.ReflectionRefractionTests.picture" />
+        <item itemvalue="JUnit.softShadowTest.trianglesSphereWithSoftShadow" />
+        <item itemvalue="JUnit.softShadowTest" />
+        <item itemvalue="JUnit.SuperSamplingTest.pictureE7WithSuperSampling" />
+        <item itemvalue="JUnit.ReflectionRefractionTests.pictureE7" />
       </list>
     </recent_temporary>
   </component>
@@ -162,27 +174,14 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="397" y="97" key="#PlaneTest" timestamp="1586225618969">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="397" y="97" key="#PlaneTest/0.0.1600.860@0.0.1600.860" timestamp="1586225618969" />
-    <state x="392" y="88" key="#Project_Structure" timestamp="1584822812051">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="392" y="88" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1584822812051" />
     <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1590155333102">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1590155333102" />
-    <state x="1005" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1592483603895">
+    <state x="1005" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1595866924152">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="804" y="83" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1585438156870" />
-    <state x="1005" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1592483603895" />
-    <state x="490" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585433099346">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="490" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680@0.0.1280.680" timestamp="1585433099346" />
+    <state x="1005" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1595866924152" />
     <state x="596" y="315" width="408" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1591303432352">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -195,26 +194,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="780" y="169" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860@0.0.1600.860" timestamp="1591547930836" />
-    <state x="965" y="188" key="FileChooserDialogImpl" timestamp="1586258054884">
+    <state width="1557" height="237" key="GridCell.Tab.0.bottom" timestamp="1595874660883">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="965" y="188" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1586258054884" />
-    <state width="1035" height="144" key="GridCell.Tab.0.bottom" timestamp="1593107035134">
+    <state width="1557" height="237" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1595874660883" />
+    <state width="1557" height="237" key="GridCell.Tab.0.center" timestamp="1595874660883">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1035" height="144" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1593107035134" />
-    <state width="1035" height="144" key="GridCell.Tab.0.center" timestamp="1593107035134">
+    <state width="1557" height="237" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1595874660883" />
+    <state width="1557" height="237" key="GridCell.Tab.0.left" timestamp="1595874660883">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1035" height="144" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1593107035134" />
-    <state width="1035" height="144" key="GridCell.Tab.0.left" timestamp="1593107035133">
+    <state width="1557" height="237" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1595874660883" />
+    <state width="1557" height="237" key="GridCell.Tab.0.right" timestamp="1595874660883">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1035" height="144" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1593107035133" />
-    <state width="1035" height="144" key="GridCell.Tab.0.right" timestamp="1593107035134">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1035" height="144" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1593107035134" />
+    <state width="1557" height="237" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1595874660883" />
     <state width="1557" height="291" key="GridCell.Tab.1.bottom" timestamp="1593028539115">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -231,31 +226,18 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1557" height="291" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1593028539115" />
-    <state x="498" y="141" key="RollbackChangesDialog" timestamp="1585257924771">
+    <state x="474" y="69" width="916" height="708" key="SettingsEditor" timestamp="1595874921971">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="498" y="141" key="RollbackChangesDialog/0.0.1600.860@0.0.1600.860" timestamp="1585257924771" />
-    <state x="474" y="69" width="916" height="708" key="SettingsEditor" timestamp="1593027443731">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="474" y="69" width="916" height="708" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1593027443731" />
-    <state x="673" y="166" key="Vcs.Push.Dialog.v2" timestamp="1586298804781">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="673" y="166" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1586298804781" />
+    <state x="474" y="69" width="916" height="708" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1595874921971" />
     <state x="896" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1591787405241">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="673" y="201" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585433032247" />
     <state x="896" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1591787405241" />
-    <state x="904" y="327" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584893058949">
+    <state x="760" y="163" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1595873690511">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="904" y="327" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1600.860@0.0.1600.860" timestamp="1584893058949" />
-    <state x="760" y="163" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1593025850674">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="760" y="163" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860@0.0.1600.860" timestamp="1593025850674" />
+    <state x="760" y="163" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860@0.0.1600.860" timestamp="1595873690511" />
     <state x="925" y="0" width="682" height="867" key="dock-window-1" timestamp="1591370537200">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -268,6 +250,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="901" y="0" width="706" height="867" key="dock-window-3/0.0.1600.860@0.0.1600.860" timestamp="1591373713026" />
+    <state x="506" y="177" key="refactoring.ChangeSignatureDialog" timestamp="1595864571071">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="506" y="177" key="refactoring.ChangeSignatureDialog/0.0.1600.860@0.0.1600.860" timestamp="1595864571071" />
     <state x="856" y="199" width="672" height="677" key="run.anything.popup" timestamp="1590507464200">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
