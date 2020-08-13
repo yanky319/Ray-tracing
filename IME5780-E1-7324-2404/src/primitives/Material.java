@@ -89,9 +89,9 @@ public class Material {
     }
 
     /**
-     * getter for refraction coefficient.
+     * getter for transparency coefficient.
      *
-     * @return refraction coefficient
+     * @return transparency coefficient
      */
     public double get_kT() {
         return _kT;

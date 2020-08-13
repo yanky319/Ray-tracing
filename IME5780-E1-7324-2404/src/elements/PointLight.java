@@ -46,10 +46,10 @@ public class PointLight extends Light implements LightSource {
      * @param radius    radius of the light
      * @throws IllegalArgumentException if radius is negative
      */
-    public PointLight(Color intensity, Point3D position, double kC, double kL, double kQ, double radius) throws IllegalArgumentException{
+    public PointLight(Color intensity, Point3D position, double kC, double kL, double kQ, double radius) throws IllegalArgumentException {
         super(intensity);
-        if(radius<0)
-            throw new  IllegalArgumentException("radius can not be negative");
+        if (radius < 0)
+            throw new IllegalArgumentException("radius can not be negative");
         _position = new Point3D(position);
         _kC = kC;
         _kL = kL;
@@ -100,14 +100,17 @@ public class PointLight extends Light implements LightSource {
         // add main vector
         Vector l = this.getL(lightedPoint);
         vectors.add(l);
+        if (_radius == 0)
+            return vectors;
 
-        Vector vectorV;
+        // get coordinate with min value
         List<Double> list = List.of(l.get_head().get_x().get(),
                 l.get_head().get_y().get(),
                 l.get_head().get_z().get());
         int i = list.indexOf(Collections.min(list));
 
-        switch (i) {
+        Vector vectorV;
+        switch (i) { // create orthogonal vector to main vector from light to the lighted point
             case 0:
                 vectorV = new Vector(0, -1 * l.get_head().get_z().get(), l.get_head().get_y().get()).normalize();
                 break;
@@ -118,11 +121,11 @@ public class PointLight extends Light implements LightSource {
                 vectorV = new Vector(-1 * l.get_head().get_y().get(), l.get_head().get_x().get(), 0).normalize();
                 break;
         }
-        Vector vectorU = l.crossProduct(vectorV);
+        Vector vectorU = l.crossProduct(vectorV); // get second orthogonal vector
         Random r = new Random();
         // the parameter to calculate the coefficient of the 2 vectors
-        double dX, dY, d;
-        //the coefficient to calculate in which quadrant is random point in the radius
+        double cos, sin, d;
+        //the coefficient to calculate in which quarter in the radius is random point
         int k, h;
 
         Point3D randomPoint;
@@ -131,18 +134,18 @@ public class PointLight extends Light implements LightSource {
             // decide which quarter we are in
             k = t != 1 && t != 2 ? 1 : -1;
             h = t != 2 && t != 3 ? 1 : -1;
-            for (int u = 0; u < numOfVectors / 4; u++) {
-                dX = r.nextDouble(); // give value for cosine
-                dY = Math.sqrt(1 - dX * dX); // calculate sine
-                d = r.nextDouble();
+            for (int u = 0; u < numOfVectors / 4; u++) { // create vectors in the quarter
+                cos = r.nextDouble(); // give value for cosine
+                sin = Math.sqrt(1 - cos * cos); // calculate sine
+                d = r.nextDouble() * _radius; // 0 < d < radius
                 // find random point on this pixel to create new ray from camera
                 randomPoint = _position;
-                if (dY * d != 0)
-                    randomPoint = randomPoint.add(vectorU.scale(dY * d * h * _radius));
-                if (dX * d != 0)
-                    randomPoint = randomPoint.add(vectorV.scale(dX * d * k * _radius));
+                if (sin * d * h != 0)
+                    randomPoint = randomPoint.add(vectorV.scale(sin * d * h));
+                if (cos * d * k != 0)
+                    randomPoint = randomPoint.add(vectorU.scale(cos * d * k));
                 // add the vector to the list
-                vectors.add(randomPoint.subtract(_position).normalize());
+                vectors.add(lightedPoint.subtract(randomPoint).normalize());
             }
         }
         return vectors;

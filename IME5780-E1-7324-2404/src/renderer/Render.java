@@ -25,7 +25,7 @@ public class Render {
     /**
      * color that has les weight then this gives very little effect of color and wil not be calculated
      */
-    private static final double MIN_CALC_COLOR_K = 0.001;
+    private static final double MIN_CALC_COLOR_K = 0.0001;
 
     /**
      * Object of image Writer for writing the image
@@ -60,7 +60,7 @@ public class Render {
         this._scene = scene;
         _superSampling = false;
         _softShadowing = false;
-        _numOfRays = 0;
+        _numOfRays = 50;
     }
     // -------------- setters --------------------
 
@@ -88,7 +88,10 @@ public class Render {
      * @param numOfRays size of superSampling grid
      */
     public void setNumOfRays(int numOfRays) {
-        _numOfRays = numOfRays;
+        if (numOfRays < 50)
+            _numOfRays = 50;
+        else
+            _numOfRays = numOfRays;
     }
 
     //--------------- functions -----------------
@@ -110,7 +113,7 @@ public class Render {
 
         for (int i = 0; i < ny; i++) {                        // go over all of the pixels
             for (int j = 0; j < nx; j++) {
-                Ray mainRay = camera.constructRayThroughPixel(nx, ny, j, i, distance, width, height);   // construct a ray from tha camera through it
+                Ray mainRay = camera.constructRayThroughPixel(nx, ny, j, i, distance, width, height);   // construct a ray from tha camera through the pixel
                 if (!_superSampling) {
                     GeoPoint closestIntersection = findClosestIntersection(mainRay); // find the closest intersection point on the ray and any geometry
                     if (closestIntersection == null)                          // if no intersections
@@ -120,21 +123,19 @@ public class Render {
                         _imageWriter.writePixel(j, i, color.getColor());               // color the pixel
                     }
                 } else {
-                    List<Ray> rays = camera.constructBeamOfRaysThroughPixel(nx, ny, j, i, distance, width, height, _numOfRays);   // construct a ray from tha camera through it
+                    List<Ray> rays = camera.constructBeamOfRaysThroughPixel(nx, ny, j, i, distance, width, height, _numOfRays);   // construct a beam of rays from tha camera through the pixel
                     Color color = Color.BLACK;
-                    double sumScales = 0;
-                    double scale = 0;
-                    for (Ray ray : rays) {
+                    int counter = 0;
+                    for (Ray ray : rays) { // go over all rays in the beam
                         GeoPoint closestIntersection = findClosestIntersection(ray); // find the closest intersection point on the ray and any geometry
-                        scale = ray.get_direction().dotProduct(mainRay.get_direction());
-                        sumScales += scale;
+                        counter++;
                         if (closestIntersection == null)                          // if no intersections
-                            color = color.add(background.scale(scale));          // then add background color to pixel
+                            color = color.add(background);          // then add background color to pixel
                         else {                                                  // if there are intersections
-                            color = color.add(calcColor(closestIntersection, ray).scale(scale));                         // calculate the color of that point
+                            color = color.add(calcColor(closestIntersection, ray));  // calculate the color of that point
                         }
                     }
-                    _imageWriter.writePixel(j, i, color.scale(1 / sumScales).getColor());               // color the pixel
+                    _imageWriter.writePixel(j, i, color.reduce(counter).getColor());        // color the pixel
                 }
             }
         }
@@ -259,30 +260,30 @@ public class Render {
 
         Point3D point = geoPoint.point;
         Vector n = geoPoint.geometry.getNormal(point); //normal vector from geometry at the point
-        Vector v = point.subtract(_scene.get_camera().get_p0()).normalize(); // vector from camera to the point
-
+        Vector v = point.subtract(_scene.get_camera().get_p0()).normalize(); // vector from camera to the poin
+        // get material attribute
         double kd = geoPoint.geometry.get_material().get_kD();
         double ks = geoPoint.geometry.get_material().get_kS();
         int nShininess = geoPoint.geometry.get_material().get_nShininess();
-        color = color.add(getLightSourceColor(geoPoint, color, v, n, kd, ks, nShininess, k));
+        color = color.add(getLightSourceColor(geoPoint, color, v, n, kd, ks, nShininess, k)); // add color from light sources
 
         double kr = geoPoint.geometry.get_material().get_kR();
         double kkr = k * kr;
-        if (kkr > MIN_CALC_COLOR_K) {
-            Ray reflectionRay = constructReflectedRay(point, inRay, n);
-            GeoPoint reflectionPoint = findClosestIntersection(reflectionRay);
+        if (kkr > MIN_CALC_COLOR_K) { // check if the scale of reflection color is significant
+            Ray reflectionRay = constructReflectedRay(point, inRay, n); // get reflected ray
+            GeoPoint reflectionPoint = findClosestIntersection(reflectionRay); // find intersection on reflected ray
             if (reflectionPoint != null)
-                color = color.add(calcColor(reflectionPoint, reflectionRay, level - 1, kkr).scale(kr));
+                color = color.add(calcColor(reflectionPoint, reflectionRay, level - 1, kkr).scale(kr)); // recursion call to add reflection color
         }
 
 
         double kt = geoPoint.geometry.get_material().get_kT();
         double kkt = k * kt;
-        if (kkt > MIN_CALC_COLOR_K) {
-            Ray refractionRay = constructRefractedRay(point, inRay, n);
-            GeoPoint refractionPoint = findClosestIntersection(refractionRay);
+        if (kkt > MIN_CALC_COLOR_K) { // check if the scale of transparency color is significant
+            Ray refractionRay = constructRefractedRay(point, inRay, n); // get refracted ray
+            GeoPoint refractionPoint = findClosestIntersection(refractionRay);  // find intersection on refracted ray
             if (refractionPoint != null)
-                color = color.add(calcColor(refractionPoint, refractionRay, level - 1, kkt).scale(kt));
+                color = color.add(calcColor(refractionPoint, refractionRay, level - 1, kkt).scale(kt)); // recursion call to add transparency color
         }
         return color;
     }
@@ -303,33 +304,15 @@ public class Render {
     private Color getLightSourceColor(GeoPoint geoPoint, Color color, Vector v, Vector n, double kd, double ks, int nShininess, double k) {
         Point3D point = geoPoint.point;
         List<LightSource> lightSources = _scene.get_lights();
-        for (LightSource light : lightSources) {
-            Vector l = light.getL(point); //vector from light source to the point
+        for (LightSource light : lightSources) { // go over all light source
+            Vector l = light.getL(point); // get vector from light source to the point
             double nl = alignZero(n.dotProduct(l));
-            double nv = alignZero(n.dotProduct(v));
-            // parameter to save the sum of ktr of each ray in beam
-            double ktr = 0;
-            // count the number of vectors for calculating the average
-            int counter = 0;
-            if (nl * nv > 0) {  // check both dotProducts hav the same sign
-                //if (unshaded(l, n, geoPoint, light)) {
-                ktr = transparency(l, n, geoPoint, light);
-                counter++;
-            }
-            if (_softShadowing) {
-                for (Vector vec : light.getListOfVectors(point, _numOfRays)) {
-                    nl = alignZero(n.dotProduct(vec));
-                    if (nl * nv > 0) {  // check both dotProducts have the same sign
-                        ktr += transparency(vec, n, geoPoint, light);
-                        counter++;
-                    }
-                }
-                if ((ktr / counter) * k > MIN_CALC_COLOR_K) {
-                    Color li = light.getIntensity(point).scale(ktr / counter);
-                    color = color.add(
-                            calcDiffusive(kd, nl, li),
-                            calcSpecular(ks, l, n, nl, v, nShininess, li));
-                }
+            double ktr = transparency(v, n, geoPoint, light); // get scale of shadow transparency
+            if (ktr * k > MIN_CALC_COLOR_K) { // check if the scale of shadow transparency color is significant
+                Color li = light.getIntensity(point).scale(ktr);
+                color = color.add(                          // add the color from the specific light source
+                        calcDiffusive(kd, nl, li),
+                        calcSpecular(ks, l, n, nl, v, nShininess, li));
             }
         }
         return color;
@@ -390,29 +373,48 @@ public class Render {
     }
 
     /**
-     * checks whether the light from a source hits a given pointor that point is shaded by another object.
+     * checks whether the light from a source hits a given point or that point is shaded by another object.
      *
-     * @param l           vector from light source towards the point
+     * @param v           vector from camera to the point
      * @param n           normal vector from the geometry at the given point
      * @param gp          the geo point we are checking if is unshaded
      * @param lightSource the light source we are checking if the light from gets to the point
      * @return boolean value true wen the point is unshaded
      */
-    private double transparency(Vector l, Vector n, GeoPoint gp, LightSource lightSource) {
-        Vector lightDirection = l.scale(-1); // get vector from point towards light source
+    private double transparency(Vector v, Vector n, GeoPoint gp, LightSource lightSource) {
+        double nv = alignZero(n.dotProduct(v));
         Point3D p = gp.point;
-        Ray lightRay = new Ray(p, lightDirection, n); // create ray from the point towards the light source
-        // check if the ray intersects objects that are closer then the light source
-        List<GeoPoint> intersections = _scene.get_geometries().findIntersections(lightRay, lightSource.getDistance(p));
-        if (intersections == null || intersections.size() == 0)
-            return 1.0;
+        Vector lightDirection = lightSource.getL(p); // get main vector from light source towards point
         double ktr = 1.0;
-        for (GeoPoint point : intersections) {
-            ktr *= point.geometry.get_material().get_kT();
-            if (ktr < MIN_CALC_COLOR_K)
-                return 0.0;
+        if (nv * n.dotProduct(lightDirection) > 0) { // check if the camera and direction of ray from light are on the same side of the geometry
+            Ray lightRay = new Ray(p, lightDirection.scale(-1), n); // create ray from the point towards the light source
+            // check if the ray intersects objects that are closer then the light source
+            List<GeoPoint> intersections = _scene.get_geometries().findIntersections(lightRay, lightSource.getDistance(p));
+            if (intersections != null)
+                for (GeoPoint point : intersections) { // go over al intersections and double up the transparency coefficient
+                    ktr *= point.geometry.get_material().get_kT();
+                }
         }
-        return ktr;
+        double sum_ktr = ktr; // variable for sum of transparency coefficient
+        int counter = 1; // count the amount of rays
+        if (_softShadowing) { //if softShadowing
+            List<Vector> vectors = lightSource.getListOfVectors(p, _numOfRays); // get list ov vectors from light source towards point
+            for (Vector vec : vectors) { // go over all of the vectors
+                if (nv * n.dotProduct(vec) > 0) { // check if the camera and direction of ray from light are on the same side of the geometry
+                    ktr = 1.0;
+                    Ray lightRay = new Ray(p, vec.scale(-1), n); // create ray from the point towards the light source
+                    // check if the ray intersects objects that are closer then the light source
+                    List<GeoPoint> intersections = _scene.get_geometries().findIntersections(lightRay, lightSource.getDistance(p));
+                    if (intersections != null)
+                        for (GeoPoint point : intersections) { // go over al intersections and double up the transparency
+                            ktr *= point.geometry.get_material().get_kT();
+                        }
+                    sum_ktr += ktr;
+                    counter++;
+                }
+            }
+        }
+        return sum_ktr / counter; // return average transparency coefficient
     }
 
     /**

@@ -36,6 +36,10 @@ public interface LightSource {
 
     /**
      * returns list of normalized vectors from the light sources towards the given point.
+     *
+     * @param lightedPoint the point in which the vectors are directed to
+     * @param numOfVectors the amount of vectors to create
+     * @return list of vectors from the light towards the point
      */
     List<Vector> getListOfVectors(Point3D lightedPoint,int numOfVectors);
 }

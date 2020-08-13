@@ -50,6 +50,6 @@ public class DirectionalLight extends Light implements LightSource {
 
     @Override
     public List<Vector> getListOfVectors(Point3D lightedPoint, int numOfVectors) {
-        return List.of(this.getL(lightedPoint));
+        return List.of(this.getL(lightedPoint).scale(-1));
     }
 }
