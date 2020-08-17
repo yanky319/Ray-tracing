@@ -1,19 +1,8 @@
 // yaakov taber 319187324
 // moshe helphgot 206262404
 
-import elements.*;
-import geometries.*;
 import primitives.*;
-import renderer.ImageWriter;
-import renderer.Render;
-import scene.Scene;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
-
-import static java.lang.System.in;
 import static java.lang.System.out;
 import static primitives.Util.*;
 
@@ -30,95 +19,61 @@ public final class Main {
      * @param args irrelevant here
      */
     public static void main(String[] args) {
-        Scene scene = new Scene("Test scene");
-        scene.set_camera(new Camera(new Point3D(150, -400, -1100), new Vector(-0.7, 1.4, 4), new Vector(0, -1, 0.35d)));
-        scene.set_distance(1000);
-        scene.set_background(Color.BLACK);
-        scene.set_ambientLight(new AmbientLight(new Color(java.awt.Color.black), 0.15));
 
-
-        //The plane
-        scene.addGeometries(
-                new Plane(new Material(0.2, 0.2, 30, 0, 0.2), new Color(10, 10, 10),
-                        new Point3D(1, 0, 1), new Vector(0, -1, 0)));
-
-        Point3D p1 = new Point3D(100, 8, -100);
-        Point3D p2 = new Point3D(-100, 8, -100);
-        Point3D p3 = new Point3D(0, 8, 200);
-        Point3D ph = new Point3D(0, -200, 100);
-        Point3D pc = new Point3D(0, -73, 100);
-        Material material = new Material(0.3, 0.3, 30, 0, 0);
-        scene.addGeometries(
-                new Cylinder(material, new Color(210, 81, 242).reduce(3), 10, new Ray(p1, ph.subtract(p1)), ph.distance(p1)),
-                new Cylinder(material, new Color(210, 81, 242).reduce(3), 10, new Ray(p2, ph.subtract(p2)), ph.distance(p2)),
-                new Cylinder(material, new Color(210, 81, 242).reduce(3), 10, new Ray(p3, ph.subtract(p3)), ph.distance(p3)),
-                new Cylinder(material, new Color(117, 78, 111).reduce(5), 1, new Ray(ph, new Vector(0, 1, 0)), ph.distance(pc)),
-                new Sphere(new Material(0.5, 0.5, 100), new Color(0, 0, 255), 15, pc));
-
-//        Point3D P1 = new Point3D(-35 , 0, 35);
-//        Point3D P2 = new Point3D(0, 0, 85);
-//        Point3D P3 = new Point3D(35 , 0, 35);
-//        Point3D P4 = new Point3D(0, -30, 0 );
-
-//        Point3D P1 = new Point3D(100, 0, -100).add(Point3D.ZERO.subtract(new Point3D(100, 0, -100)).scale(0.5));
-//        Point3D P2 = new Point3D(-100, 0, -100).add(Point3D.ZERO.subtract(new Point3D(-100, 0, -100)).scale(0.5));
-//        Point3D P3 = new Point3D(0, 0, 200).add(Point3D.ZERO.subtract(new Point3D(0, 0, 200)).scale(0.5));
-//        Point3D P4 = new Point3D(0, -50, 100);
-//        scene.addGeometries(new Polygon(material, new Color(java.awt.Color.RED).scale(0.8), P1, P2, P4),
-//                new Polygon(material, new Color(java.awt.Color.RED), P2, P3, P4),
-//                new Polygon(material, new Color(java.awt.Color.RED), P1, P3, P4),
-//                new Polygon(material, new Color(java.awt.Color.RED), P1, P2, P3));
-
-        scene.addLights(new PointLight(new Color(255, 255, 255), new Point3D(350, -450, 350),  1, 0.00001, 0.000001, 5),
-                new SpotLight(new Color(255, 255, 255), new Point3D(-400, -400, 400), Point3D.ZERO.subtract(new Point3D(-350, -400, 350)), 1, 0.00001, 0.000001, 5),
-                new DirectionalLight(new Color(255,255,255).reduce(6), new Vector(0.7, -1.4, -4)));
-
-        List<Sphere> spheres = new LinkedList() {{
-            add(new Sphere(250, new Point3D(0, 0, 100)));
-        }};
-        Random r = new Random();
-        double x, y, z;
-        List<Color> colors = new ArrayList<>() {{
-            add(new Color(0, 255, 255));
-            add(new Color(255, 0, 255));
-            add(new Color(255, 255, 0));
-            add(new Color(0, 0, 255));
-        }};
-        int i = 0;
-        while (i < 50) {
-            boolean flag = true;
-            x = r.nextDouble() * 1100 - 550;
-            y = r.nextDouble() * 15 + 10;
-            z = r.nextDouble() * 1300 - 500;
-            for (Sphere sphere : spheres) {
-                double dist = Math.sqrt((x - sphere.get_center().get_x().get()) * (x - sphere.get_center().get_x().get())
-                        + (z - sphere.get_center().get_z().get()) * (z - sphere.get_center().get_z().get()));
-                if (dist < y + sphere.get_radius()) {
-                    flag = false;
-                    break;
-                }
-            }
-            if (flag) {
-                Sphere sphere2 = new Sphere(new Material(0.5, 0.5, 100), colors.get(i % 4).reduce(4)
-                        , y, new Point3D(x, -y, z));
-                spheres.add(sphere2);
-                scene.addGeometries(sphere2);
-                i++;
-            }
+        try { // test zero vector
+            new Vector(0, 0, 0);
+            out.println("ERROR: zero vector does not throw an exception");
+        } catch (Exception e) {
         }
 
-        ImageWriter imageWriter = new ImageWriter("E1_off", 648, 432, 1080, 720);
-        Render render = new Render(imageWriter, scene);
-        render.renderImage();
-        render.writeToImage();
+        Vector v1 = new Vector(1, 2, 3);
+        Vector v2 = new Vector(-2, -4, -6);
+        Vector v3 = new Vector(0, 3, -2);
 
-        ImageWriter imageWriter2 = new ImageWriter("E1_on", 648, 432, 1080, 720);
-        render = new Render(imageWriter2, scene);
-        render.setSoftShadowing(true);
-        render.setSuperSampling(true);
-        render.setNumOfRays(89);
-        render.renderImage();
-        render.writeToImage();
+        // test length..
+        if (!isZero(v1.lengthSquared() - 14))
+            out.println("ERROR: lengthSquared() wrong value");
+        if (!isZero(new Vector(0, 3, 4).length() - 5))
+            out.println("ERROR: length() wrong value");
 
+        // test Dot-Product
+        if (!isZero(v1.dotProduct(v3)))
+            out.println("ERROR: dotProduct() for orthogonal vectors is not zero");
+        if (!isZero(v1.dotProduct(v2) + 28))
+            out.println("ERROR: dotProduct() wrong value");
+
+        // test Cross-Product
+        try { // test zero vector
+            v1.crossProduct(v2);
+            out.println("ERROR: crossProduct() for parallel vectors does not throw an exception");
+        } catch (Exception e) {
+        }
+        Vector vr = v1.crossProduct(v3);
+        if (!isZero(vr.length() - v1.length() * v3.length()))
+            out.println("ERROR: crossProduct() wrong result length");
+        if (!isZero(vr.dotProduct(v1)) || !isZero(vr.dotProduct(v3)))
+            out.println("ERROR: crossProduct() result is not orthogonal to its operands");
+
+        // test vector normalization vs vector length and cross-product
+        Vector v = new Vector(1, 2, 3);
+        Vector vCopy = new Vector(v);
+        Vector vCopyNormalize = vCopy.normalize();
+        if (vCopy != vCopyNormalize)
+            out.println("ERROR: normalize() function creates a new vector");
+        if (!isZero(vCopyNormalize.length() - 1))
+            out.println("ERROR: normalize() result is not a unit vector");
+        Vector u = v.normalized();
+        if (u == v)
+            out.println("ERROR: normalizated() function does not create a new vector");
+
+        // Test operations with points and vectors
+        Point3D p1 = new Point3D(1, 2, 3);
+        if (!Point3D.ZERO.equals(p1.add(new Vector(-1, -2, -3))))
+            out.println("ERROR: Point + Vector does not work correctly");
+        if (!new Vector(1, 1, 1).equals(new Point3D(2, 3, 4).subtract(p1)))
+            out.println("ERROR: Point - Point does not work correctly");
+
+        out.println("If there were no any other outputs - all tests succeeded!");
     }
 }
+

@@ -138,6 +138,7 @@ public class Polygon extends Geometry {
             if (positive != (edge1.crossProduct(edge2).dotProduct(n) > 0))
                 throw new IllegalArgumentException("All vertices must be ordered and the polygon must be convex");
         }
+        setBox();
     }
 
     // ------------------------ Override functions ---------------------
@@ -150,8 +151,10 @@ public class Polygon extends Geometry {
 
     @Override
     public List<GeoPoint> findIntersections(Ray ray, double maxDistance) {
+        if(!boundaryBox.intersectBox(ray)) // if no intersection with the box return null
+            return null;
         GeoPoint p;
-        try {
+        try { // check if intersects with the plane its in
             p = _plane.findIntersections(ray, maxDistance).get(0);
             if (p == null) return null;
         } catch (Exception e) {
@@ -184,6 +187,37 @@ public class Polygon extends Geometry {
             return null;
         }
         return List.of(new GeoPoint(this, p.point));
+    }
+
+    @Override
+    public void setBox() {
+        // set min and max values to ba coordinates of first vertices
+        double min_x = _vertices.get(0).get_x().get();
+        double max_x = _vertices.get(0).get_x().get();
+        double min_y = _vertices.get(0).get_y().get();
+        double max_y = _vertices.get(0).get_y().get();
+        double min_z = _vertices.get(0).get_z().get();
+        double max_z = _vertices.get(0).get_z().get();
+        // // go over all vertices and check for grater or smaller values
+        for (Point3D p : _vertices) {
+            if (p.get_x().get() < min_x)
+                min_x = p.get_x().get();
+            if (p.get_x().get() > max_x)
+                max_x = p.get_x().get();
+            if (p.get_y().get() < min_y)
+                min_y = p.get_y().get();
+            if (p.get_y().get() > max_y)
+                max_y = p.get_y().get();
+            if (p.get_z().get() < min_z)
+                min_z = p.get_z().get();
+            if (p.get_z().get() > max_z)
+                max_z = p.get_z().get();
+        }
+        // create box with min and max values found
+        boundaryBox = new Box(
+                new Point3D(min_x, min_y, min_z),
+                new Point3D(max_x, max_y, max_z));
+
     }
 
 }

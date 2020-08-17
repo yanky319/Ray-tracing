@@ -110,20 +110,23 @@ public class Camera {
     public Ray constructRayThroughPixel(int nX, int nY,
                                         int j, int i, double screenDistance,
                                         double screenWidth, double screenHeight) {
+        // center point of the view plane
         Point3D Pc = _p0.add(_Vto.scale(screenDistance));
-
+        // size of the pixel
         double Ry = screenHeight / (double) nY;
         double Rx = screenWidth / (double) nX;
 
+        // distance to the center of the pixel
         double Yi = (i - nY / 2d) * Ry + Ry / 2d;
         double Xj = (j - nX / 2d) * Rx + Rx / 2d;
 
+        // get point of the center of the pixel
         Point3D PIJ = new Point3D(Pc);
         if (Xj != 0)
             PIJ = PIJ.add(_Vright.scale(Xj));
         if (Yi != 0)
             PIJ = PIJ.add(_Vup.scale(-Yi));
-
+        // create ray from camera through center of the pixel
         return new Ray(_p0, PIJ.subtract(_p0));
     }
 

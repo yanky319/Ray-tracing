@@ -184,5 +184,13 @@ public class Scene {
             _lights.add(l);
         }
     }
+
+    /**
+     * builds the bvh tree by calling {@link Geometries#bvhTree()}.
+     */
+    public void build_bvhTree()
+    {
+        _geometries.bvhTree();
+    }
 }
 

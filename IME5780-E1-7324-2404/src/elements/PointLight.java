@@ -110,7 +110,7 @@ public class PointLight extends Light implements LightSource {
         int i = list.indexOf(Collections.min(list));
 
         Vector vectorV;
-        switch (i) { // create orthogonal vector to main vector from light to the lighted point
+        switch (i) { // create orthogonal vector to main vector from light source to the lighted point
             case 0:
                 vectorV = new Vector(0, -1 * l.get_head().get_z().get(), l.get_head().get_y().get()).normalize();
                 break;
@@ -138,7 +138,7 @@ public class PointLight extends Light implements LightSource {
                 cos = r.nextDouble(); // give value for cosine
                 sin = Math.sqrt(1 - cos * cos); // calculate sine
                 d = r.nextDouble() * _radius; // 0 < d < radius
-                // find random point on this pixel to create new ray from camera
+                // find random point on this pixel to create new vector from the light source to the lighted point
                 randomPoint = _position;
                 if (sin * d * h != 0)
                     randomPoint = randomPoint.add(vectorV.scale(sin * d * h));

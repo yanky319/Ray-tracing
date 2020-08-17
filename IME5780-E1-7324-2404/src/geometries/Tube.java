@@ -62,6 +62,9 @@ public class Tube extends RadialGeometry {
         if (ray == null)
             throw new NullPointerException("ERROR Ray arguments is NULL");
         this._axisRay = new Ray(ray);
+        // check that not a Cylinder to avoid run time exception
+        if (!(this instanceof Cylinder))
+            setBox();
     }
 
     //*********************************** Getters ***************
@@ -86,6 +89,8 @@ public class Tube extends RadialGeometry {
 
     @Override
     public List<GeoPoint> findIntersections(Ray ray, double maxDistance) {
+        if (!boundaryBox.intersectBox(ray)) // if no intersection with the box return null
+            return null;
         Point3D p = ray.get_p0();
         Point3D p0 = _axisRay.get_p0();
         Vector deltaP = p.subtract(p0);
@@ -116,7 +121,7 @@ public class Tube extends RadialGeometry {
         double t1 = (-1 * B + sqrt(calc_d)) / (2d * A);
         double t2 = (-1 * B - sqrt(calc_d)) / (2d * A);
 
-        // takes only positive and no zero results, also in the distance:
+        // takes only positive and non zero results, also in the distance:
         if (isZero(calc_d)) return List.of(new GeoPoint(this, ray.getPoint(t1)));
         if (alignZero(t1 - maxDistance) <= 0 && alignZero(t2 - maxDistance) <= 0 && t1 > 0 && t2 > 0)
             return List.of(new GeoPoint(this, ray.getPoint(t1)), new GeoPoint(this, ray.getPoint(t2)));
@@ -125,6 +130,37 @@ public class Tube extends RadialGeometry {
         if (alignZero(t2 - maxDistance) <= 0 && t2 > 0)
             return List.of(new GeoPoint(this, ray.getPoint(t2)));
         return null;
+    }
+
+    @Override
+    public void setBox() {  // set initial values as plus/minus max value
+        double min_x = -Double.MAX_VALUE;
+        double max_x = Double.MAX_VALUE;
+        double min_y = -Double.MAX_VALUE;
+        double max_y = Double.MAX_VALUE;
+        double min_z = -Double.MAX_VALUE;
+        double max_z = Double.MAX_VALUE;
+
+        double x = this._axisRay.get_direction().get_head().get_x().get();
+        double y = this._axisRay.get_direction().get_head().get_y().get();
+        double z = this._axisRay.get_direction().get_head().get_z().get();
+
+        if (isZero(y) && isZero(z)) { // if tube is parallel to x axes
+            min_x = _axisRay.get_p0().get_x().get() - _radius;
+            max_x = _axisRay.get_p0().get_x().get() + _radius;
+        }
+        if (isZero(x) && isZero(z)) { // if tube is parallel to y axes
+            min_y = _axisRay.get_p0().get_y().get() - _radius;
+            max_y = _axisRay.get_p0().get_y().get() + _radius;
+        }
+        if (isZero(y) && isZero(x)) { // if tube is parallel to z axes
+            min_z = _axisRay.get_p0().get_z().get() - _radius;
+            max_z = _axisRay.get_p0().get_z().get() + _radius;
+        }
+        // create box with min and max values found
+        boundaryBox = new Box(
+                new Point3D(min_x, min_y, min_z),
+                new Point3D(max_x, max_y, max_z));
     }
 
     //******************** Admin ****************

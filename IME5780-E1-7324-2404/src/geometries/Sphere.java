@@ -62,6 +62,7 @@ public class Sphere extends RadialGeometry {
         if (po == null)
             throw new NullPointerException("ERROR Point arguments is NULL");
         _center = new Point3D(po);
+        setBox();
     }
     //*********************************** getters ***************
 
@@ -83,6 +84,8 @@ public class Sphere extends RadialGeometry {
 
     @Override
     public List<GeoPoint> findIntersections(Ray ray, double maxDistance) {
+        if (!boundaryBox.intersectBox(ray)) // if no intersection with the box return null
+            return null;
         Vector u;
         try {
             u = this._center.subtract(ray.get_p0());
@@ -112,6 +115,19 @@ public class Sphere extends RadialGeometry {
             return result;
         }
         return null;
+    }
+
+    @Override
+    public void setBox() {
+        // min value is the value of the coordinate mines the radius
+        // max value is the value of the coordinate plus the radius
+        boundaryBox = new Box(
+                new Point3D(_center.get_x().get() - _radius,
+                        _center.get_y().get() - _radius,
+                        _center.get_z().get() - _radius),
+                new Point3D(_center.get_x().get() + _radius,
+                        _center.get_y().get() + _radius,
+                        _center.get_z().get() + _radius));
     }
 
     //******************** Admin ****************

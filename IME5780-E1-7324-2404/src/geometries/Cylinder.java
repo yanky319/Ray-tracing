@@ -63,6 +63,7 @@ public class Cylinder extends Tube {
         if (height <= 0)
             throw new IllegalArgumentException("The Cylinder height must be greater than zero");
         _height = height;
+        setBox();
     }
 
     //*********************************** Getters ***************
@@ -78,10 +79,20 @@ public class Cylinder extends Tube {
 
     @Override
     public Vector getNormal(Point3D point) {
-        double t = this._axisRay.get_direction().dotProduct(point.subtract(this._axisRay.get_p0()));
+        double t = 0;
+        try{
+            // projection of P-O on the ray:
+           t = this._axisRay.get_direction().dotProduct(point.subtract(this._axisRay.get_p0()));
+        } catch (Exception e)
+        {
+            // at ray start
+            return new Vector(this._axisRay.get_direction()).scale(-1).normalize();
+        }
+
+        // on base with ray start
         if (t == 0)
             return new Vector(this._axisRay.get_direction()).scale(-1).normalize();
-
+        // on second base
         if (t == this._height)
             return new Vector(this._axisRay.get_direction()).normalize();
 
@@ -92,14 +103,18 @@ public class Cylinder extends Tube {
 
     @Override
     public List<GeoPoint> findIntersections(Ray ray, double maxDistance) {
-        // Step 1: intersect with tube
+        if (!boundaryBox.intersectBox(ray)) // if no intersection with the box return null
+            return null;
+
+        // intersect with tube
         List<GeoPoint> intersections = super.findIntersections(ray, maxDistance);
+
         Vector va = _axisRay.get_direction();
         Point3D A = _axisRay.get_p0();
         Point3D B = _axisRay.getPoint(_height);
         List<GeoPoint> intersectionsCylinder = null;
         if (intersections != null) {
-            // Step 2: intersect is between caps
+            // intersect is between caps
             double lowerBound, upperBound;
             for (GeoPoint gPoint : intersections) {
                 lowerBound = va.dotProduct(gPoint.point.subtract(A));
@@ -114,14 +129,14 @@ public class Cylinder extends Tube {
             }
         }
 
-        // Step 3: intersect with each plane which belongs to the caps
+        // intersect with each plane which belongs to the caps
         Plane planeA = new Plane(_material, _emission, A, va);
         Plane planeB = new Plane(_material, _emission, B, va);
         List<GeoPoint> intersectionPlaneA = planeA.findIntersections(ray, maxDistance);
         List<GeoPoint> intersectionPlaneB = planeB.findIntersections(ray, maxDistance);
         if (intersectionPlaneA == null && intersectionPlaneB == null)
             return intersectionsCylinder;
-        // Step 4: intersect inside caps
+        // check if intersection is inside caps
         Point3D q3, q4;
         if (intersectionPlaneA != null) {
             q3 = intersectionPlaneA.get(0).point;
@@ -142,7 +157,24 @@ public class Cylinder extends Tube {
         return intersectionsCylinder;
     }
 
-    //******************** Admin ****************
+    @Override
+    public void setBox() {
+        // get points of the ray on both bases
+        Point3D p1 = _axisRay.get_p0();
+        Point3D p2 = p1.add(_axisRay.get_direction().scale(_height));
+
+        // min value is the min value of the coordinate mines the radius
+        // max value is the max value of the coordinate plus the radius
+        boundaryBox = new Box(
+                new Point3D(Math.min(p1.get_x().get() - _radius, p2.get_x().get() - _radius),
+                        Math.min(p1.get_y().get() - _radius, p2.get_y().get() - _radius),
+                        Math.min(p1.get_z().get() - _radius, p2.get_z().get() - _radius)),
+                new Point3D(Math.max(p1.get_x().get() + _radius, p2.get_x().get() + _radius),
+                        Math.max(p1.get_y().get() + _radius, p2.get_y().get() + _radius),
+                        Math.max(p1.get_z().get() + _radius, p2.get_z().get() + _radius)));
+
+    }
+//******************** Admin ****************
 
 
     @Override

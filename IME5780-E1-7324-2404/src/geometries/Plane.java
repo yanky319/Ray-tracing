@@ -5,7 +5,6 @@ import primitives.*;
 import static primitives.Util.*;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * class Plane representing a Plane in 3D with a point and normal vector.
@@ -63,6 +62,7 @@ public class Plane extends Geometry {
             throw new NullPointerException("ERROR One or more of the arguments is NULL");
         this._po = new Point3D(po);
         this._normal = new Vector(normal).normalize();
+        setBox();
     }
 
 
@@ -117,6 +117,7 @@ public class Plane extends Geometry {
         Vector N = U.crossProduct(V);
         N.normalize();
         this._normal = N;
+        setBox();
     }
 
     //*********************************** getters ***************
@@ -148,6 +149,8 @@ public class Plane extends Geometry {
 
     @Override
     public List<GeoPoint> findIntersections(Ray ray, double maxDistance) {
+        if (!boundaryBox.intersectBox(ray)) // if no intersection with the box return null
+            return null;
         Vector Qp;
         try {
             Qp = this._po.subtract(ray.get_p0());
@@ -166,6 +169,40 @@ public class Plane extends Geometry {
         }
         return null;
     }
+
+    @Override
+    public void setBox() {
+
+        // set initial values as plus/minus max value
+        double min_x = -Double.MAX_VALUE;
+        double max_x = Double.MAX_VALUE;
+        double min_y = -Double.MAX_VALUE;
+        double max_y = Double.MAX_VALUE;
+        double min_z = -Double.MAX_VALUE;
+        double max_z = Double.MAX_VALUE;
+
+        double x = this._normal.get_head().get_x().get();
+        double y = this._normal.get_head().get_y().get();
+        double z = this._normal.get_head().get_z().get();
+
+        if (isZero(y) && isZero(z)) { // if plane is orthogonal to x axes
+            min_x = x - 0.1;
+            max_x = x + 0.1;
+        }
+        if (isZero(x) && isZero(z)) { // if plane is orthogonal to y axes
+            min_y = y - 0.1;
+            max_y = y + 0.1;
+        }
+        if (isZero(y) && isZero(x)) { // if plane is orthogonal to z axes
+            min_z = z - 0.1;
+            max_z = z + 0.1;
+        }
+        // create box with min and max values found
+        boundaryBox = new Box(
+                new Point3D(min_x, min_y, min_z),
+                new Point3D(max_x, max_y, max_z));
+    }
+
 
     //******************** Admin ****************
 

@@ -51,6 +51,7 @@ public class Triangle extends Polygon {
      */
     public Triangle(Material material, Color emission, Point3D po1, Point3D po2, Point3D po3) {
         super(material, emission, po1, po2, po3);
+        setBox();
     }
     //*********************************** Getters ***************
 
@@ -68,21 +69,26 @@ public class Triangle extends Polygon {
 
     @Override
     public List<GeoPoint> findIntersections(Ray ray, double maxDistance) {
+        if(!boundaryBox.intersectBox(ray)) // if no intersection with the box return null
+            return null;
+        // check if intersects with the plane its in
         List<GeoPoint> planeResult = _plane.findIntersections(ray, maxDistance);
         if (planeResult == null)
             return null;
+        // create vectors from start of rey through all vertices
         Vector v1 = _vertices.get(0).subtract(ray.get_p0()).normalize();
         Vector v2 = _vertices.get(1).subtract(ray.get_p0()).normalize();
         Vector v3 = _vertices.get(2).subtract(ray.get_p0()).normalize();
-
+        // cross Product between them in order
         Vector n1 = v1.crossProduct(v2).normalize();
         Vector n2 = v2.crossProduct(v3).normalize();
         Vector n3 = v3.crossProduct(v1).normalize();
-
+        // dot Product with ray direction
         double t1 = alignZero(ray.get_direction().dotProduct(n1));
         double t2 = alignZero(ray.get_direction().dotProduct(n2));
         double t3 = alignZero(ray.get_direction().dotProduct(n3));
 
+        // if all have the same sign
         if (Math.signum(t1) == Math.signum(t2) && Math.signum(t2) == Math.signum(t3)) {
             planeResult.get(0).geometry = this;
             return planeResult;

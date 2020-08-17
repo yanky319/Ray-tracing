@@ -109,7 +109,7 @@ public class SpotLight extends PointLight {
                 cos = r.nextDouble(); // give value for cosine
                 sin = Math.sqrt(1 - cos * cos); // calculate sine
                 d = r.nextDouble() * _radius; // 0 < d < radius
-                // find random point on this pixel to create new ray from camera
+                // find random point on this pixel to create new vector from the light source to the lighted point
                 randomPoint = _position;
                 if (sin * d * h != 0)
                     randomPoint = randomPoint.add(vectorV.scale(sin * d * h));

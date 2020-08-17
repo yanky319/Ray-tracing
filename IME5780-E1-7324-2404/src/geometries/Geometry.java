@@ -8,7 +8,7 @@ import primitives.Vector;
 /**
  * abstract class Geometry for Geometry objects
  */
-public abstract class Geometry implements Intersectable {
+public abstract class Geometry extends Intersectable {
 
     /**
      * the color/light from the object
